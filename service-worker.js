@@ -1,13 +1,13 @@
 // Titrate - Service Worker v2.1
 const CACHE_NAME = 'titrate-v4';
 const ASSETS = [
-    '/Titrate/',
-    '/Titrate/index.html',
-    '/Titrate/app.js',
-    '/Titrate/data.json',
-    '/Titrate/manifest.json',
-    '/Titrate/icon-192.svg',
-    '/Titrate/icon-512.svg'
+    '/HelenJoesph/',
+    '/HelenJoesph/index.html',
+    '/HelenJoesph/app.js',
+    '/HelenJoesph/data.json',
+    '/HelenJoesph/manifest.json',
+    '/HelenJoesph/icon-192.svg',
+    '/HelenJoesph/icon-512.svg'
 ];
 
 self.addEventListener('install', e => {
