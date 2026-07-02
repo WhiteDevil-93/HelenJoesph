@@ -124,35 +124,39 @@ function renderEDProcedures(d){
   let h='';
   let currentProtocol=null;
   let currentEquip=[];
+  let currentSteps=[];
   let stepMap={};
 
+  // Phase 1: Group items by protocol
   for(const it of protocols){
     const n=it.item||'';
     const parent=it.parent_protocol||'';
 
+    // New protocol header
     if(n.startsWith('━')){
+      // Flush previous protocol
       if(currentProtocol){
-        const orderedSteps=Object.entries(stepMap).sort((a,b)=>{
-          const na=parseInt(a[0].match(/\d+/)?.[0]||0);
-          const nb=parseInt(b[0].match(/\d+/)?.[0]||0);
-          return na-nb;
-        }).map(e=>e[1]);
-        h+=renderEDProtocolCard(currentProtocol,currentEquip,orderedSteps);
+        h+=renderEDProtocolCard(currentProtocol,currentEquip,currentSteps);
       }
       currentProtocol={name:n.replace(/━/g,'').trim(),notes:it.notes_updates||''};
       currentEquip=[];
+      currentSteps=[];
       stepMap={};
       continue;
     }
 
     if(!currentProtocol)continue;
+
+    // Skip metadata fields
     if(n==='Name'||n==='Category')continue;
 
+    // Collect equipment (no parent_protocol, empty notes)
     if(!parent&&(it.notes_updates||'')===''&&n.length>0&&n!=='Action'&&n!=='Details'&&n!=='Caution'){
       currentEquip.push(n);
       continue;
     }
 
+    // Collect steps grouped by parent
     if(parent.startsWith('Step By Step')){
       if(!stepMap[parent])stepMap[parent]={action:'',details:'',caution:''};
       const l=n.toLowerCase();
@@ -162,7 +166,9 @@ function renderEDProcedures(d){
     }
   }
 
+  // Flush last protocol
   if(currentProtocol){
+    // Convert stepMap to ordered array
     const orderedSteps=Object.entries(stepMap).sort((a,b)=>{
       const na=parseInt(a[0].match(/\d+/)?.[0]||0);
       const nb=parseInt(b[0].match(/\d+/)?.[0]||0);
@@ -178,9 +184,13 @@ function renderEDProcedures(d){
 function renderEDProtocolCard(proto,equip,steps){
   let h=`<div class="proto" data-s="${proto.name.toLowerCase()}">`;
   h+=`<div class="proto-h"><div class="proto-icon">▶</div><div class="proto-title">${proto.name}</div></div>`;
+
+  // Equipment checklist
   if(equip.length>0){
     h+=`<div class="eqlist">${equip.map(e=>`<span class="eqtag">${e}</span>`).join('')}</div>`;
   }
+
+  // Steps
   if(steps.length>0){
     h+=`<div class="sub">PROTOCOL STEPS</div>`;
     for(let i=0;i<steps.length;i++){
@@ -193,6 +203,7 @@ function renderEDProtocolCard(proto,equip,steps){
       h+=`</div>`;
     }
   }
+
   h+='</div>';
   return h;
 }
@@ -327,6 +338,7 @@ function parseProtocolSections(text){
 function calcWeightDose(doseStr,wt){
   if(!doseStr||!wt)return null;
   const s=doseStr.toString();
+  // Match patterns like "0.05 - 1 ug/kg/min" or "5 mg/kg" or "10-20 ml/kg"
   const m=s.match(/([\d.]+)\s*[-–]\s*([\d.]+)\s*(ug|mcg|mg|g|units|mEq|mmol|ml)\s*\/\s*kg/i);
   if(m){
     const minV=parseFloat(m[1])*wt;
@@ -335,6 +347,7 @@ function calcWeightDose(doseStr,wt){
     const unitMap={ug:'mcg',mcg:'mcg',mg:'mg',g:'g',units:'units',meq:'mEq',mmol:'mmol',ml:'mL'};
     return minV.toFixed(1).replace(/\.0$/,'')+' - '+maxV.toFixed(1).replace(/\.0$/,'')+' '+unitMap[unit];
   }
+  // Single value: "5 mg/kg"
   const m2=s.match(/([\d.]+)\s*(ug|mcg|mg|g|units|mEq|mmol|ml)\s*\/\s*kg/i);
   if(m2){
     const v=parseFloat(m2[1])*wt;
@@ -372,6 +385,7 @@ function calcInfusion(id){
   const wt=parseFloat(document.getElementById(id+'-w')?.value);
   const r=document.getElementById(id+'-r');
   if(!r||isNaN(dose)||isNaN(conc)||isNaN(wt)||wt<=0||conc<=0){r.style.display='block';r.textContent='Enter all values';r.style.color='var(--d)';return}
+  // mL/hr = (mcg/kg/min * kg * 60 min) / (mg/mL * 1000 mcg/mg)
   const mlhr=(dose*wt*60)/(conc*1000);
   r.style.display='block';r.style.color='var(--a)';
   r.innerHTML=`${mlhr.toFixed(1)} mL/hr <span style="font-size:.6rem;color:var(--t2)">(${dose} mcg/kg/min × ${wt}kg × 60) ÷ (${conc}mg/mL × 1000)</span>`;
@@ -387,10 +401,11 @@ function renderDrug(it,cat,n){
   let h=`<div class="drug" data-s="${(n+' '+nt).toLowerCase()}">`;
   h+=`<div class="dh"><div class="dn">${n}${badges}</div><button class="star${fv?' on':''}" onclick="togF('${dk}')">${fv?'★':'☆'}</button></div>`;
   if(it.adult_dose||it.adult_settings)h+=`<div class="dose"><span class="dl">A</span><span class="dv">${it.adult_dose||it.adult_settings}</span></div>`;
-  if(it.paediatric_dose||it.paediatric_settings)h+=`<div class="dose"><span class="dl">P</span><span class="dp dv">${it.paediatric_dose||it.paediatric_settings}</span></div>`;
+  if(it.paediatric_dose||it.paeditric_settings)h+=`<div class="dose"><span class="dl">P</span><span class="dp dv">${it.paediatric_dose||it.paediatric_settings}</span></div>`;
   if(it.protocol_dose)h+=`<div class="dose"><span class="dl">Rx</span><span class="dv">${it.protocol_dose}</span></div>`;
   if(it.formula){h+=`<div class="dose"><span class="dl">📐</span><span class="dv" style="font-family:monospace;font-size:.75rem">${it.formula}</span></div>`;if(it.standard_dilutions)h+=`<div class="dose"><span class="dl">Dil</span><span class="dv">${it.standard_dilutions}</span></div>`}
 
+  // Weight-based calculated dose
   if(W>0){
     const ad=it.adult_dose||it.adult_settings||'';
     const pd=it.paediatric_dose||it.paediatric_settings||'';
@@ -402,6 +417,7 @@ function renderDrug(it,cat,n){
     }
   }
 
+  // Infusion calculator
   if(isInfusionDrug(n,it)){
     h+=renderInfusionCalc(it,n);
   }
@@ -637,6 +653,7 @@ if((act==='all'||act==='16_score_calculators')&&D['16_score_calculators']){
 for(const[key,sc]of Object.entries(D['16_score_calculators'])){
 if((sc.name+' '+JSON.stringify(sc)).toLowerCase().includes(q)){if(!found)h+=`<div class="sect open"><div class="sh" onclick="togS(this)"><div style="display:flex;align-items:center"><div class="shi">📊</div><div class="sht">Score Calculators</div></div><div class="shc">▼</div></div><div class="sb">`;h+=renderScoreCalc(key,sc);found=true}}
 if(found)h+='</div></div>'}
+// Result count
 const count=(h.match(/class="drug"/g)||[]).length+(h.match(/class="proto"/g)||[]).length+(h.match(/class="calcw"/g)||[]).length;
 h=`<div class="rbar">${count} result${count!==1?'s':''} for "${q}"</div>`+h;
 document.getElementById('c').innerHTML=h||`<div class="nores"><div class="ico">🔍</div>No results for "${q}"</div>`;

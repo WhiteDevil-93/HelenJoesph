@@ -1,6 +1,6 @@
-// Titrate legacy SW kill-switch v4.2
+// Titrate legacy SW kill-switch v4.3
 // This overwrites the old v3.0 cache-first service worker
-const KILL = 'titrate-kill-v4-2';
+const KILL = 'titrate-kill-v4-3';
 
 self.addEventListener('install', e => {
   self.skipWaiting();

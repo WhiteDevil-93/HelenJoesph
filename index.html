@@ -10,7 +10,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Titrate</title>
-<link rel="manifest" href="manifest.json?v=42">
+<link rel="manifest" href="manifest.json?v=43">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230d3b3b'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='48' font-family='Arial' font-weight='bold' fill='%23ffffff'%3ET%3C/text%3E%3C/svg%3E">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -161,6 +161,55 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 /* ===== FLUSH: remove gaps between consecutive non-collapsible items ===== */
 .drug + .drug,.proto + .proto,.drug + .proto,.proto + .drug{margin-top:0;border-top:1px solid var(--b)}
 
+/* ===== SKELETON LOADING ===== */
+.skel{padding:.5rem .6rem}
+.skel-sect{background:var(--card);border-radius:.6rem;border:1px solid var(--b);margin-bottom:.6rem;padding:.6rem .85rem;overflow:hidden}
+.skel-sh{height:1rem;background:linear-gradient(90deg,var(--b) 25%,var(--ch) 50%,var(--b) 75%);background-size:200% 100%;animation:skel 1.5s infinite;border-radius:.3rem;margin-bottom:.5rem;width:60%}
+.skel-drug{height:2.5rem;background:linear-gradient(90deg,var(--b) 25%,var(--ch) 50%,var(--b) 75%);background-size:200% 100%;animation:skel 1.5s infinite;border-radius:.3rem;margin-bottom:.35rem}
+@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ===== SEARCH RESULT BAR ===== */
+.rbar{padding:.35rem .85rem;font-size:.72rem;font-weight:600;color:var(--t2);background:rgba(0,217,181,.06);border-bottom:1px solid var(--b);margin:-.5rem -.6rem .5rem}
+
+/* ===== WEIGHT TOAST ===== */
+.wtoast{position:fixed;top:5.5rem;left:50%;transform:translateX(-50%);background:var(--a);color:var(--p);padding:.4rem 1rem;border-radius:2rem;font-size:.75rem;font-weight:700;z-index:200;animation:toin .3s ease;pointer-events:none}
+@keyframes toin{from{opacity:0;transform:translateX(-50%) translateY(-10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+/* ===== INFUSION CALC ===== */
+.ifbox{padding:.4rem .55rem;margin:.25rem 0;border-radius:.4rem;background:rgba(0,217,181,.06);border:1.5px solid var(--b)}
+.ifh{font-size:.7rem;font-weight:700;color:var(--a);margin-bottom:.2rem;display:flex;align-items:center;gap:.3rem}
+.ifrow{display:flex;gap:.3rem;margin-bottom:.15rem;align-items:center}
+.ifrow label{font-size:.68rem;font-weight:600;color:var(--t2);min-width:4rem}
+.ifrow input{width:4rem;padding:.3rem .4rem;border:1.5px solid var(--b);border-radius:.35rem;background:var(--card);color:var(--t);font-size:.72rem;outline:none;text-align:center}
+.ifrow input:focus{border-color:var(--a)}
+.ifrow .iu{font-size:.6rem;color:var(--t2)}
+.ifres{margin-top:.2rem;padding:.25rem .4rem;border-radius:.3rem;background:rgba(0,0,0,.15);font-size:.72rem;font-weight:700;color:var(--a);text-align:center}
+.ifbtn{padding:.3rem .7rem;background:var(--a);color:var(--p);border:none;border-radius:.35rem;font-size:.68rem;font-weight:700;cursor:pointer;margin-top:.15rem}
+
+/* ===== ED PROCEDURES: EQUIPMENT CHECKLIST ===== */
+.eqlist{display:flex;flex-wrap:wrap;gap:.25rem;padding:.3rem .5rem .4rem}
+.eqtag{font-size:.65rem;padding:.15rem .4rem;border-radius:.3rem;background:var(--p2);color:var(--t2);border:1px solid var(--b)}
+
+/* ===== ED PROCEDURES: STEP CARD ===== */
+.edstep{padding:.45rem .7rem;border-top:1px solid var(--b)}
+.edstep-n{font-size:.65rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.1rem}
+.edstep-a{font-size:.82rem;font-weight:700;margin-bottom:.1rem}
+.edstep-d{font-size:.74rem;color:var(--t2);margin-bottom:.1rem;line-height:1.35}
+.edstep-c{font-size:.72rem;color:#ff9999;padding:.2rem .35rem;border-radius:.3rem;background:rgba(231,76,60,.08);border-left:2px solid var(--d)}
+
+/* ===== ONBOARDING OVERLAY ===== */
+.ob{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;display:flex;align-items:center;justify-content:center;padding:1rem}
+.obc{background:var(--card);border-radius:.8rem;border:2px solid var(--a);padding:1.2rem;width:100%;max-width:20rem;text-align:center}
+.obt{font-size:1.1rem;font-weight:800;margin-bottom:.5rem;color:var(--a)}
+.obd{font-size:.82rem;color:var(--t);line-height:1.5;margin-bottom:1rem}
+.obdots{display:flex;justify-content:center;gap:.3rem;margin-bottom:1rem}
+.obdot{width:.5rem;height:.5rem;border-radius:50%;background:var(--b)}
+.obdot.on{background:var(--a)}
+.obbtns{display:flex;gap:.4rem}
+.obbtns button{flex:1;padding:.45rem;border-radius:.4rem;border:none;font-size:.78rem;font-weight:700;cursor:pointer}
+.obn{background:var(--a);color:var(--p)}
+.obskip{background:transparent;color:var(--t2);border:1.5px solid var(--b)!important}
+
 /* Animations */
 @keyframes in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 .sect{animation:in .2s ease-out}
@@ -177,11 +226,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 <div class="cbar" id="nav"></div>
 <div class="cont" id="c">
-  <div class="nores"><div class="ico">&#x1F50D;</div>Loading clinical data...</div>
+  <div class="skel">
+    <div class="skel-sect"><div class="skel-sh"></div><div class="skel-drug"></div><div class="skel-drug"></div><div class="skel-drug"></div></div>
+    <div class="skel-sect"><div class="skel-sh"></div><div class="skel-drug"></div><div class="skel-drug"></div></div>
+  </div>
 </div>
 <div class="ft" id="f">Created by Tashriq Hendricks &amp; Kimi</div>
 <button class="totop" id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#x2191;</button>
 <div class="inst" id="inst"><span>Install Titrate for offline use</span><button onclick="doInstall()">Install</button></div>
-<script src="app-4.2.js"></script>
+<script src="app-4.3.js"></script>
 </body>
 </html>
