@@ -953,7 +953,7 @@
     "protocols": [
       {
         "item": "Acute Coronary Syndrome",
-        "notes_updates": "Symptoms: Chest pain or pressure, Dyspnoea, Diaphoresis, Nausea/vomiting, Pain radiating to arm, jaw, back, Syncope or pre-syncope | Signs: Tachycardia, Hypotension, Diaphoresis, New cardiac murmur, Signs of heart failure (elevated JVP, pulmonary crackles), Cardiogenic shock | Risk: Age ≥ 65 years, Smoking, Family history of CAD, Diabetes Mellitus, Hypercholesterolaemia | Bedside: 12 & 15 lead ECG (including V4R, V7-9), Vital signs and O2 sats, Finger prick glucose, VBG | Lab: Troponin I (hs or stat lab), U&E, FBC | Imaging: Portable CXR, CTPA if PE suspected | ⚠️ Door-to-needle time for thrombolysis: 30 minutes | Time of onset of symptoms or maximum pain must be < 12 hours for thrombolysis | Consider aortic dissection in central chest pain radiating to back with tearing sensation, differential radial pulse, differential arm BP > 15mmHg, widened mediastinum on CXR | → STEMI: Refer to Int"
+        "notes_updates": "Symptoms: Chest pain or pressure, Dyspnoea, Diaphoresis, Nausea/vomiting, Pain radiating to arm, jaw, back, Syncope or pre-syncope | Signs: Tachycardia, Hypotension, Diaphoresis, New cardiac murmur, Signs of heart failure (elevated JVP, pulmonary crackles), Cardiogenic shock | Risk: Age \u2265 65 years, Smoking, Family history of CAD, Diabetes Mellitus, Hypercholesterolaemia | Bedside: 12 & 15 lead ECG (including V4R, V7-9), Vital signs and O2 sats, Finger prick glucose, VBG | Lab: Troponin I (hs or stat lab), U&E, FBC | Imaging: Portable CXR, CTPA if PE suspected | \u26a0\ufe0f Door-to-needle time for thrombolysis: 30 minutes | Time of onset of symptoms or maximum pain must be < 12 hours for thrombolysis | Consider aortic dissection in central chest pain radiating to back with tearing sensation, differential radial pulse, differential arm BP > 15mmHg, widened mediastinum on CXR | \u2192 STEMI: Refer to Int"
       },
       {
         "parent_protocol": "Acute Coronary Syndrome",
@@ -994,23 +994,23 @@
         "parent_protocol": "Acute Coronary Syndrome",
         "item": "Atenolol",
         "adult_dose": "50mg PO stat",
-        "notes_updates": "Contraindicated in haemodynamic instability, heart failure, pulmonary oedema, SBP < 100, HR ≤ 60, AV block 2°/3°, asthma"
+        "notes_updates": "Contraindicated in haemodynamic instability, heart failure, pulmonary oedema, SBP < 100, HR \u2264 60, AV block 2\u00b0/3\u00b0, asthma"
       },
       {
-        "item": "📊 TIMI Risk Score (NSTE-ACS)",
-        "notes_updates": "Age ≥ 65 years=1 | ≥ 3 risk factors for CAD=1 | Aspirin use in last 7 days=1 | Recent severe angina (≥ 2 events in 24 hrs)=1 | Elevated cardiac markers=1 | ST deviation ≥ 0.5mm=1 | Prior coronary artery stenosis ≥ 50%=1 → 0-1: Low Risk (5% event rate); 2: Low Risk (8% event rate); 3: Intermediate Risk (13% event rate); 4: Intermediate Risk (20% event rate); 5-7: High Risk (26% event rate)"
+        "item": "\ud83d\udcca TIMI Risk Score (NSTE-ACS)",
+        "notes_updates": "Age \u2265 65 years=1 | \u2265 3 risk factors for CAD=1 | Aspirin use in last 7 days=1 | Recent severe angina (\u2265 2 events in 24 hrs)=1 | Elevated cardiac markers=1 | ST deviation \u2265 0.5mm=1 | Prior coronary artery stenosis \u2265 50%=1 \u2192 0-1: Low Risk (5% event rate); 2: Low Risk (8% event rate); 3: Intermediate Risk (13% event rate); 4: Intermediate Risk (20% event rate); 5-7: High Risk (26% event rate)"
       },
       {
-        "item": "📊 HEART Score",
-        "notes_updates": "History - Highly suspicious=2 | History - Moderately suspicious=1 | History - Slightly/non-suspicious=0 | ECG - Significant ST depression=2 | ECG - Nonspecific repolarisation changes=1 | ECG - Normal=0 | Age ≥ 65 years=2 | Age 45-65 years=1 | Age ≤ 45 years=0 | Risk factors ≥ 3=2 | Risk factors 1-2=1 | Risk factors 0=0 | Troponin ≥ 3x normal limit=2 | Troponin > 1 - < 3x normal limit=1 | Troponin ≤ normal limit=0 → 0-3: Low risk - 2.5% MACE over 6 weeks; 4-6: Intermediate risk - 20.3% MACE over "
+        "item": "\ud83d\udcca HEART Score",
+        "notes_updates": "History - Highly suspicious=2 | History - Moderately suspicious=1 | History - Slightly/non-suspicious=0 | ECG - Significant ST depression=2 | ECG - Nonspecific repolarisation changes=1 | ECG - Normal=0 | Age \u2265 65 years=2 | Age 45-65 years=1 | Age \u2264 45 years=0 | Risk factors \u2265 3=2 | Risk factors 1-2=1 | Risk factors 0=0 | Troponin \u2265 3x normal limit=2 | Troponin > 1 - < 3x normal limit=1 | Troponin \u2264 normal limit=0 \u2192 0-3: Low risk - 2.5% MACE over 6 weeks; 4-6: Intermediate risk - 20.3% MACE over "
       },
       {
-        "item": "📊 Sgarbossa Criteria (LBBB/Paced Rhythm)",
-        "notes_updates": "≥ 1mm concordant ST elevation in any lead=5 | ≥ 1mm concordant ST depression in V1-V3=3 | ≥ 5mm discordant ST elevation in any lead=2 → ≥ 3: 90% specificity for diagnosing MI"
+        "item": "\ud83d\udcca Sgarbossa Criteria (LBBB/Paced Rhythm)",
+        "notes_updates": "\u2265 1mm concordant ST elevation in any lead=5 | \u2265 1mm concordant ST depression in V1-V3=3 | \u2265 5mm discordant ST elevation in any lead=2 \u2192 \u2265 3: 90% specificity for diagnosing MI"
       },
       {
         "item": "Actilyse (Alteplase) Protocol - STEMI Thrombolysis",
-        "notes_updates": "Symptoms: STEMI with onset < 12 hours, Continuous chest pain | Signs: ST elevation meeting criteria in 2 or more contiguous leads | Bedside: Continuous BP, HR, O2 sats, GCS monitoring, ECG at 0, 15, 30, 60, 90 min | Imaging: CXR | ⚠️ Door-to-needle time: 30 minutes | Must have continuous monitoring during and after infusion | Reperfusion arrhythmias are common and usually transient | → Refer to Internal Medicine/Cardiology urgently after thrombolysis | STEPS: 1 → 2 → 3 → 4"
+        "notes_updates": "Symptoms: STEMI with onset < 12 hours, Continuous chest pain | Signs: ST elevation meeting criteria in 2 or more contiguous leads | Bedside: Continuous BP, HR, O2 sats, GCS monitoring, ECG at 0, 15, 30, 60, 90 min | Imaging: CXR | \u26a0\ufe0f Door-to-needle time: 30 minutes | Must have continuous monitoring during and after infusion | Reperfusion arrhythmias are common and usually transient | \u2192 Refer to Internal Medicine/Cardiology urgently after thrombolysis | STEPS: 1 \u2192 2 \u2192 3 \u2192 4"
       },
       {
         "parent_protocol": "Actilyse (Alteplase) Protocol - STEMI Thrombolysis",
@@ -1022,11 +1022,11 @@
         "parent_protocol": "Actilyse (Alteplase) Protocol - STEMI Thrombolysis",
         "item": "Tenecteplase (Metalyse)",
         "adult_dose": "Weight < 100kg: 8000 IU; Weight > 100kg: 10000 IU IV Single dose over 10 seconds",
-        "notes_updates": "Use if late presentation ≥ 10 hrs post pain onset or allergy to Streptokinase"
+        "notes_updates": "Use if late presentation \u2265 10 hrs post pain onset or allergy to Streptokinase"
       },
       {
         "item": "Acute Heart Failure",
-        "notes_updates": "Symptoms: Dyspnoea, Orthopnoea, Effort intolerance, Peripheral oedema, Paroxysmal nocturnal dyspnoea (PND) | Signs: Tachypnoea, Tachycardia, Gallop rhythm (S3), Elevated JVP, Chest crackles (pulmonary oedema), Cardiac murmurs | Risk: Previous CCF, ACS history, Uncontrolled hypertension, Valvular heart disease, Cardiomyopathy | Bedside: ECG (AF, new T wave changes, LVH, LBBB, cerebral T waves), VBG, HGT, Urine βHCG | Lab: FBC, U&E, Troponin, proBNP (if diagnosis in doubt) | Imaging: CXR: pulmonary oedema, pulmonary venous congestion, cardiomegaly, Kerley B lines | ⚠️ Patients are often intravascularly depleted despite peripheral fluid overload | Caution with nitrocine in preload dependent patients (RV infarction, pulmonary HT, aortic stenosis) | Caution with furosemide in severe renal failure/anuria | → Internal Medicine/Cardiology consult. Will likely require High Care bed. Continue seri"
+        "notes_updates": "Symptoms: Dyspnoea, Orthopnoea, Effort intolerance, Peripheral oedema, Paroxysmal nocturnal dyspnoea (PND) | Signs: Tachypnoea, Tachycardia, Gallop rhythm (S3), Elevated JVP, Chest crackles (pulmonary oedema), Cardiac murmurs | Risk: Previous CCF, ACS history, Uncontrolled hypertension, Valvular heart disease, Cardiomyopathy | Bedside: ECG (AF, new T wave changes, LVH, LBBB, cerebral T waves), VBG, HGT, Urine \u03b2HCG | Lab: FBC, U&E, Troponin, proBNP (if diagnosis in doubt) | Imaging: CXR: pulmonary oedema, pulmonary venous congestion, cardiomegaly, Kerley B lines | \u26a0\ufe0f Patients are often intravascularly depleted despite peripheral fluid overload | Caution with nitrocine in preload dependent patients (RV infarction, pulmonary HT, aortic stenosis) | Caution with furosemide in severe renal failure/anuria | \u2192 Internal Medicine/Cardiology consult. Will likely require High Care bed. Continue seri"
       },
       {
         "parent_protocol": "Acute Heart Failure",
@@ -1054,7 +1054,7 @@
       },
       {
         "item": "Acute Ischaemic Stroke",
-        "notes_updates": "Symptoms: Sudden onset focal neurological deficit, Unilateral weakness or numbness, Speech difficulty (aphasia/dysarthria), Visual disturbance, Severe headache (less common), Ataxia | Signs: Unilateral facial droop, Unilateral arm drift/weakness, Unilateral leg weakness, Aphasia (expressive or receptive), Dysarthria, Hemianopia | Risk: Hypertension, Diabetes Mellitus, Atrial fibrillation, Previous stroke/TIA, Smoking | Bedside: HGT (exclude hypoglycaemia), ABG, 12 lead ECG, NIHSS score | Lab: INR (if indicated), FBC, U&E | Imaging: Urgent non-contrast CT brain (within 25 minutes), CT angiogram (consider), CT perfusion scan or MRI DWI (for thrombectomy selection) | ⚠️ TIME IS KEY - do not delay | Wake-up stroke is currently NOT for thrombolysis | 1 in 6-10 patients may have improvement with thrombolysis | → All patients require Medicine/Neurology referral. Thrombolysis patients need ICU/H"
+        "notes_updates": "Symptoms: Sudden onset focal neurological deficit, Unilateral weakness or numbness, Speech difficulty (aphasia/dysarthria), Visual disturbance, Severe headache (less common), Ataxia | Signs: Unilateral facial droop, Unilateral arm drift/weakness, Unilateral leg weakness, Aphasia (expressive or receptive), Dysarthria, Hemianopia | Risk: Hypertension, Diabetes Mellitus, Atrial fibrillation, Previous stroke/TIA, Smoking | Bedside: HGT (exclude hypoglycaemia), ABG, 12 lead ECG, NIHSS score | Lab: INR (if indicated), FBC, U&E | Imaging: Urgent non-contrast CT brain (within 25 minutes), CT angiogram (consider), CT perfusion scan or MRI DWI (for thrombectomy selection) | \u26a0\ufe0f TIME IS KEY - do not delay | Wake-up stroke is currently NOT for thrombolysis | 1 in 6-10 patients may have improvement with thrombolysis | \u2192 All patients require Medicine/Neurology referral. Thrombolysis patients need ICU/H"
       },
       {
         "parent_protocol": "Acute Ischaemic Stroke",
@@ -1075,16 +1075,16 @@
         "notes_updates": "For symptomatic ICH after thrombolysis"
       },
       {
-        "item": "📊 NIH Stroke Scale (NIHSS)",
-        "notes_updates": "Level of consciousness=0 | Gaze=0 | Visual fields=0 | Facial palsy=0 | Motor arm (left and right)=0 | Motor leg (left and right)=0 | Limb ataxia=0 | Sensory=0 | Best language=0 | Dysarthria=0 | Extinction/inattention=0 → 0: No stroke symptoms; 1-4: Minor stroke; 5-15: Moderate stroke; 16-20: Moderate-severe stroke; 21-42: Severe stroke; > 6: Threshold for thrombolysis consideration"
+        "item": "\ud83d\udcca NIH Stroke Scale (NIHSS)",
+        "notes_updates": "Level of consciousness=0 | Gaze=0 | Visual fields=0 | Facial palsy=0 | Motor arm (left and right)=0 | Motor leg (left and right)=0 | Limb ataxia=0 | Sensory=0 | Best language=0 | Dysarthria=0 | Extinction/inattention=0 \u2192 0: No stroke symptoms; 1-4: Minor stroke; 5-15: Moderate stroke; 16-20: Moderate-severe stroke; 21-42: Severe stroke; > 6: Threshold for thrombolysis consideration"
       },
       {
-        "item": "📊 VAN Score (for thrombectomy eligibility)",
-        "notes_updates": "Weakness (required)=0 | Visual involvement=0 | Aphasia=0 | Neglect=0 → Weakness + one of V/A/N: Positive VAN score - may qualify for thrombectomy"
+        "item": "\ud83d\udcca VAN Score (for thrombectomy eligibility)",
+        "notes_updates": "Weakness (required)=0 | Visual involvement=0 | Aphasia=0 | Neglect=0 \u2192 Weakness + one of V/A/N: Positive VAN score - may qualify for thrombectomy"
       },
       {
         "item": "Atrial Fibrillation",
-        "notes_updates": "Symptoms: Palpitations, Chest pain, Dyspnoea, Dizziness, Syncope or pre-syncope, Fatigue | Signs: Irregularly irregular pulse, Tachycardia (HR > 100 bpm), Hypotension (unstable AF), Signs of heart failure, Variable intensity S1 | Risk: Thyroid disease, Hypothermia, PE/embolism, Alcohol, Trauma (cardiac contusion) | Bedside: 12 lead ECG, Vital signs, HGT | Lab: U&E (exclude electrolyte abnormalities), Troponin (if chest pain), TFTs (thyroid), FBC (anaemia, infection) | Imaging: CXR (if indicated) | ⚠️ DO NOT use rate-controlling agents (beta-blockers, calcium channel blockers, amiodarone) in WPW with AF - risk of VF | WPW + AF: Use electrical cardioversion ONLY | WPW ECG features: Irregularly irregular, rapid > 200bpm, wide QRS varying beat-to-beat, delta wave | → Unstable AF: Admit to HCU/ICU. Stable AF: May discharge with cardiology follow-up if rate controlled and anticoagulated. | STE"
+        "notes_updates": "Symptoms: Palpitations, Chest pain, Dyspnoea, Dizziness, Syncope or pre-syncope, Fatigue | Signs: Irregularly irregular pulse, Tachycardia (HR > 100 bpm), Hypotension (unstable AF), Signs of heart failure, Variable intensity S1 | Risk: Thyroid disease, Hypothermia, PE/embolism, Alcohol, Trauma (cardiac contusion) | Bedside: 12 lead ECG, Vital signs, HGT | Lab: U&E (exclude electrolyte abnormalities), Troponin (if chest pain), TFTs (thyroid), FBC (anaemia, infection) | Imaging: CXR (if indicated) | \u26a0\ufe0f DO NOT use rate-controlling agents (beta-blockers, calcium channel blockers, amiodarone) in WPW with AF - risk of VF | WPW + AF: Use electrical cardioversion ONLY | WPW ECG features: Irregularly irregular, rapid > 200bpm, wide QRS varying beat-to-beat, delta wave | \u2192 Unstable AF: Admit to HCU/ICU. Stable AF: May discharge with cardiology follow-up if rate controlled and anticoagulated. | STE"
       },
       {
         "parent_protocol": "Atrial Fibrillation",
@@ -1129,16 +1129,16 @@
         "notes_updates": "Alternative rate control agent"
       },
       {
-        "item": "📊 CHA2DS2-VASc Score",
-        "notes_updates": "C - CHF history=1 | H - Hypertension history=1 | A2 - Age ≥ 75 years=2 | D - Diabetes Mellitus history=1 | S2 - Stroke/TIA/Thromboembolism history=2 | V - Vascular disease (prior MI, PAD, aortic plaque)=1 | A - Age 65-74 years=1 | Sc - Sex category female=1 → 0: Low risk - may not require anticoagulation; 1: Low-moderate risk - consider antiplatelet or anticoagulation; ≥ 2: Moderate-high risk - anticoagulation recommended"
+        "item": "\ud83d\udcca CHA2DS2-VASc Score",
+        "notes_updates": "C - CHF history=1 | H - Hypertension history=1 | A2 - Age \u2265 75 years=2 | D - Diabetes Mellitus history=1 | S2 - Stroke/TIA/Thromboembolism history=2 | V - Vascular disease (prior MI, PAD, aortic plaque)=1 | A - Age 65-74 years=1 | Sc - Sex category female=1 \u2192 0: Low risk - may not require anticoagulation; 1: Low-moderate risk - consider antiplatelet or anticoagulation; \u2265 2: Moderate-high risk - anticoagulation recommended"
       },
       {
-        "item": "📊 HAS-BLED Score",
-        "notes_updates": "H - Hypertension uncontrolled (SBP > 160)=1 | A - Abnormal renal function (dialysis, transplant, Cr > 200)=1 | A - Abnormal liver function (cirrhosis, bilirubin 2x, AST/ALT/ALP x3)=1 | S - Stroke history=1 | B - Prior major bleeding/predisposition=1 | L - Labile INR=1 | E - Age > 65 years=1 | D - Medication predisposing to bleeding (aspirin, clopidogrel, NSAIDs)=1 | Alcohol use > 8 drinks/week=1 → 0-1: Low risk - anticoagulation should be considered; 2: Moderate risk - anticoagulation can be con"
+        "item": "\ud83d\udcca HAS-BLED Score",
+        "notes_updates": "H - Hypertension uncontrolled (SBP > 160)=1 | A - Abnormal renal function (dialysis, transplant, Cr > 200)=1 | A - Abnormal liver function (cirrhosis, bilirubin 2x, AST/ALT/ALP x3)=1 | S - Stroke history=1 | B - Prior major bleeding/predisposition=1 | L - Labile INR=1 | E - Age > 65 years=1 | D - Medication predisposing to bleeding (aspirin, clopidogrel, NSAIDs)=1 | Alcohol use > 8 drinks/week=1 \u2192 0-1: Low risk - anticoagulation should be considered; 2: Moderate risk - anticoagulation can be con"
       },
       {
         "item": "Asthma",
-        "notes_updates": "Symptoms: Dyspnoea, Wheezing, Chest tightness, Cough, Difficulty speaking | Risk: Previous near-fatal exacerbation, Previous intubation/ICU admission, Recent/current steroid use, Co-morbid cardiac or respiratory disease, ED visit/admission in last month | Bedside: Peak Expiratory Flow Rate (PEFR), O2 sats, Vital signs, ABG (if severe: pCO2 > 42mmHg is ominous) | Lab: FBC, U&E, VBG/ABG | Imaging: CXR indications: non-responders, O2 sats < 92%, suspected pneumothorax/pneumonia, chest pain, CV instability, possible foreign body | ⚠️ Silent chest = life-threatening - no wheeze due to minimal air movement | Rising pCO2 in asthma is ominous and indicates tiring - prepare for intubation | pCO2 > 42mmHg in severe asthma indicates respiratory failure | → {'mild': 'Discharge with Prednisone 0.5mg/kg x 7 days, Beta-2 agonist MDI QID PRN, Budesonide 400mcg BD, Asthma clinic follow-up', 'moderate': '"
+        "notes_updates": "Symptoms: Dyspnoea, Wheezing, Chest tightness, Cough, Difficulty speaking | Risk: Previous near-fatal exacerbation, Previous intubation/ICU admission, Recent/current steroid use, Co-morbid cardiac or respiratory disease, ED visit/admission in last month | Bedside: Peak Expiratory Flow Rate (PEFR), O2 sats, Vital signs, ABG (if severe: pCO2 > 42mmHg is ominous) | Lab: FBC, U&E, VBG/ABG | Imaging: CXR indications: non-responders, O2 sats < 92%, suspected pneumothorax/pneumonia, chest pain, CV instability, possible foreign body | \u26a0\ufe0f Silent chest = life-threatening - no wheeze due to minimal air movement | Rising pCO2 in asthma is ominous and indicates tiring - prepare for intubation | pCO2 > 42mmHg in severe asthma indicates respiratory failure | \u2192 {'mild': 'Discharge with Prednisone 0.5mg/kg x 7 days, Beta-2 agonist MDI QID PRN, Budesonide 400mcg BD, Asthma clinic follow-up', 'moderate': '"
       },
       {
         "parent_protocol": "Asthma",
@@ -1184,7 +1184,7 @@
       },
       {
         "item": "Chronic Obstructive Pulmonary Disease (COPD) Exacerbation",
-        "notes_updates": "Symptoms: Increased dyspnoea, Increased cough, Increased sputum volume or purulence, Chest tightness, Wheeze | Risk: Smoking, Infection (viral or bacterial), Non-compliance with medications, Air pollution exposure, Co-morbid cardiac disease | Bedside: PEFR/FEV1, O2 sats, Vital signs, ABG (pH < 7.35 and pCO2 > 45 indicate need for NIV) | Lab: FBC, U&E, CRP, ABG/VBG | Imaging: CXR (exclude pneumothorax, pneumonia, cardiac failure) | ⚠️ Find and treat the cause of acute exacerbation (infection, PE, pneumothorax, pneumonia, cardiac failure, non-compliance) | NIV criteria: pH < 7.35 and pCO2 > 45mmHg | Avoid excessive O2 in CO2 retainers - target O2 sats 88-92% | → Mild: Discharge with antibiotics if indicated, steroids, inhalers, Resp OPD follow-up. Moderate-Severe: Admit. Severe with NIV: HCU/ICU. | STEPS: 1 → 2 → 3 → 4"
+        "notes_updates": "Symptoms: Increased dyspnoea, Increased cough, Increased sputum volume or purulence, Chest tightness, Wheeze | Risk: Smoking, Infection (viral or bacterial), Non-compliance with medications, Air pollution exposure, Co-morbid cardiac disease | Bedside: PEFR/FEV1, O2 sats, Vital signs, ABG (pH < 7.35 and pCO2 > 45 indicate need for NIV) | Lab: FBC, U&E, CRP, ABG/VBG | Imaging: CXR (exclude pneumothorax, pneumonia, cardiac failure) | \u26a0\ufe0f Find and treat the cause of acute exacerbation (infection, PE, pneumothorax, pneumonia, cardiac failure, non-compliance) | NIV criteria: pH < 7.35 and pCO2 > 45mmHg | Avoid excessive O2 in CO2 retainers - target O2 sats 88-92% | \u2192 Mild: Discharge with antibiotics if indicated, steroids, inhalers, Resp OPD follow-up. Moderate-Severe: Admit. Severe with NIV: HCU/ICU. | STEPS: 1 \u2192 2 \u2192 3 \u2192 4"
       },
       {
         "parent_protocol": "Chronic Obstructive Pulmonary Disease (COPD) Exacerbation",
@@ -1236,7 +1236,7 @@
       },
       {
         "item": "Community Acquired Pneumonia",
-        "notes_updates": "Symptoms: Fever, Cough (productive or dry), Pleuritic chest pain, Dyspnoea, Rigors, Fatigue | Signs: Tachypnoea (RR ≥ 30/min), Tachycardia, Hypotension (SBP ≤ 90mmHg / DBP ≤ 60mmHg), Confusion (especially elderly), Crackles on auscultation, Dullness to percussion | Risk: Elderly > 65 years, COPD, Smoking, Immunocompromise, Aspiration risk | Bedside: Vital signs including O2 sats, ABG (if severe), Blood cultures (before antibiotics if possible) | Lab: FBC, U&E, CRP, Blood cultures | Imaging: CXR (consolidation, infiltrates, effusion), CT chest (if complicated or atypical) | ⚠️ If age > 65 is the only criteria, follow severity score 2 as renal dysfunction likely | If TB suspected, advise sputum AFBs and GXP | Consider PJP/TB cover for CURB-65 4-5 | → CURB-65 0-1: Home. CURB-65 2: Ward admission. CURB-65 3-5: HCU/ICU admission. | STEPS: 1 → 2 → 3 → 4"
+        "notes_updates": "Symptoms: Fever, Cough (productive or dry), Pleuritic chest pain, Dyspnoea, Rigors, Fatigue | Signs: Tachypnoea (RR \u2265 30/min), Tachycardia, Hypotension (SBP \u2264 90mmHg / DBP \u2264 60mmHg), Confusion (especially elderly), Crackles on auscultation, Dullness to percussion | Risk: Elderly > 65 years, COPD, Smoking, Immunocompromise, Aspiration risk | Bedside: Vital signs including O2 sats, ABG (if severe), Blood cultures (before antibiotics if possible) | Lab: FBC, U&E, CRP, Blood cultures | Imaging: CXR (consolidation, infiltrates, effusion), CT chest (if complicated or atypical) | \u26a0\ufe0f If age > 65 is the only criteria, follow severity score 2 as renal dysfunction likely | If TB suspected, advise sputum AFBs and GXP | Consider PJP/TB cover for CURB-65 4-5 | \u2192 CURB-65 0-1: Home. CURB-65 2: Ward admission. CURB-65 3-5: HCU/ICU admission. | STEPS: 1 \u2192 2 \u2192 3 \u2192 4"
       },
       {
         "parent_protocol": "Community Acquired Pneumonia",
@@ -1275,8 +1275,8 @@
         "notes_updates": "Severe CAP (CURB-65 3-5)"
       },
       {
-        "item": "📊 CURB-65 Score",
-        "notes_updates": "C - Confusion=1 | U - Urea ≥ 7mmol/L=1 | R - Respiratory Rate ≥ 30/min=1 | B - Blood Pressure SBP ≤ 90mmHg or DBP ≤ 60mmHg=1 | 65 - Age ≥ 65 years=1 → 0-1: Low risk (mortality < 3%) - treat as outpatient; 2: Intermediate risk (mortality < 9%) - hospital admission; 3: Severe (mortality 15%) - urgent hospital admission; 4-5: Very severe (mortality 40%) - ICU/High Care admission, consider PJP/TB cover"
+        "item": "\ud83d\udcca CURB-65 Score",
+        "notes_updates": "C - Confusion=1 | U - Urea \u2265 7mmol/L=1 | R - Respiratory Rate \u2265 30/min=1 | B - Blood Pressure SBP \u2264 90mmHg or DBP \u2264 60mmHg=1 | 65 - Age \u2265 65 years=1 \u2192 0-1: Low risk (mortality < 3%) - treat as outpatient; 2: Intermediate risk (mortality < 9%) - hospital admission; 3: Severe (mortality 15%) - urgent hospital admission; 4-5: Very severe (mortality 40%) - ICU/High Care admission, consider PJP/TB cover"
       },
       {
         "item": "Pulmonary Embolism",
@@ -1291,7 +1291,7 @@
       {
         "parent_protocol": "Pulmonary Embolism",
         "item": "Alteplase (Actilyse)",
-        "adult_dose": "≥65kg: 10mg bolus + 90mg over 2hrs; <65kg: 10mg bolus + remainder of 1.5mg/kg over 2hrs IV Single dose",
+        "adult_dose": "\u226565kg: 10mg bolus + 90mg over 2hrs; <65kg: 10mg bolus + remainder of 1.5mg/kg over 2hrs IV Single dose",
         "notes_updates": "Massive PE only. Cardiac arrest: 50mg IVI stat."
       },
       {
@@ -1301,16 +1301,16 @@
         "notes_updates": "Adjunct for massive PE"
       },
       {
-        "item": "📊 Wells Score for PE",
-        "notes_updates": "Clinical signs/symptoms of DVT=3 | PE is #1 diagnosis (or equally likely)=3 | Heart rate > 100 bpm=1.5 | Immobilisation > 3 days or surgery in last 4 weeks=1.5 | Previous DVT/PE=1.5 | Haemoptysis=1 | Malignancy (treated in last 6 months or palliative care)=1 → < 2: Low risk - proceed to PERC score; 2-4: Moderate risk - D-dimer testing; > 4: High risk - start Clexane, proceed to CTPA"
+        "item": "\ud83d\udcca Wells Score for PE",
+        "notes_updates": "Clinical signs/symptoms of DVT=3 | PE is #1 diagnosis (or equally likely)=3 | Heart rate > 100 bpm=1.5 | Immobilisation > 3 days or surgery in last 4 weeks=1.5 | Previous DVT/PE=1.5 | Haemoptysis=1 | Malignancy (treated in last 6 months or palliative care)=1 \u2192 < 2: Low risk - proceed to PERC score; 2-4: Moderate risk - D-dimer testing; > 4: High risk - start Clexane, proceed to CTPA"
       },
       {
-        "item": "📊 PERC Score (Pulmonary Embolism Rule-Out Criteria)",
-        "notes_updates": "H - No Hormones (oestrogen)=0 | A - Age < 50=0 | D - No DVT/PE history=0 | C - No Coughing blood (haemoptysis)=0 | L - No unilateral Lower limb oedema=0 | O - Oxygen saturations ≥ 95%=0 | T - No Tachycardia ≥ 100bpm=0 | S - No Surgery/trauma within 28 days=0 → PERC Negative (all 8 criteria met): PE excluded - no further testing needed; PERC Positive (any criterion not met): Proceed to D-dimer"
+        "item": "\ud83d\udcca PERC Score (Pulmonary Embolism Rule-Out Criteria)",
+        "notes_updates": "H - No Hormones (oestrogen)=0 | A - Age < 50=0 | D - No DVT/PE history=0 | C - No Coughing blood (haemoptysis)=0 | L - No unilateral Lower limb oedema=0 | O - Oxygen saturations \u2265 95%=0 | T - No Tachycardia \u2265 100bpm=0 | S - No Surgery/trauma within 28 days=0 \u2192 PERC Negative (all 8 criteria met): PE excluded - no further testing needed; PERC Positive (any criterion not met): Proceed to D-dimer"
       },
       {
         "item": "Deep Vein Thrombosis",
-        "notes_updates": "Symptoms: Unilateral leg pain, Leg swelling, Calf tenderness, Warmth over affected area, Redness/erythema | Signs: Calf swelling > 3cm larger than asymptomatic side, Swelling of entire leg, Localized tenderness along deep venous system, Pitting oedema in symptomatic leg, Collateral superficial veins (non-varicose), Erythema | Risk: Active cancer, Recent bedridden > 3 days or major surgery within 12 weeks, Paralysis, paresis or recent plaster immobilization, Previous documented DVT, Long-haul travel | Bedside: Wells score calculation, Bilateral leg circumference measurement, LCUS (limited compression ultrasound) | Lab: D-dimer (if Wells < 2 and LCUS negative) | Imaging: Formal compression ultrasound (diagnostic test) | ⚠️ Document Wells score in patient file | Follow algorithm - do not skip steps | If DVT positive, always start Clexane stat | → Admit for anticoagulation. Low-risk proximal"
+        "notes_updates": "Symptoms: Unilateral leg pain, Leg swelling, Calf tenderness, Warmth over affected area, Redness/erythema | Signs: Calf swelling > 3cm larger than asymptomatic side, Swelling of entire leg, Localized tenderness along deep venous system, Pitting oedema in symptomatic leg, Collateral superficial veins (non-varicose), Erythema | Risk: Active cancer, Recent bedridden > 3 days or major surgery within 12 weeks, Paralysis, paresis or recent plaster immobilization, Previous documented DVT, Long-haul travel | Bedside: Wells score calculation, Bilateral leg circumference measurement, LCUS (limited compression ultrasound) | Lab: D-dimer (if Wells < 2 and LCUS negative) | Imaging: Formal compression ultrasound (diagnostic test) | \u26a0\ufe0f Document Wells score in patient file | Follow algorithm - do not skip steps | If DVT positive, always start Clexane stat | \u2192 Admit for anticoagulation. Low-risk proximal"
       },
       {
         "parent_protocol": "Deep Vein Thrombosis",
@@ -1319,12 +1319,12 @@
         "notes_updates": "Start stat in ED if DVT confirmed. Bridge to warfarin if needed."
       },
       {
-        "item": "📊 Wells Score for DVT",
-        "notes_updates": "Active cancer=1 | Recently bedridden > 3 days or major surgery within 12 weeks=1 | Paralysis, paresis or recent plaster immobilization=1 | Previous documented DVT=1 | Calf swelling > 3cm larger than asymptomatic side=1 | Swelling of entire leg=1 | Localized tenderness along deep venous system=1 | Pitting oedema in symptomatic leg=1 | Collateral superficial veins (non-varicose)=1 | Alternative diagnosis at least as likely as DVT=-2 → < 2: DVT unlikely - proceed to LCUS then D-dimer if needed; ≥ 2"
+        "item": "\ud83d\udcca Wells Score for DVT",
+        "notes_updates": "Active cancer=1 | Recently bedridden > 3 days or major surgery within 12 weeks=1 | Paralysis, paresis or recent plaster immobilization=1 | Previous documented DVT=1 | Calf swelling > 3cm larger than asymptomatic side=1 | Swelling of entire leg=1 | Localized tenderness along deep venous system=1 | Pitting oedema in symptomatic leg=1 | Collateral superficial veins (non-varicose)=1 | Alternative diagnosis at least as likely as DVT=-2 \u2192 < 2: DVT unlikely - proceed to LCUS then D-dimer if needed; \u2265 2"
       },
       {
         "item": "Malaria",
-        "notes_updates": "Symptoms: Fever, Rigors, Arthralgia, Myalgia, Fatigue, Malaise | Signs: Fever, Tachycardia, Tachypnoea, Pallor (anaemia), Jaundice (severe malaria), Hepatosplenomegaly | Risk: Travel to malaria area, Children, Pregnant and postpartum, Elderly > 65 years, HIV | Bedside: Blood glucose (hypoglycaemia is severe malaria criterion), Hb (anaemia), U-dipstix, Blood gas (lactate, acidosis) | Lab: FBC (anaemia, thrombocytopenia), U&E (renal impairment), CRP, LFT (hepatic transaminases) | Imaging: ECG prior to anti-malarial therapy (quinine affects QT interval) | ⚠️ Artesunate is first-line for severe malaria - do not delay | Avoid fluid overload - pulmonary oedema is a risk in severe malaria | Monitor QT interval with quinine IV | → Uncomplicated: May discharge after observed first dose if no vomiting, with follow-up. Severe: Admit, ICU/HCU if organ dysfunction. | STEPS: 1 → 2 → 3 → 4"
+        "notes_updates": "Symptoms: Fever, Rigors, Arthralgia, Myalgia, Fatigue, Malaise | Signs: Fever, Tachycardia, Tachypnoea, Pallor (anaemia), Jaundice (severe malaria), Hepatosplenomegaly | Risk: Travel to malaria area, Children, Pregnant and postpartum, Elderly > 65 years, HIV | Bedside: Blood glucose (hypoglycaemia is severe malaria criterion), Hb (anaemia), U-dipstix, Blood gas (lactate, acidosis) | Lab: FBC (anaemia, thrombocytopenia), U&E (renal impairment), CRP, LFT (hepatic transaminases) | Imaging: ECG prior to anti-malarial therapy (quinine affects QT interval) | \u26a0\ufe0f Artesunate is first-line for severe malaria - do not delay | Avoid fluid overload - pulmonary oedema is a risk in severe malaria | Monitor QT interval with quinine IV | \u2192 Uncomplicated: May discharge after observed first dose if no vomiting, with follow-up. Severe: Admit, ICU/HCU if organ dysfunction. | STEPS: 1 \u2192 2 \u2192 3 \u2192 4"
       },
       {
         "parent_protocol": "Malaria",
@@ -1364,7 +1364,7 @@
       },
       {
         "item": "Sepsis and Septic Shock",
-        "notes_updates": "Symptoms: Fever or hypothermia, Rigors, Tachypnoea, Confusion/delirium, Reduced urine output, Malaise | Signs: Fever (> 38.3°C) or hypothermia (< 36°C), Tachycardia, Tachypnoea (RR > 22), Hypotension (SBP < 90, MAP < 65), Raised shock index (HR/SBP), Elevated lactate | Risk: Immunocompromise, Diabetes Mellitus, Elderly, Pregnancy, Recent surgery | Bedside: VBG/ABG (lactate, acidosis), Blood glucose, Urine dipstick, Urine βHCG | Lab: FBC, U&E, CRP, Lactate | Imaging: CXR (pneumonia), Abdominal ultrasound, CT as indicated by suspected source | ⚠️ Surviving sepsis bundles to be completed within 3 hours: measure lactate, obtain blood cultures prior to AB, administer broad spectrum AB, administer 30ml/kg crystalloid bolus for hypotension/lactate > 4 | Within 6 hours: apply vasopressors for MAP > 65, reassess volume status if persistent hypotension or lactate > 4, remeasure lactate | Antibioti"
+        "notes_updates": "Symptoms: Fever or hypothermia, Rigors, Tachypnoea, Confusion/delirium, Reduced urine output, Malaise | Signs: Fever (> 38.3\u00b0C) or hypothermia (< 36\u00b0C), Tachycardia, Tachypnoea (RR > 22), Hypotension (SBP < 90, MAP < 65), Raised shock index (HR/SBP), Elevated lactate | Risk: Immunocompromise, Diabetes Mellitus, Elderly, Pregnancy, Recent surgery | Bedside: VBG/ABG (lactate, acidosis), Blood glucose, Urine dipstick, Urine \u03b2HCG | Lab: FBC, U&E, CRP, Lactate | Imaging: CXR (pneumonia), Abdominal ultrasound, CT as indicated by suspected source | \u26a0\ufe0f Surviving sepsis bundles to be completed within 3 hours: measure lactate, obtain blood cultures prior to AB, administer broad spectrum AB, administer 30ml/kg crystalloid bolus for hypotension/lactate > 4 | Within 6 hours: apply vasopressors for MAP > 65, reassess volume status if persistent hypotension or lactate > 4, remeasure lactate | Antibioti"
       },
       {
         "parent_protocol": "Sepsis and Septic Shock",
@@ -1403,16 +1403,16 @@
         "notes_updates": "If refractory shock despite fluids and vasopressors"
       },
       {
-        "item": "📊 qSOFA (Quick SOFA)",
-        "notes_updates": "Respiratory rate ≥ 22/min=1 | Altered mentation (GCS < 15)=1 | Systolic BP ≤ 100mmHg=1 → ≥ 2: High risk of poor outcome - suspect sepsis"
+        "item": "\ud83d\udcca qSOFA (Quick SOFA)",
+        "notes_updates": "Respiratory rate \u2265 22/min=1 | Altered mentation (GCS < 15)=1 | Systolic BP \u2264 100mmHg=1 \u2192 \u2265 2: High risk of poor outcome - suspect sepsis"
       },
       {
-        "item": "📊 SOFA Score",
-        "notes_updates": "Respiratory (PaO2/FiO2 ratio)=0 | Coagulation (Platelets)=0 | Liver (Bilirubin)=0 | Cardiovascular (MAP/Vasopressors)=0 | CNS (GCS)=0 | Renal (Creatinine/Urine output)=0 → Increase ≥ 2 from baseline: Organ dysfunction = Sepsis"
+        "item": "\ud83d\udcca SOFA Score",
+        "notes_updates": "Respiratory (PaO2/FiO2 ratio)=0 | Coagulation (Platelets)=0 | Liver (Bilirubin)=0 | Cardiovascular (MAP/Vasopressors)=0 | CNS (GCS)=0 | Renal (Creatinine/Urine output)=0 \u2192 Increase \u2265 2 from baseline: Organ dysfunction = Sepsis"
       },
       {
         "item": "Dizziness and Vertigo",
-        "notes_updates": "Symptoms: Vertigo (illusion of motion/room spinning), Near-syncope (lightheadedness), Disequilibrium (unsteady gait), Non-specific dizziness | Risk: Hypertension, Diabetes Mellitus, Atrial fibrillation, Previous stroke/TIA, Migraine history | Bedside: HINTS exam (for acute vestibular syndrome), Dix-Hallpike manoeuvre (for BPPV), BP (including orthostatic), HGT | Lab: FBC, U&E, Glucose | Imaging: CT brain (if central cause suspected), MRI (if CT negative but high suspicion for posterior circulation stroke) | ⚠️ A normal (negative) head impulse test is worrying - suggests central cause (posterior circulation stroke) | Any central HINTS sign = stroke until proven otherwise | Do NOT attribute continuous vertigo in elderly/vascular patients to 'inner ear' without ruling out stroke | → Central vertigo/stroke: Admit. Peripheral vertigo (BPPV, vestibular neuritis): May discharge with follow-up i"
+        "notes_updates": "Symptoms: Vertigo (illusion of motion/room spinning), Near-syncope (lightheadedness), Disequilibrium (unsteady gait), Non-specific dizziness | Risk: Hypertension, Diabetes Mellitus, Atrial fibrillation, Previous stroke/TIA, Migraine history | Bedside: HINTS exam (for acute vestibular syndrome), Dix-Hallpike manoeuvre (for BPPV), BP (including orthostatic), HGT | Lab: FBC, U&E, Glucose | Imaging: CT brain (if central cause suspected), MRI (if CT negative but high suspicion for posterior circulation stroke) | \u26a0\ufe0f A normal (negative) head impulse test is worrying - suggests central cause (posterior circulation stroke) | Any central HINTS sign = stroke until proven otherwise | Do NOT attribute continuous vertigo in elderly/vascular patients to 'inner ear' without ruling out stroke | \u2192 Central vertigo/stroke: Admit. Peripheral vertigo (BPPV, vestibular neuritis): May discharge with follow-up i"
       }
     ]
   },
@@ -1420,7 +1420,7 @@
     "protocols": [
       {
         "item": "Organophosphate/Carbamate (Acetylcholinesterase Inhibitor) Overdose",
-        "notes_updates": "Monitor: Respiratory secretions: Continuous | Electrolytes: Serial | Blood glucose: Check during seizures | ⚠️ Avoid succinylcholine if intubation required (causes prolonged paralysis) | Atropine only treats muscarinic symptoms, not nicotinic | May cause anticholinergic toxidrome at high doses - monitor closely | → Internal Medicine consultation | Muscarinic: D - Diaphoresis, diarrhoea, U - Urination, M - Miosis, B - Bradycardia, bronchorrhoea, bronchospasm, E - Emesis | Nicotinic: Fasciculations, Weakness, Hypertension, Tachycardia, Mydriasis | Cns: Anxiety, Ataxia, Restlessness, Confusion, Convulsions | STEPS: Decontamination → Supportive care of ABCs → Atropine administration → Atropine infusion | Activated Charcoal: Not specifically mentioned for OP/carbamate | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: Remove clothing, wash patient with soap "
+        "notes_updates": "Monitor: Respiratory secretions: Continuous | Electrolytes: Serial | Blood glucose: Check during seizures | \u26a0\ufe0f Avoid succinylcholine if intubation required (causes prolonged paralysis) | Atropine only treats muscarinic symptoms, not nicotinic | May cause anticholinergic toxidrome at high doses - monitor closely | \u2192 Internal Medicine consultation | Muscarinic: D - Diaphoresis, diarrhoea, U - Urination, M - Miosis, B - Bradycardia, bronchorrhoea, bronchospasm, E - Emesis | Nicotinic: Fasciculations, Weakness, Hypertension, Tachycardia, Mydriasis | Cns: Anxiety, Ataxia, Restlessness, Confusion, Convulsions | STEPS: Decontamination \u2192 Supportive care of ABCs \u2192 Atropine administration \u2192 Atropine infusion | Activated Charcoal: Not specifically mentioned for OP/carbamate | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: Remove clothing, wash patient with soap "
       },
       {
         "parent_protocol": "Organophosphate/Carbamate (Acetylcholinesterase Inhibitor) Overdose",
@@ -1436,7 +1436,7 @@
       },
       {
         "item": "Anaphylaxis",
-        "notes_updates": "Monitor: Blood pressure: Continuous | Airway patency: Continuous | Oxygen saturation: Continuous | ⚠️ Biphasic reaction can occur in 5-20% of cases | Risk factors for biphasic: delayed adrenaline, slow response, repeated doses, need for IV fluids, lack of steroids | If partial airway obstruction: nebulized adrenaline 5mg, prepare for difficult airway | → Monitor for biphasic reaction (5-20% recurrence). Risk factors: delayed adrenaline, slow response, repeated doses needed, IV fluids required, lack of steroid use. Observation period required. | STEPS: Stop/remove suspected allergen → Position patient → Adrenaline IM → High-flow oxygen | Activated Charcoal: N/A | Gastric Lavage: N/A | Whole Bowel Irrigation: N/A | Skin Decon: Stop/remove the suspected allergen | Reversal: Adrenaline: 0.5 ml IM 1:1000, repeat every 3-5 min | Nebulized Adrenaline: 5 mg"
+        "notes_updates": "Monitor: Blood pressure: Continuous | Airway patency: Continuous | Oxygen saturation: Continuous | \u26a0\ufe0f Biphasic reaction can occur in 5-20% of cases | Risk factors for biphasic: delayed adrenaline, slow response, repeated doses, need for IV fluids, lack of steroids | If partial airway obstruction: nebulized adrenaline 5mg, prepare for difficult airway | \u2192 Monitor for biphasic reaction (5-20% recurrence). Risk factors: delayed adrenaline, slow response, repeated doses needed, IV fluids required, lack of steroid use. Observation period required. | STEPS: Stop/remove suspected allergen \u2192 Position patient \u2192 Adrenaline IM \u2192 High-flow oxygen | Activated Charcoal: N/A | Gastric Lavage: N/A | Whole Bowel Irrigation: N/A | Skin Decon: Stop/remove the suspected allergen | Reversal: Adrenaline: 0.5 ml IM 1:1000, repeat every 3-5 min | Nebulized Adrenaline: 5 mg"
       },
       {
         "parent_protocol": "Anaphylaxis",
@@ -1470,7 +1470,7 @@
       },
       {
         "item": "Angioedema",
-        "notes_updates": "Monitor: Airway patency: Continuous | Vital signs: Continuous | ⚠️ HAE (Hereditary Angioedema) vs allergic angioedema have different management pathways | ACE-I/ARB cases (bradykinin-mediated): Adrenaline, steroids, antihistamines UNLIKELY effective | LMA unlikely to be successful in angioedema - move directly to cricothyrotomy if intubation fails | → Isolated face/lips involvement: monitor 4-8 hours, consider discharge with outpatient follow-up. Monitored admission for: incomplete resolution, previous angioedema history, tongue/laryngeal/pharyngeal oedema, concern for severe allergic reaction. Ensure patient aware of ACEi/ARB brand names (drugs ending in 'pril' and 'sartan') - give written report and document on TTO. | STEPS: Triage to high care/monitored area (Resus/Orange) → Assess for imminent airway compromise → 2 large-bore IV lines → Prepare for extremely difficult airway | Activa"
+        "notes_updates": "Monitor: Airway patency: Continuous | Vital signs: Continuous | \u26a0\ufe0f HAE (Hereditary Angioedema) vs allergic angioedema have different management pathways | ACE-I/ARB cases (bradykinin-mediated): Adrenaline, steroids, antihistamines UNLIKELY effective | LMA unlikely to be successful in angioedema - move directly to cricothyrotomy if intubation fails | \u2192 Isolated face/lips involvement: monitor 4-8 hours, consider discharge with outpatient follow-up. Monitored admission for: incomplete resolution, previous angioedema history, tongue/laryngeal/pharyngeal oedema, concern for severe allergic reaction. Ensure patient aware of ACEi/ARB brand names (drugs ending in 'pril' and 'sartan') - give written report and document on TTO. | STEPS: Triage to high care/monitored area (Resus/Orange) \u2192 Assess for imminent airway compromise \u2192 2 large-bore IV lines \u2192 Prepare for extremely difficult airway | Activa"
       },
       {
         "parent_protocol": "Angioedema",
@@ -1504,7 +1504,7 @@
       },
       {
         "item": "Toxic Alcohol Ingestion (Ethylene Glycol, Methanol, Isopropyl Alcohol)",
-        "notes_updates": "Monitor: pH: Serial VBG | Anion gap: Serial | Osmolar gap: Serial | ⚠️ HAGMA with high osmolar gap suggests toxic alcohol ingestion | Airway protection required prior to ethanol administration | Haemodialysis usually required - consult renal early | → Medicine/renal consult. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Ethylene glycol: coma, seizures, meningism, muscle spasms, ocular paralysis, Methanol: Parkinsonism, transverse myelitis, basal ganglia haemorrhages, inebriation, Isopropyl: profound intoxication, cerebellar signs, coma | STEPS: Triage to RESUS AREA → Rapid ABC assessment → Correct abnormal electrolytes → Crystalloid fluid bolus | Activated Charcoal: Not recommended for toxic alcohols | Gastric Lavage: Not recommended | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A"
+        "notes_updates": "Monitor: pH: Serial VBG | Anion gap: Serial | Osmolar gap: Serial | \u26a0\ufe0f HAGMA with high osmolar gap suggests toxic alcohol ingestion | Airway protection required prior to ethanol administration | Haemodialysis usually required - consult renal early | \u2192 Medicine/renal consult. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Ethylene glycol: coma, seizures, meningism, muscle spasms, ocular paralysis, Methanol: Parkinsonism, transverse myelitis, basal ganglia haemorrhages, inebriation, Isopropyl: profound intoxication, cerebellar signs, coma | STEPS: Triage to RESUS AREA \u2192 Rapid ABC assessment \u2192 Correct abnormal electrolytes \u2192 Crystalloid fluid bolus | Activated Charcoal: Not recommended for toxic alcohols | Gastric Lavage: Not recommended | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A"
       },
       {
         "parent_protocol": "Toxic Alcohol Ingestion (Ethylene Glycol, Methanol, Isopropyl Alcohol)",
@@ -1537,18 +1537,18 @@
         "notes_updates": "Cofactor for methanol - promotes conversion to non-toxic metabolites"
       },
       {
-        "item": "📐 Anion Gap",
+        "item": "\ud83d\udcd0 Anion Gap",
         "adult_dose": "Na - (Cl + HCO3)",
         "notes_updates": "Vars: Na, Cl, HCO3 | "
       },
       {
-        "item": "📐 Osmolar Gap",
+        "item": "\ud83d\udcd0 Osmolar Gap",
         "adult_dose": "Measured osmolality - Calculated osmolality",
         "notes_updates": "Vars: Measured osmolality, Calculated osmolality | "
       },
       {
         "item": "Isoniazid (INH) Overdose",
-        "notes_updates": "Monitor: Blood gas: Serial VBG | Seizure activity: Continuous | ECG: Serial | ⚠️ INH depletes Vitamin B6, causing decreased GABA - leads to seizures and lactic acidosis | Blood gas shows HAGMA with severe lactic acidosis | ECG: No specific features, sinus tachycardia | → Internal medicine referral. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Seizures (refractory, high doses of benzodiazepines may be required), Profound CNS depression | STEPS: Consider INH toxicity → Triage to RESUS AREA → Terminate seizures → Rapid ABC assessment | Activated Charcoal: Consider activated charcoal 50 g via NGT once airway is secured, IF ingestion < 1 hour ago | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A"
+        "notes_updates": "Monitor: Blood gas: Serial VBG | Seizure activity: Continuous | ECG: Serial | \u26a0\ufe0f INH depletes Vitamin B6, causing decreased GABA - leads to seizures and lactic acidosis | Blood gas shows HAGMA with severe lactic acidosis | ECG: No specific features, sinus tachycardia | \u2192 Internal medicine referral. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Seizures (refractory, high doses of benzodiazepines may be required), Profound CNS depression | STEPS: Consider INH toxicity \u2192 Triage to RESUS AREA \u2192 Terminate seizures \u2192 Rapid ABC assessment | Activated Charcoal: Consider activated charcoal 50 g via NGT once airway is secured, IF ingestion < 1 hour ago | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A"
       },
       {
         "parent_protocol": "Isoniazid (INH) Overdose",
@@ -1558,7 +1558,7 @@
       },
       {
         "item": "Salicylate Overdose",
-        "notes_updates": "Monitor: Serum pH: Serial VBG | Urine pH: Serial | Salicylate level: Serial | ⚠️ Levels correlate POORLY with severity of toxicity, but serial levels can monitor response to treatment | Neuroglycopenia can occur even at normal HGT levels | AVOID intubation if possible - associated with high peri-intubation mortality | → Renal consult if dialysis required. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Minimal (<150 mg/kg): minimal symptoms, Moderate (150-300 mg/kg): hyperpnoea, vomiting, nausea, tinnitus, Severe (>300 mg/kg): metabolic acidosis, seizures, coma, hypotension, pulmonary oedema, hyperthermia, Lethal (>500 mg/kg), Chronic: non-specific delirium, confusion, fever, unexplained acidosis (common in elderly) | STEPS: Triage to RESUS AREA → Rapid ABC assessment → Correct electrolyte abnormalities → Crystalloid fluid bolus | Activated Charcoa"
+        "notes_updates": "Monitor: Serum pH: Serial VBG | Urine pH: Serial | Salicylate level: Serial | \u26a0\ufe0f Levels correlate POORLY with severity of toxicity, but serial levels can monitor response to treatment | Neuroglycopenia can occur even at normal HGT levels | AVOID intubation if possible - associated with high peri-intubation mortality | \u2192 Renal consult if dialysis required. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Minimal (<150 mg/kg): minimal symptoms, Moderate (150-300 mg/kg): hyperpnoea, vomiting, nausea, tinnitus, Severe (>300 mg/kg): metabolic acidosis, seizures, coma, hypotension, pulmonary oedema, hyperthermia, Lethal (>500 mg/kg), Chronic: non-specific delirium, confusion, fever, unexplained acidosis (common in elderly) | STEPS: Triage to RESUS AREA \u2192 Rapid ABC assessment \u2192 Correct electrolyte abnormalities \u2192 Crystalloid fluid bolus | Activated Charcoa"
       },
       {
         "parent_protocol": "Salicylate Overdose",
@@ -1567,13 +1567,13 @@
         "notes_updates": "Goal serum pH 7.45-7.55, urine pH >7.5. Mainstay of treatment."
       },
       {
-        "item": "📐 Winter's Formula",
+        "item": "\ud83d\udcd0 Winter's Formula",
         "adult_dose": "Expected CO2 = 1.5 x HCO3 + 8 +/- 2",
         "notes_updates": "Vars: HCO3 | "
       },
       {
         "item": "Warfarin Toxicity",
-        "notes_updates": "Monitor: INR/PT: 30 min after PCC, then serial | Haemoglobin: Serial | Vital signs: Continuous | ⚠️ Non-bleeding patients should NOT receive PCC/FFP | Do NOT wait for INR result in catastrophic bleeding | Goal of treatment is return to THERAPEUTIC INR, not sub-therapeutic/normal INR | → Internal medicine referral. ICU if ongoing bleeding or haemodynamic instability. | STEPS: Triage to RESUS/ORANGE AREA → Rapid ABC assessment → Assess INR and bleeding status → HIGH INR, NOT BLEEDING/MINOR BLEEDING | Activated Charcoal: N/A | Gastric Lavage: N/A | Whole Bowel Irrigation: N/A | Skin Decon: N/A | Reversal: 4-Factor PCC (Haemosolvex): 25-50 IU/kg | FFP/FDP: 10-15 ml/kg | Vitamin K: 5-10 mg IV (life-threatening) or 1-5 mg oral (non-bleeding)"
+        "notes_updates": "Monitor: INR/PT: 30 min after PCC, then serial | Haemoglobin: Serial | Vital signs: Continuous | \u26a0\ufe0f Non-bleeding patients should NOT receive PCC/FFP | Do NOT wait for INR result in catastrophic bleeding | Goal of treatment is return to THERAPEUTIC INR, not sub-therapeutic/normal INR | \u2192 Internal medicine referral. ICU if ongoing bleeding or haemodynamic instability. | STEPS: Triage to RESUS/ORANGE AREA \u2192 Rapid ABC assessment \u2192 Assess INR and bleeding status \u2192 HIGH INR, NOT BLEEDING/MINOR BLEEDING | Activated Charcoal: N/A | Gastric Lavage: N/A | Whole Bowel Irrigation: N/A | Skin Decon: N/A | Reversal: 4-Factor PCC (Haemosolvex): 25-50 IU/kg | FFP/FDP: 10-15 ml/kg | Vitamin K: 5-10 mg IV (life-threatening) or 1-5 mg oral (non-bleeding)"
       },
       {
         "parent_protocol": "Warfarin Toxicity",
@@ -1613,7 +1613,7 @@
       },
       {
         "item": "Tricyclic Antidepressant (TCA) Overdose",
-        "notes_updates": "Monitor: QRS duration: Serial ECG | pH: Serial VBG | Blood pressure: Continuous | ⚠️ Significant overdose: >10 mg/kg | QRS >100 msec predictive of seizures | QRS >160 msec predictive of ventricular arrhythmias | → Medicine consult. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Sedation/coma, Seizures, Anticholinergic syndrome | Anticholinergic: Delirium, Tachycardia, Dry/flushed skin, Dilated pupils, Hyperthermia | STEPS: Triage to RESUS AREA → Rapid ABC assessment → Correct electrolyte abnormalities → Comprehensive history and exam | Activated Charcoal: 1 g/kg activated charcoal via NGT ONLY once airway is protected (even if presentation >1 hour after ingestion). Consider MDAC in severe cases. | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A | Reversal: Sodium Bicarbonate: 1-2 mmol/kg IV, repeat q5min"
+        "notes_updates": "Monitor: QRS duration: Serial ECG | pH: Serial VBG | Blood pressure: Continuous | \u26a0\ufe0f Significant overdose: >10 mg/kg | QRS >100 msec predictive of seizures | QRS >160 msec predictive of ventricular arrhythmias | \u2192 Medicine consult. Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: Sedation/coma, Seizures, Anticholinergic syndrome | Anticholinergic: Delirium, Tachycardia, Dry/flushed skin, Dilated pupils, Hyperthermia | STEPS: Triage to RESUS AREA \u2192 Rapid ABC assessment \u2192 Correct electrolyte abnormalities \u2192 Comprehensive history and exam | Activated Charcoal: 1 g/kg activated charcoal via NGT ONLY once airway is protected (even if presentation >1 hour after ingestion). Consider MDAC in severe cases. | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A | Reversal: Sodium Bicarbonate: 1-2 mmol/kg IV, repeat q5min"
       },
       {
         "parent_protocol": "Tricyclic Antidepressant (TCA) Overdose",
@@ -1635,7 +1635,7 @@
       },
       {
         "item": "Toxidromes - Classic Recognition and Management",
-        "notes_updates": "Monitor: ECG: All toxicology patients | Paracetamol level: All toxicology patients | Blood glucose: All toxicology patients | ⚠️ AVOID beta-blockers in sympathomimetic toxidrome - unopposed alpha agonism | AVOID flumazenil in benzodiazepine overdose - can precipitate withdrawal/seizures | Physostigmine contraindicated in TCA overdose and cardiac conduction abnormalities | → Urgent Medicine/ICU referral for significant ingestions. ECG and paracetamol level for ALL poisoned patients. | Muscarinic: DUMBELS: Diaphoresis, diarrhoea; Urination; Miosis; Bradycardia, bronchorrhoea, bronchospasm; Emesis; Lacrimation; Salivation | Nicotinic: Fasciculations, weakness, hypertension, tachycardia, mydriasis | Anticholinergic: Mad as a hatter: Delirium, Blind as a bat: Dilated pupils, blurred vision, Red as a beet: Flushed skin, hyperthermia, Dry as a bone: Dry skin/mucous membranes, urinary retention,"
+        "notes_updates": "Monitor: ECG: All toxicology patients | Paracetamol level: All toxicology patients | Blood glucose: All toxicology patients | \u26a0\ufe0f AVOID beta-blockers in sympathomimetic toxidrome - unopposed alpha agonism | AVOID flumazenil in benzodiazepine overdose - can precipitate withdrawal/seizures | Physostigmine contraindicated in TCA overdose and cardiac conduction abnormalities | \u2192 Urgent Medicine/ICU referral for significant ingestions. ECG and paracetamol level for ALL poisoned patients. | Muscarinic: DUMBELS: Diaphoresis, diarrhoea; Urination; Miosis; Bradycardia, bronchorrhoea, bronchospasm; Emesis; Lacrimation; Salivation | Nicotinic: Fasciculations, weakness, hypertension, tachycardia, mydriasis | Anticholinergic: Mad as a hatter: Delirium, Blind as a bat: Dilated pupils, blurred vision, Red as a beet: Flushed skin, hyperthermia, Dry as a bone: Dry skin/mucous membranes, urinary retention,"
       },
       {
         "parent_protocol": "Toxidromes - Classic Recognition and Management",
@@ -1681,7 +1681,7 @@
       },
       {
         "item": "Paracetamol Overdose",
-        "notes_updates": "Monitor: Paracetamol level: At presentation if >4 hours post-ingestion | LFTs (AST/ALT/INR): If >12 hours post-ingestion | Blood glucose: Serial | ⚠️ Toxic dose: 150 mg/kg or >10 g in adults | Use the Paracetamol Treatment Nomogram to establish need for antidote | If high dosage suspected, rather give the antidote | → Internal Medicine referral. Admit for completion of NAC infusion. | Cns: Stage 1 (0-24 hours): Often asymptomatic or mild nausea/vomiting, Stage 2 (24-72 hours): Right upper quadrant pain, elevated LFTs, Stage 3 (72-96 hours): Peak hepatotoxicity - jaundice, coagulopathy, encephalopathy, renal failure, Stage 4 (4 days-2 weeks): Recovery or progression to fulminant hepatic failure | STEPS: Assess and support ABCs → Monitor glucose → Quantify ingestion → Establish timeframe | Activated Charcoal: 50 g PO (not via NGT) if presentation <1 hour from ingestion | Gastric Lavage: No"
+        "notes_updates": "Monitor: Paracetamol level: At presentation if >4 hours post-ingestion | LFTs (AST/ALT/INR): If >12 hours post-ingestion | Blood glucose: Serial | \u26a0\ufe0f Toxic dose: 150 mg/kg or >10 g in adults | Use the Paracetamol Treatment Nomogram to establish need for antidote | If high dosage suspected, rather give the antidote | \u2192 Internal Medicine referral. Admit for completion of NAC infusion. | Cns: Stage 1 (0-24 hours): Often asymptomatic or mild nausea/vomiting, Stage 2 (24-72 hours): Right upper quadrant pain, elevated LFTs, Stage 3 (72-96 hours): Peak hepatotoxicity - jaundice, coagulopathy, encephalopathy, renal failure, Stage 4 (4 days-2 weeks): Recovery or progression to fulminant hepatic failure | STEPS: Assess and support ABCs \u2192 Monitor glucose \u2192 Quantify ingestion \u2192 Establish timeframe | Activated Charcoal: 50 g PO (not via NGT) if presentation <1 hour from ingestion | Gastric Lavage: No"
       },
       {
         "parent_protocol": "Paracetamol Overdose",
@@ -1703,7 +1703,7 @@
       },
       {
         "item": "Calcium Channel Blocker and Beta-Blocker Overdose",
-        "notes_updates": "Monitor: Blood glucose (HGT): Every 20 min for 1st hour, then hourly | Potassium: Serial | Ejection fraction: Serial | ⚠️ Propranolol: Also acts as Na channel blocker - TCA-like features of OD | Sotalol: Blocks myocardial K channels - QT prolongation, Torsades in OD | CCB causes hyperglycaemia; BB causes hypoglycaemia | → Int Med consult (consider renal consult for dialysis). Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: CNS depression, Profound CNS depression (beta-blocker OD may lead to this) | STEPS: Triage to RESUS AREA → Rapid ABC assessment → Correct abnormal electrolytes → Crystalloid fluid bolus | Activated Charcoal: Consider activated charcoal 50 g via NGT | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A | Reversal: HIET (High-Dose Insulin): Actrapid 1 IU/kg load then 0.5-10 IU/kg/hr infusion | Ca"
+        "notes_updates": "Monitor: Blood glucose (HGT): Every 20 min for 1st hour, then hourly | Potassium: Serial | Ejection fraction: Serial | \u26a0\ufe0f Propranolol: Also acts as Na channel blocker - TCA-like features of OD | Sotalol: Blocks myocardial K channels - QT prolongation, Torsades in OD | CCB causes hyperglycaemia; BB causes hypoglycaemia | \u2192 Int Med consult (consider renal consult for dialysis). Will likely require ICU/High care. Continue serial ECG and VBG monitoring in ED. | Cns: CNS depression, Profound CNS depression (beta-blocker OD may lead to this) | STEPS: Triage to RESUS AREA \u2192 Rapid ABC assessment \u2192 Correct abnormal electrolytes \u2192 Crystalloid fluid bolus | Activated Charcoal: Consider activated charcoal 50 g via NGT | Gastric Lavage: Not mentioned | Whole Bowel Irrigation: Not mentioned | Skin Decon: N/A | Reversal: HIET (High-Dose Insulin): Actrapid 1 IU/kg load then 0.5-10 IU/kg/hr infusion | Ca"
       },
       {
         "parent_protocol": "Calcium Channel Blocker and Beta-Blocker Overdose",
@@ -1752,7 +1752,7 @@
   "13_ed_trauma_surgical": {
     "protocols": [
       {
-        "item": "━━ Head Injury ━━",
+        "item": "\u2501\u2501 Head Injury \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -1971,7 +1971,7 @@
       },
       {
         "item": "Temperature",
-        "notes_updates": "Normothermia (Temp < 37.5°C)",
+        "notes_updates": "Normothermia (Temp < 37.5\u00b0C)",
         "parent_protocol": "Neuroprotective Measures"
       },
       {
@@ -2157,7 +2157,7 @@
         "parent_protocol": "Admission Referral"
       },
       {
-        "item": "━━ Fast Efast ━━",
+        "item": "\u2501\u2501 Fast Efast \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -2188,7 +2188,7 @@
         "parent_protocol": "Rush Protocol"
       },
       {
-        "item": "━━ Back Pain ━━",
+        "item": "\u2501\u2501 Back Pain \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -2398,7 +2398,7 @@
         "parent_protocol": "Disposition"
       },
       {
-        "item": "━━ Brainstem Death ━━",
+        "item": "\u2501\u2501 Brainstem Death \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -2411,7 +2411,7 @@
         "parent_protocol": "Brainstem Death"
       },
       {
-        "item": "Normothermia (>36°C)",
+        "item": "Normothermia (>36\u00b0C)",
         "parent_protocol": "Brainstem Death"
       },
       {
@@ -2452,7 +2452,7 @@
       },
       {
         "item": "Absent oculovestibular (cold caloric) reflex - visible intac...",
-        "notes_updates": "Absent oculovestibular (cold caloric) reflex - visible intact eardrum, HOB 30°, 50ml ice-cold water flushed into canal, observe for 60 seconds, eye movement should be absent",
+        "notes_updates": "Absent oculovestibular (cold caloric) reflex - visible intact eardrum, HOB 30\u00b0, 50ml ice-cold water flushed into canal, observe for 60 seconds, eye movement should be absent",
         "parent_protocol": "Brainstem Death"
       },
       {
@@ -2547,7 +2547,7 @@
         "parent_protocol": "Brainstem Death"
       },
       {
-        "item": "━━ Burns ━━",
+        "item": "\u2501\u2501 Burns \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -2940,7 +2940,7 @@
         "parent_protocol": "Palliative Care"
       },
       {
-        "item": "━━ C Spine Imaging ━━",
+        "item": "\u2501\u2501 C Spine Imaging \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3069,7 +3069,7 @@
       },
       {
         "item": "Range Of Motion Test",
-        "notes_updates": "Able to rotate neck 45° left and right",
+        "notes_updates": "Able to rotate neck 45\u00b0 left and right",
         "parent_protocol": "Canadian C Spine Rule"
       },
       {
@@ -3083,7 +3083,7 @@
         "parent_protocol": "Canadian C Spine Rule"
       },
       {
-        "item": "━━ Compartment Syndrome ━━",
+        "item": "\u2501\u2501 Compartment Syndrome \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3233,7 +3233,7 @@
         "parent_protocol": "Compartment Syndrome"
       },
       {
-        "item": "━━ Fractures Dislocations ━━",
+        "item": "\u2501\u2501 Fractures Dislocations \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3369,7 +3369,7 @@
         "parent_protocol": "Fractures Dislocations"
       },
       {
-        "item": "━━ Trauma Basics ━━",
+        "item": "\u2501\u2501 Trauma Basics \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3585,7 +3585,7 @@
         "parent_protocol": "Massive Transfusion"
       },
       {
-        "item": "━━ Acute Appendicitis ━━",
+        "item": "\u2501\u2501 Acute Appendicitis \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3745,7 +3745,7 @@
         "parent_protocol": "Special Populations"
       },
       {
-        "item": "━━ Acute Cholecystitis ━━",
+        "item": "\u2501\u2501 Acute Cholecystitis \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -3941,7 +3941,7 @@
         "parent_protocol": "Acute Cholecystitis"
       },
       {
-        "item": "━━ Renal Colic ━━",
+        "item": "\u2501\u2501 Renal Colic \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -4095,7 +4095,7 @@
         "parent_protocol": "Stone Passage Probability"
       },
       {
-        "item": "━━ Sexual Assault ━━",
+        "item": "\u2501\u2501 Sexual Assault \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -4427,7 +4427,7 @@
         "parent_protocol": "Sexual Assault"
       },
       {
-        "item": "━━ Rabies ━━",
+        "item": "\u2501\u2501 Rabies \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -4671,7 +4671,7 @@
         "parent_protocol": "Rabies"
       },
       {
-        "item": "━━ Snakebite ━━",
+        "item": "\u2501\u2501 Snakebite \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -4700,11 +4700,11 @@
     "protocols": [
       {
         "item": "Hyperglycaemia",
-        "notes_updates": "Dx: Blood glucose (HGT): > 11mmol/L | pH: < 7.35 | HCO3: < 20mmol/L | Base Excess: < -4 | Class: Uncomplicated Hyperglycaemia: HGT >11 mmol/L, no ketones, no nausea/vomiting, no dehydration, normal mental state, no acidosis | Complicated Hyperglycaemia (DKA/HHS): Any of: urine ketones positive, nausea/vomiting, dehydration, altered mental state, acidotic breathing, pH < 7.35, HCO3 < 20, BE < -4 | Monitor: HGT: Hourly during acute phase | ⚠️ Always assess for DKA/HHS criteria in hyperglycaemic patients | → Uncomplicated: discharge with referral to Poly Clinic/local clinic within 3 days. Complicated: Admit to Medicine."
+        "notes_updates": "Dx: Blood glucose (HGT): > 11mmol/L | pH: < 7.35 | HCO3: < 20mmol/L | Base Excess: < -4 | Class: Uncomplicated Hyperglycaemia: HGT >11 mmol/L, no ketones, no nausea/vomiting, no dehydration, normal mental state, no acidosis | Complicated Hyperglycaemia (DKA/HHS): Any of: urine ketones positive, nausea/vomiting, dehydration, altered mental state, acidotic breathing, pH < 7.35, HCO3 < 20, BE < -4 | Monitor: HGT: Hourly during acute phase | \u26a0\ufe0f Always assess for DKA/HHS criteria in hyperglycaemic patients | \u2192 Uncomplicated: discharge with referral to Poly Clinic/local clinic within 3 days. Complicated: Admit to Medicine."
       },
       {
         "item": "Diabetic Ketoacidosis (DKA)",
-        "notes_updates": "Dx: Blood glucose (HGT): > 11, often > 30mmol/L | pH: < 7.3 | HCO3: < 18mmol/L | Anion Gap: > 16mmol/L | Class: DKA: HGT > 11 (often > 30), pH < 7.3, HCO3 < 18, AG > 16, osmolality < 320, ketones positive, metabolic acidosis | HHS: HGT > 30, pH > 7.3 (minimal acidosis), osmolality > 350, ketones absent/weakly positive, altered mental state common | Euglycemic DKA: DKA with near-normal glucose; risk factors: SGLT2 inhibitors, carbohydrate restriction, fasting, dehydration, alcohol, partially treated DKA | Monitor: HGT: Hourly | Potassium: Regularly | pH / HCO3 / Anion Gap: 1 ABG then 4-hourly VBG | ⚠️ Delay insulin until K+ > 3.5 mmol/L | Do NOT routinely use sodium bicarbonate | Avoid intubation if possible | → Admit Medicine unless surgical precipitant. ICU consult if pH < 7, shock, or CNS abnormalities."
+        "notes_updates": "Dx: Blood glucose (HGT): > 11, often > 30mmol/L | pH: < 7.3 | HCO3: < 18mmol/L | Anion Gap: > 16mmol/L | Class: DKA: HGT > 11 (often > 30), pH < 7.3, HCO3 < 18, AG > 16, osmolality < 320, ketones positive, metabolic acidosis | HHS: HGT > 30, pH > 7.3 (minimal acidosis), osmolality > 350, ketones absent/weakly positive, altered mental state common | Euglycemic DKA: DKA with near-normal glucose; risk factors: SGLT2 inhibitors, carbohydrate restriction, fasting, dehydration, alcohol, partially treated DKA | Monitor: HGT: Hourly | Potassium: Regularly | pH / HCO3 / Anion Gap: 1 ABG then 4-hourly VBG | \u26a0\ufe0f Delay insulin until K+ > 3.5 mmol/L | Do NOT routinely use sodium bicarbonate | Avoid intubation if possible | \u2192 Admit Medicine unless surgical precipitant. ICU consult if pH < 7, shock, or CNS abnormalities."
       },
       {
         "parent_protocol": "Diabetic Ketoacidosis (DKA)",
@@ -4746,28 +4746,28 @@
         "item": "Thiamine"
       },
       {
-        "item": "📐 Serum Osmolality",
+        "item": "\ud83d\udcd0 Serum Osmolality",
         "adult_dose": "2(Na + K) + Urea + Glucose",
         "notes_updates": "Vars: Na (mmol/L), K (mmol/L), Urea (mmol/L), Glucose (mmol/L) | mOsm/kg"
       },
       {
-        "item": "📐 Anion Gap",
+        "item": "\ud83d\udcd0 Anion Gap",
         "adult_dose": "(Na + K) - (Cl + HCO3)",
         "notes_updates": "Vars: Na, K, Cl, HCO3 (all mmol/L) | mmol/L"
       },
       {
-        "item": "📐 Corrected Potassium",
+        "item": "\ud83d\udcd0 Corrected Potassium",
         "adult_dose": "For every 0.1 pH drop from 7.4, K+ drops by 0.5",
         "notes_updates": "Vars: pH, Measured K+ | mmol/L"
       },
       {
-        "item": "📐 Corrected Sodium for Glucose",
+        "item": "\ud83d\udcd0 Corrected Sodium for Glucose",
         "adult_dose": "For every 5.5 mmol/L glucose above 5.5: Na increases by 1.6 if glucose 11-22; by 2.4 if glucose > 22",
         "notes_updates": "Vars: Measured Na, Glucose | mmol/L"
       },
       {
         "item": "Hyperosmolar Hyperglycaemic State (HHS)",
-        "notes_updates": "Dx: Blood glucose (HGT): > 30mmol/L | Serum Osmolality: > 350mOsm/kg | pH: > 7.3 (minimal acidosis) | Anion Gap: Normal (12-16)mmol/L | Class: HHS: HGT > 30, osmolality > 350, minimal acidosis/normal pH, ketones absent/weakly positive, altered mental state common | HHS-DKA Overlap: May have features of both HHS and DKA | Monitor: HGT: Hourly | Potassium: Regularly | pH / HCO3 / Anion Gap: 1 ABG then 4-hourly VBG | ⚠️ Slower fluid correction than DKA | Higher thromboembolism risk than DKA - anticoagulate | Do not correct too fast - risk of cerebral oedema | → Admit Medicine. ICU consult if shock or CNS abnormalities."
+        "notes_updates": "Dx: Blood glucose (HGT): > 30mmol/L | Serum Osmolality: > 350mOsm/kg | pH: > 7.3 (minimal acidosis) | Anion Gap: Normal (12-16)mmol/L | Class: HHS: HGT > 30, osmolality > 350, minimal acidosis/normal pH, ketones absent/weakly positive, altered mental state common | HHS-DKA Overlap: May have features of both HHS and DKA | Monitor: HGT: Hourly | Potassium: Regularly | pH / HCO3 / Anion Gap: 1 ABG then 4-hourly VBG | \u26a0\ufe0f Slower fluid correction than DKA | Higher thromboembolism risk than DKA - anticoagulate | Do not correct too fast - risk of cerebral oedema | \u2192 Admit Medicine. ICU consult if shock or CNS abnormalities."
       },
       {
         "parent_protocol": "Hyperosmolar Hyperglycaemic State (HHS)",
@@ -4795,18 +4795,18 @@
         "adult_dose": "0.5 mg/kg SC STAT"
       },
       {
-        "item": "📐 Serum Osmolality",
+        "item": "\ud83d\udcd0 Serum Osmolality",
         "adult_dose": "2(Na + K) + Urea + Glucose",
         "notes_updates": "Vars: Na (mmol/L), K (mmol/L), Urea (mmol/L), Glucose (mmol/L) | mOsm/kg"
       },
       {
-        "item": "📐 Anion Gap",
+        "item": "\ud83d\udcd0 Anion Gap",
         "adult_dose": "(Na + K) - (Cl + HCO3)",
         "notes_updates": "Vars: Na, K, Cl, HCO3 (all mmol/L) | mmol/L"
       },
       {
         "item": "Hypoglycaemia",
-        "notes_updates": "Dx: Blood glucose (HGT): < 4mmol/L | Blood glucose (severe): < 2.2mmol/L | Class: Early/Mild: Sweating, dizziness, bad mood, trembling, palpitations, hunger | Late/Severe: Confusion, visual changes, slurred speech, seizures, lethargy, stupor, coma | Monitor: HGT: Hourly checks | ⚠️ Severe hypoglycaemia is a life-threatening emergency | Prolonged hypoglycaemia can lead to permanent brain damage | Correct any HGT < 4 mmol/L immediately | → Identify and treat underlying cause or admit for HGT monitoring and further workup. Ensure early NGT feeds in intubated/critically ill patients."
+        "notes_updates": "Dx: Blood glucose (HGT): < 4mmol/L | Blood glucose (severe): < 2.2mmol/L | Class: Early/Mild: Sweating, dizziness, bad mood, trembling, palpitations, hunger | Late/Severe: Confusion, visual changes, slurred speech, seizures, lethargy, stupor, coma | Monitor: HGT: Hourly checks | \u26a0\ufe0f Severe hypoglycaemia is a life-threatening emergency | Prolonged hypoglycaemia can lead to permanent brain damage | Correct any HGT < 4 mmol/L immediately | \u2192 Identify and treat underlying cause or admit for HGT monitoring and further workup. Ensure early NGT feeds in intubated/critically ill patients."
       },
       {
         "parent_protocol": "Hypoglycaemia",
@@ -4838,7 +4838,7 @@
       },
       {
         "item": "Hyperkalaemia",
-        "notes_updates": "Dx: Potassium (K+): > 5.5mmol/L | Class: Mild: K+ 5.5-6.0 mmol/L | Moderate: K+ 6.0-6.5 mmol/L | Severe: K+ > 6.5 mmol/L or ECG changes | Monitor: ECG: Continuous | Potassium: Follow-up monitoring | Blood glucose: After insulin/dextrose | ⚠️ Administer dextrose PRIOR to insulin (separate IV lines) | Give calcium until QRS narrows (if wide and not bundle branch block) | Sodium bicarbonate routine use no longer recommended | → Admit for monitoring and treatment of underlying cause. Dialysis for intractable cases. | STEPS: Stop exogenous K+ administration → Stabilise the cardiac membrane (calcium) → Shift K+ intracellularly (insulin/glucose, salbutamol, bicarbonate if indicated) → Increase K+ excretion (furosemide, dialysis if intractable)"
+        "notes_updates": "Dx: Potassium (K+): > 5.5mmol/L | Class: Mild: K+ 5.5-6.0 mmol/L | Moderate: K+ 6.0-6.5 mmol/L | Severe: K+ > 6.5 mmol/L or ECG changes | Monitor: ECG: Continuous | Potassium: Follow-up monitoring | Blood glucose: After insulin/dextrose | \u26a0\ufe0f Administer dextrose PRIOR to insulin (separate IV lines) | Give calcium until QRS narrows (if wide and not bundle branch block) | Sodium bicarbonate routine use no longer recommended | \u2192 Admit for monitoring and treatment of underlying cause. Dialysis for intractable cases. | STEPS: Stop exogenous K+ administration \u2192 Stabilise the cardiac membrane (calcium) \u2192 Shift K+ intracellularly (insulin/glucose, salbutamol, bicarbonate if indicated) \u2192 Increase K+ excretion (furosemide, dialysis if intractable)"
       },
       {
         "parent_protocol": "Hyperkalaemia",
@@ -4880,18 +4880,18 @@
         "item": "Dialysis"
       },
       {
-        "item": "📐 Potassium Correction for Acidosis",
+        "item": "\ud83d\udcd0 Potassium Correction for Acidosis",
         "adult_dose": "Decrease of pH by 0.1 = Increased K+ of 0.3-0.5 mmol/L",
         "notes_updates": "Vars: pH, Measured K+ | mmol/L"
       },
       {
-        "item": "📐 Example Correction",
+        "item": "\ud83d\udcd0 Example Correction",
         "adult_dose": "pH 7.1 and K+ 6, then corrected K+ = 5.1",
         "notes_updates": "Vars:  | mmol/L"
       },
       {
         "item": "Hypokalaemia",
-        "notes_updates": "Dx: Potassium (K+): < 3.5mmol/L | Class: Hypokalaemia: K+ < 3.5 mmol/L | Life-threatening: Cardiac arrest or impending arrest | Monitor: Potassium: Re-check after life-threatening replacement | Magnesium: Simultaneous replacement | ⚠️ BOTH Potassium AND Magnesium must be replaced simultaneously | Use infusion pump/dial-a-flow for standard replacement | In life-threatening cases, 20 mEq KCl can be given at 1 ml/min IV | → Admit for monitoring and continued replacement."
+        "notes_updates": "Dx: Potassium (K+): < 3.5mmol/L | Class: Hypokalaemia: K+ < 3.5 mmol/L | Life-threatening: Cardiac arrest or impending arrest | Monitor: Potassium: Re-check after life-threatening replacement | Magnesium: Simultaneous replacement | \u26a0\ufe0f BOTH Potassium AND Magnesium must be replaced simultaneously | Use infusion pump/dial-a-flow for standard replacement | In life-threatening cases, 20 mEq KCl can be given at 1 ml/min IV | \u2192 Admit for monitoring and continued replacement."
       },
       {
         "parent_protocol": "Hypokalaemia",
@@ -4905,7 +4905,7 @@
       },
       {
         "item": "Hypernatraemia",
-        "notes_updates": "Dx: Sodium (Na+): > 145mmol/L | Sodium (Na+): > 150mmol/L | Class: Mild: Na+ 145-150 mmol/L - may not need correction | Moderate-Severe: Na+ > 150 mmol/L - correction required | Monitor: Sodium: Regular | Urine output: Continuous | ⚠️ DO NOT CORRECT TOO FAST - risk of cerebral oedema | Aim to correct Na+ by 10-12 mmol/L in 24 hrs (not more than 0.5 mmol/L/hr) | Shock/dehydration: fluid resuscitation is 1st priority using isotonic solutions | → Admit for slow correction and management of underlying cause."
+        "notes_updates": "Dx: Sodium (Na+): > 145mmol/L | Sodium (Na+): > 150mmol/L | Class: Mild: Na+ 145-150 mmol/L - may not need correction | Moderate-Severe: Na+ > 150 mmol/L - correction required | Monitor: Sodium: Regular | Urine output: Continuous | \u26a0\ufe0f DO NOT CORRECT TOO FAST - risk of cerebral oedema | Aim to correct Na+ by 10-12 mmol/L in 24 hrs (not more than 0.5 mmol/L/hr) | Shock/dehydration: fluid resuscitation is 1st priority using isotonic solutions | \u2192 Admit for slow correction and management of underlying cause."
       },
       {
         "parent_protocol": "Hypernatraemia",
@@ -4921,23 +4921,23 @@
         "item": "Furosemide"
       },
       {
-        "item": "📐 Calculated Serum Osmolality",
+        "item": "\ud83d\udcd0 Calculated Serum Osmolality",
         "adult_dose": "(2 x sNa+) + glucose + urea",
         "notes_updates": "Vars: sNa+ (mmol/L), Glucose (mmol/L), Urea (mmol/L) | mOsm/kg"
       },
       {
-        "item": "📐 Free Water Deficit",
+        "item": "\ud83d\udcd0 Free Water Deficit",
         "adult_dose": "0.6 x Weight(kg) x [(sNa+ - 140)/140]",
         "notes_updates": "Vars: Weight (kg), sNa+ (mmol/L) | Litres"
       },
       {
-        "item": "📐 5DW or Half-normal Saline Infusion Rate",
+        "item": "\ud83d\udcd0 5DW or Half-normal Saline Infusion Rate",
         "adult_dose": "Use MDCalc",
         "notes_updates": "Vars:  | ml/hr"
       },
       {
         "item": "Hyponatraemia",
-        "notes_updates": "Dx: Sodium (Na+): < 135mmol/L | Sodium (Na+): < 120mmol/L | Class: Mild: Na+ 130-135 mmol/L - usually asymptomatic | Moderate: Na+ 120-129 mmol/L | Severe: Na+ < 120 mmol/L - CNS dysfunction likely | Monitor: Sodium: Regular | Serum osmolality:  | Urine Na+:  | ⚠️ DO NOT CORRECT TOO FAST - risk of pontine myelinolysis | Maximum Na+ increase: 12 mmol/L per 24 hours (max 0.5 mmol/L/hr) | If low GCS with Na > 120 mmol/L, search for other cause of coma/seizures | → Admit for slow correction and management of underlying cause."
+        "notes_updates": "Dx: Sodium (Na+): < 135mmol/L | Sodium (Na+): < 120mmol/L | Class: Mild: Na+ 130-135 mmol/L - usually asymptomatic | Moderate: Na+ 120-129 mmol/L | Severe: Na+ < 120 mmol/L - CNS dysfunction likely | Monitor: Sodium: Regular | Serum osmolality:  | Urine Na+:  | \u26a0\ufe0f DO NOT CORRECT TOO FAST - risk of pontine myelinolysis | Maximum Na+ increase: 12 mmol/L per 24 hours (max 0.5 mmol/L/hr) | If low GCS with Na > 120 mmol/L, search for other cause of coma/seizures | \u2192 Admit for slow correction and management of underlying cause."
       },
       {
         "parent_protocol": "Hyponatraemia",
@@ -4964,23 +4964,23 @@
         "item": "Fluid restriction"
       },
       {
-        "item": "📐 Calculated Serum Osmolality",
+        "item": "\ud83d\udcd0 Calculated Serum Osmolality",
         "adult_dose": "(2 x Na+) + glucose + urea",
         "notes_updates": "Vars: Na+ (mmol/L), Glucose (mmol/L), Urea (mmol/L) | mOsm"
       },
       {
-        "item": "📐 Corrected Na+ for Hyperglycaemia",
+        "item": "\ud83d\udcd0 Corrected Na+ for Hyperglycaemia",
         "adult_dose": "Na+ + [2.4(Glucose - 5.4)/5.4]",
         "notes_updates": "Vars: Measured Na+, Glucose (mmol/L) | mmol/L"
       },
       {
-        "item": "📐 Hypertonic/Normal Saline Infusion Rate",
+        "item": "\ud83d\udcd0 Hypertonic/Normal Saline Infusion Rate",
         "adult_dose": "Use MDCalc",
         "notes_updates": "Vars:  | ml/hr"
       },
       {
         "item": "Hyperthermia",
-        "notes_updates": "Dx: Temperature (Heat Exhaustion): < 40°C | Temperature (Heat Stroke): > 40°C | Class: Minor Heat Illness: Muscle cramps, minor peripheral oedema, syncope, heat rash | Heat Exhaustion: Temp < 40°C, sweating intact, intact neurological function, weakness, fatigue, headache, nausea, vomiting, syncope | Heat Stroke: Temp > 40°C, ± sweating, agitation, confusion, seizures, coma, shock, AKI, coagulopathy, electrolyte disturbances. LIFE-THREATENING EMERGENCY. | Monitor: Core temperature: Continuous (central monitoring) | ECG: Continuous | HGT:  | ⚠️ HEAT STROKE IS A LIFE-THREATENING EMERGENCY | Avoid succinylcholine (scoline) - risk of hyperkalaemia | Avoid antipyretics - NSAIDs and aspirin not effective | → Heat exhaustion: supportive care. Heat stroke: ICU admission."
+        "notes_updates": "Dx: Temperature (Heat Exhaustion): < 40\u00b0C | Temperature (Heat Stroke): > 40\u00b0C | Class: Minor Heat Illness: Muscle cramps, minor peripheral oedema, syncope, heat rash | Heat Exhaustion: Temp < 40\u00b0C, sweating intact, intact neurological function, weakness, fatigue, headache, nausea, vomiting, syncope | Heat Stroke: Temp > 40\u00b0C, \u00b1 sweating, agitation, confusion, seizures, coma, shock, AKI, coagulopathy, electrolyte disturbances. LIFE-THREATENING EMERGENCY. | Monitor: Core temperature: Continuous (central monitoring) | ECG: Continuous | HGT:  | \u26a0\ufe0f HEAT STROKE IS A LIFE-THREATENING EMERGENCY | Avoid succinylcholine (scoline) - risk of hyperkalaemia | Avoid antipyretics - NSAIDs and aspirin not effective | \u2192 Heat exhaustion: supportive care. Heat stroke: ICU admission."
       },
       {
         "parent_protocol": "Hyperthermia",
@@ -4989,19 +4989,19 @@
       },
       {
         "item": "Hypothermia",
-        "notes_updates": "Dx: Core temperature (non-trauma): ≤ 35°C | Core temperature (trauma): ≤ 36°C | Class: Stage I (Swiss): Conscious, shivering; Temperature 32-35°C | Stage II (Swiss): Impaired consciousness, not shivering; Temperature 28-32°C | Stage III (Swiss): Unconscious, not shivering, vital signs present; Temperature 24-28°C | Monitor: Core temperature: Continuous | ECG: Continuous | Cardiac activity (ultrasound): If no pulse felt | ⚠️ TREAT HYPOTHERMIA AGGRESSIVELY - ALL OTHER INTERVENTIONS ARE LIKELY TO FAIL | Careful movement of patient to avoid arrhythmias | Ensure intubated before gastric lavage | → Stage I: Warm environment. Stage II-III: Admit to high care/ICU. Stage IV: Aggressive resuscitation with ECMO if available."
+        "notes_updates": "Dx: Core temperature (non-trauma): \u2264 35\u00b0C | Core temperature (trauma): \u2264 36\u00b0C | Class: Stage I (Swiss): Conscious, shivering; Temperature 32-35\u00b0C | Stage II (Swiss): Impaired consciousness, not shivering; Temperature 28-32\u00b0C | Stage III (Swiss): Unconscious, not shivering, vital signs present; Temperature 24-28\u00b0C | Monitor: Core temperature: Continuous | ECG: Continuous | Cardiac activity (ultrasound): If no pulse felt | \u26a0\ufe0f TREAT HYPOTHERMIA AGGRESSIVELY - ALL OTHER INTERVENTIONS ARE LIKELY TO FAIL | Careful movement of patient to avoid arrhythmias | Ensure intubated before gastric lavage | \u2192 Stage I: Warm environment. Stage II-III: Admit to high care/ICU. Stage IV: Aggressive resuscitation with ECMO if available."
       },
       {
         "item": "Thyroid Emergencies",
-        "notes_updates": "⚠️ Thyroid storm: A clinical diagnosis - do not wait for blood results | Consult Endocrine EARLY to co-manage | Lugol's iodine must be given 60 minutes AFTER PTU/methimazole | → Thyroid storm: ICU admission. Myxoedema coma: ICU admission."
+        "notes_updates": "\u26a0\ufe0f Thyroid storm: A clinical diagnosis - do not wait for blood results | Consult Endocrine EARLY to co-manage | Lugol's iodine must be given 60 minutes AFTER PTU/methimazole | \u2192 Thyroid storm: ICU admission. Myxoedema coma: ICU admission."
       },
       {
         "item": "Indications for Dialysis",
-        "notes_updates": "⚠️ AEIOU mnemonic for dialysis indications | → Urgent renal consult for dialysis."
+        "notes_updates": "\u26a0\ufe0f AEIOU mnemonic for dialysis indications | \u2192 Urgent renal consult for dialysis."
       },
       {
         "item": "Vaginal Bleeding",
-        "notes_updates": "Class: Pregnancy Related: Ectopic pregnancy, miscarriage (threatened/incomplete/complete/missed), antepartum haemorrhage (>24 weeks), secondary postpartum haemorrhage | Non-Pregnancy Related: Gynaecological (fibroids, polyps, malignancy, infection, trauma, endometriosis, DUB) or General (clotting disorders, hypothyroidism, hepatic/renal disease) | ⚠️ Rh negative patients: give Anti-D within 72 hours | NO digital PV exam if placenta praevia suspected | Ectopic pregnancy: stable patients may rapidly become unstable | → {'unstable': 'Resus, urgent gynae/obstetric referral, emergency blood', 'stable_pregnant': 'Close monitoring in resus, gynae/GOPD referral', 'stable_non_pregnant': 'GOPD referral if gynae pathology, MOPD if general cause, ferrous sulphate for anaemia, tranexamic acid PO'}"
+        "notes_updates": "Class: Pregnancy Related: Ectopic pregnancy, miscarriage (threatened/incomplete/complete/missed), antepartum haemorrhage (>24 weeks), secondary postpartum haemorrhage | Non-Pregnancy Related: Gynaecological (fibroids, polyps, malignancy, infection, trauma, endometriosis, DUB) or General (clotting disorders, hypothyroidism, hepatic/renal disease) | \u26a0\ufe0f Rh negative patients: give Anti-D within 72 hours | NO digital PV exam if placenta praevia suspected | Ectopic pregnancy: stable patients may rapidly become unstable | \u2192 {'unstable': 'Resus, urgent gynae/obstetric referral, emergency blood', 'stable_pregnant': 'Close monitoring in resus, gynae/GOPD referral', 'stable_non_pregnant': 'GOPD referral if gynae pathology, MOPD if general cause, ferrous sulphate for anaemia, tranexamic acid PO'}"
       },
       {
         "parent_protocol": "Vaginal Bleeding",
@@ -5037,7 +5037,7 @@
   "15_ed_procedures": {
     "protocols": [
       {
-        "item": "━━ Airway Management Checklist & RSI ━━",
+        "item": "\u2501\u2501 Airway Management Checklist & RSI \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -5487,7 +5487,7 @@
         "parent_protocol": "Surgical Airway Cricothyrotomy"
       },
       {
-        "item": "━━ Adult Basic Life Support (BLS) Algorithm ━━",
+        "item": "\u2501\u2501 Adult Basic Life Support (BLS) Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -5650,7 +5650,7 @@
         "parent_protocol": "Adult Basic Life Support (BLS) Algorithm"
       },
       {
-        "item": "━━ Adult Cardiac Arrest Algorithm (ACLS) ━━",
+        "item": "\u2501\u2501 Adult Cardiac Arrest Algorithm (ACLS) \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -5902,7 +5902,7 @@
         "parent_protocol": "Adult Cardiac Arrest Algorithm (ACLS)"
       },
       {
-        "item": "━━ Adult Post-Cardiac Arrest Care Algorithm ━━",
+        "item": "\u2501\u2501 Adult Post-Cardiac Arrest Care Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6058,7 +6058,7 @@
         "parent_protocol": "Adult Post-Cardiac Arrest Care Algorithm"
       },
       {
-        "item": "━━ Adult Bradycardia with a Pulse Algorithm ━━",
+        "item": "\u2501\u2501 Adult Bradycardia with a Pulse Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6171,7 +6171,7 @@
         "parent_protocol": "Adult Bradycardia with a Pulse Algorithm"
       },
       {
-        "item": "━━ Adult Tachycardia With a Pulse Algorithm ━━",
+        "item": "\u2501\u2501 Adult Tachycardia With a Pulse Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6304,7 +6304,7 @@
         "parent_protocol": "Settings_0"
       },
       {
-        "item": "━━ Cardiac Arrest in Pregnancy Algorithm (In-Hospital ACLS) ━━",
+        "item": "\u2501\u2501 Cardiac Arrest in Pregnancy Algorithm (In-Hospital ACLS) \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6409,7 +6409,7 @@
         "parent_protocol": "Cardiac Arrest in Pregnancy Algorithm (In-Hospital ACLS)"
       },
       {
-        "item": "━━ Neonatal Resuscitation Algorithm ━━",
+        "item": "\u2501\u2501 Neonatal Resuscitation Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6559,7 +6559,7 @@
         "notes_updates": "IV | 1:10000 | Neonatal cardiac arrest (HR <60 despite PPV and compressions)"
       },
       {
-        "item": "━━ Paediatric Basic Life Support - Single Rescuer ━━",
+        "item": "\u2501\u2501 Paediatric Basic Life Support - Single Rescuer \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6713,7 +6713,7 @@
         "parent_protocol": "Settings_4"
       },
       {
-        "item": "━━ Paediatric Basic Life Support - 2 or More Rescuers ━━",
+        "item": "\u2501\u2501 Paediatric Basic Life Support - 2 or More Rescuers \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -6847,7 +6847,7 @@
         "parent_protocol": "Settings_3"
       },
       {
-        "item": "━━ Paediatric Cardiac Arrest Algorithm ━━",
+        "item": "\u2501\u2501 Paediatric Cardiac Arrest Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7059,7 +7059,7 @@
         "parent_protocol": "Paediatric Cardiac Arrest Algorithm"
       },
       {
-        "item": "━━ Paediatric Post-Cardiac Arrest Care Checklist ━━",
+        "item": "\u2501\u2501 Paediatric Post-Cardiac Arrest Care Checklist \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7181,7 +7181,7 @@
         "parent_protocol": "Paediatric Post-Cardiac Arrest Care Checklist"
       },
       {
-        "item": "━━ Paediatric Bradycardia With a Pulse Algorithm ━━",
+        "item": "\u2501\u2501 Paediatric Bradycardia With a Pulse Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7274,7 +7274,7 @@
         "parent_protocol": "Paediatric Bradycardia With a Pulse Algorithm"
       },
       {
-        "item": "━━ Paediatric Tachycardia With a Pulse Algorithm ━━",
+        "item": "\u2501\u2501 Paediatric Tachycardia With a Pulse Algorithm \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7394,7 +7394,7 @@
         "parent_protocol": "Settings_1"
       },
       {
-        "item": "━━ Critical Care Management Principles (FASTHUGS IN BED) ━━",
+        "item": "\u2501\u2501 Critical Care Management Principles (FASTHUGS IN BED) \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7617,7 +7617,7 @@
         "notes_updates": "IV | Stress ulcer prophylaxis"
       },
       {
-        "item": "━━ Ventilator Basics & Lung Protective Ventilation ━━",
+        "item": "\u2501\u2501 Ventilator Basics & Lung Protective Ventilation \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -7959,7 +7959,7 @@
         "parent_protocol": "Ventilator Basics & Lung Protective Ventilation"
       },
       {
-        "item": "━━ Non-Invasive Ventilation (NIV) - BiPAP/CPAP ━━",
+        "item": "\u2501\u2501 Non-Invasive Ventilation (NIV) - BiPAP/CPAP \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8182,7 +8182,7 @@
         "parent_protocol": "Non-Invasive Ventilation (NIV) - BiPAP/CPAP"
       },
       {
-        "item": "━━ Amiodarone Infusion ━━",
+        "item": "\u2501\u2501 Amiodarone Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8230,7 +8230,7 @@
         "parent_protocol": "Amiodarone Infusion"
       },
       {
-        "item": "━━ Ketamine Infusion ━━",
+        "item": "\u2501\u2501 Ketamine Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8278,7 +8278,7 @@
         "parent_protocol": "Ketamine Infusion"
       },
       {
-        "item": "━━ Morphine Infusion ━━",
+        "item": "\u2501\u2501 Morphine Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8326,7 +8326,7 @@
         "parent_protocol": "Morphine Infusion"
       },
       {
-        "item": "━━ Esmolol Infusion ━━",
+        "item": "\u2501\u2501 Esmolol Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8386,7 +8386,7 @@
         "parent_protocol": "Esmolol Infusion"
       },
       {
-        "item": "━━ Adrenaline (Epinephrine) Push-Dose and Infusion ━━",
+        "item": "\u2501\u2501 Adrenaline (Epinephrine) Push-Dose and Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8444,7 +8444,7 @@
         "parent_protocol": "Adrenaline (Epinephrine) Push-Dose and Infusion"
       },
       {
-        "item": "━━ Dobutamine Infusion ━━",
+        "item": "\u2501\u2501 Dobutamine Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8488,7 +8488,7 @@
         "parent_protocol": "Dobutamine Infusion"
       },
       {
-        "item": "━━ Phenylephrine Infusion ━━",
+        "item": "\u2501\u2501 Phenylephrine Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8560,7 +8560,7 @@
         "parent_protocol": "Phenylephrine Infusion"
       },
       {
-        "item": "━━ Labetalol Infusion ━━",
+        "item": "\u2501\u2501 Labetalol Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8604,7 +8604,7 @@
         "parent_protocol": "Labetalol Infusion"
       },
       {
-        "item": "━━ Isosorbide Dinitrate (Isoket) Infusion ━━",
+        "item": "\u2501\u2501 Isosorbide Dinitrate (Isoket) Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8648,7 +8648,7 @@
         "parent_protocol": "Isosorbide Dinitrate (Isoket) Infusion"
       },
       {
-        "item": "━━ Nitroglycerin (Nitrocine) Infusion ━━",
+        "item": "\u2501\u2501 Nitroglycerin (Nitrocine) Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8716,7 +8716,7 @@
         "parent_protocol": "Nitroglycerin (Nitrocine) Infusion"
       },
       {
-        "item": "━━ Morphine + Midazolam Infusion (Single Bag) ━━",
+        "item": "\u2501\u2501 Morphine + Midazolam Infusion (Single Bag) \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8760,7 +8760,7 @@
         "parent_protocol": "Morphine + Midazolam Infusion (Single Bag)"
       },
       {
-        "item": "━━ Midazolam (Dormicum) Infusion ━━",
+        "item": "\u2501\u2501 Midazolam (Dormicum) Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8804,7 +8804,7 @@
         "parent_protocol": "Midazolam (Dormicum) Infusion"
       },
       {
-        "item": "━━ Propofol Infusion ━━",
+        "item": "\u2501\u2501 Propofol Infusion \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -8856,7 +8856,7 @@
         "parent_protocol": "Propofol Infusion"
       },
       {
-        "item": "━━ Procedural Sedation & Analgesia (PSA) Checklist ━━",
+        "item": "\u2501\u2501 Procedural Sedation & Analgesia (PSA) Checklist \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9138,7 +9138,7 @@
         "parent_protocol": "Procedural Sedation & Analgesia (PSA) Checklist"
       },
       {
-        "item": "━━ Pain Management in the ED ━━",
+        "item": "\u2501\u2501 Pain Management in the ED \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9341,7 +9341,7 @@
         "parent_protocol": "Pain Management in the ED"
       },
       {
-        "item": "━━ Blood and Blood Products including Freeze-Dried Plasma ━━",
+        "item": "\u2501\u2501 Blood and Blood Products including Freeze-Dried Plasma \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9625,7 +9625,7 @@
         "parent_protocol": "Blood and Blood Products including Freeze-Dried Plasma"
       },
       {
-        "item": "━━ Oncological Emergencies ━━",
+        "item": "\u2501\u2501 Oncological Emergencies \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9663,7 +9663,7 @@
         "item": "Malignant Pericardial Effusion"
       },
       {
-        "item": "━━ Ophthalmology Emergencies ━━",
+        "item": "\u2501\u2501 Ophthalmology Emergencies \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9697,7 +9697,7 @@
         "item": "Blunt Eye Injury"
       },
       {
-        "item": "━━ Vascular Emergencies ━━",
+        "item": "\u2501\u2501 Vascular Emergencies \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9723,7 +9723,7 @@
         "item": "Critical and Acute Limb Ischaemia"
       },
       {
-        "item": "━━ ICU Referral, Medicolegal Documentation & Triage SOP ━━",
+        "item": "\u2501\u2501 ICU Referral, Medicolegal Documentation & Triage SOP \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9749,7 +9749,7 @@
         "item": "Triage SOP"
       },
       {
-        "item": "━━ Post Exposure Prophylaxis (PEP) - Occupational and Non-Occupational ━━",
+        "item": "\u2501\u2501 Post Exposure Prophylaxis (PEP) - Occupational and Non-Occupational \u2501\u2501",
         "notes_updates": "ED Protocol 2026"
       },
       {
@@ -9902,5 +9902,1220 @@
         "parent_protocol": "Post Exposure Prophylaxis (PEP) - Occupational and Non-Occupational"
       }
     ]
+  },
+  "16_score_calculators": {
+    "gcs": {
+      "name": "Glasgow Coma Scale",
+      "category": "neurological",
+      "components": [
+        {
+          "name": "Eye Opening",
+          "key": "eye",
+          "options": [
+            {
+              "value": 4,
+              "label": "Spontaneous",
+              "desc": "Eyes open spontaneously"
+            },
+            {
+              "value": 3,
+              "label": "To speech",
+              "desc": "Eyes open to verbal command"
+            },
+            {
+              "value": 2,
+              "label": "To pain",
+              "desc": "Eyes open to painful stimulus"
+            },
+            {
+              "value": 1,
+              "label": "None",
+              "desc": "No eye opening"
+            }
+          ]
+        },
+        {
+          "name": "Verbal Response",
+          "key": "verbal",
+          "options": [
+            {
+              "value": 5,
+              "label": "Oriented",
+              "desc": "Oriented to time, place, person"
+            },
+            {
+              "value": 4,
+              "label": "Confused",
+              "desc": "Confused, disorientated"
+            },
+            {
+              "value": 3,
+              "label": "Inappropriate",
+              "desc": "Inappropriate words"
+            },
+            {
+              "value": 2,
+              "label": "Incomprehensible",
+              "desc": "Incomprehensible sounds"
+            },
+            {
+              "value": 1,
+              "label": "None",
+              "desc": "No verbal response"
+            }
+          ]
+        },
+        {
+          "name": "Motor Response",
+          "key": "motor",
+          "options": [
+            {
+              "value": 6,
+              "label": "Obeys commands",
+              "desc": "Follows verbal commands"
+            },
+            {
+              "value": 5,
+              "label": "Localises pain",
+              "desc": "Localises to painful stimulus"
+            },
+            {
+              "value": 4,
+              "label": "Withdraws",
+              "desc": "Withdraws from painful stimulus"
+            },
+            {
+              "value": 3,
+              "label": "Flexion abnormal",
+              "desc": "Abnormal flexion (decorticate)"
+            },
+            {
+              "value": 2,
+              "label": "Extension",
+              "desc": "Extension (decerebrate)"
+            },
+            {
+              "value": 1,
+              "label": "None",
+              "desc": "No motor response"
+            }
+          ]
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 13,
+          "max": 15,
+          "label": "Mild",
+          "action": "Monitor closely"
+        },
+        {
+          "min": 9,
+          "max": 12,
+          "label": "Moderate",
+          "action": "Consider CT head, neuro referral"
+        },
+        {
+          "min": 3,
+          "max": 8,
+          "label": "Severe",
+          "action": "Intubate, CT head immediately, neurosurgical referral"
+        }
+      ]
+    },
+    "nexus": {
+      "name": "NEXUS Criteria",
+      "category": "trauma",
+      "low_risk_when_all_no": true,
+      "components": [
+        {
+          "name": "Midline cervical tenderness",
+          "key": "midline_tenderness",
+          "points": 1,
+          "yes_means": "High risk \u2014 imaging required"
+        },
+        {
+          "name": "Focal neurological deficit",
+          "key": "focal_deficit",
+          "points": 1,
+          "yes_means": "High risk \u2014 imaging required"
+        },
+        {
+          "name": "Altered level of consciousness",
+          "key": "altered_loc",
+          "points": 1,
+          "yes_means": "High risk \u2014 imaging required"
+        },
+        {
+          "name": "Intoxication",
+          "key": "intoxication",
+          "points": 1,
+          "yes_means": "High risk \u2014 imaging required"
+        },
+        {
+          "name": "Distracting painful injury",
+          "key": "distracting_injury",
+          "points": 1,
+          "yes_means": "High risk \u2014 imaging required"
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "all_no",
+          "label": "Low risk",
+          "action": "C-spine imaging NOT indicated \u2014 clinical clearance possible"
+        },
+        {
+          "condition": "any_yes",
+          "label": "High risk",
+          "action": "C-spine imaging indicated"
+        }
+      ]
+    },
+    "canadian_cspine": {
+      "name": "Canadian C-Spine Rule",
+      "category": "trauma",
+      "components": [
+        {
+          "name": "Age \u2265 65 years",
+          "key": "age_65",
+          "dangerous": true
+        },
+        {
+          "name": "Dangerous mechanism (fall >1m, axial load, high-speed MVC, rollover, bicycle/ejected)",
+          "key": "dangerous_mechanism",
+          "dangerous": true
+        },
+        {
+          "name": "Paresthesias in extremities",
+          "key": "paresthesias",
+          "dangerous": true
+        },
+        {
+          "name": "Sitting position in ED?",
+          "key": "sitting",
+          "simple": true
+        },
+        {
+          "name": "Ambulatory at any time?",
+          "key": "ambulatory",
+          "simple": true
+        },
+        {
+          "name": "Delayed onset of neck pain (>12h after injury)?",
+          "key": "delayed_pain",
+          "simple": true
+        },
+        {
+          "name": "Midline cervical tenderness?",
+          "key": "midline_tender",
+          "simple": true
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "any_dangerous_yes",
+          "label": "Imaging required",
+          "action": "C-spine CT/X-ray indicated \u2014 high-risk factors present"
+        },
+        {
+          "condition": "no_dangerous_and_any_simple_yes",
+          "label": "Low risk",
+          "action": "Range of motion testing \u2014 if full ROM, no imaging needed"
+        },
+        {
+          "condition": "all_no",
+          "label": "No imaging",
+          "action": "C-spine imaging NOT indicated \u2014 clinically clear"
+        }
+      ]
+    },
+    "alvarado": {
+      "name": "Alvarado Score",
+      "category": "surgical",
+      "components": [
+        {
+          "name": "Migratory RIF pain",
+          "points": 1
+        },
+        {
+          "name": "Anorexia",
+          "points": 1
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "points": 1
+        },
+        {
+          "name": "Tenderness in RIF",
+          "points": 2
+        },
+        {
+          "name": "Rebound tenderness",
+          "points": 1
+        },
+        {
+          "name": "Elevated temperature (>37.3\u00b0C)",
+          "points": 1
+        },
+        {
+          "name": "Leukocytosis (>10 x10\u2079/L)",
+          "points": 2
+        },
+        {
+          "name": "Left shift (>75% neutrophils)",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 1,
+          "max": 4,
+          "label": "Unlikely appendicitis",
+          "action": "Observe \u2014 CT abdomen if clinical concern"
+        },
+        {
+          "min": 5,
+          "max": 6,
+          "label": "Possible appendicitis",
+          "action": "CT abdomen with contrast \u2014 surgical consult"
+        },
+        {
+          "min": 7,
+          "max": 10,
+          "label": "Probable appendicitis",
+          "action": "Surgical consult \u2014 prepare for theatre"
+        }
+      ]
+    },
+    "pas": {
+      "name": "Pediatric Appendicitis Score (PAS)",
+      "category": "surgical",
+      "components": [
+        {
+          "name": "Anorexia",
+          "points": 1
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "points": 1
+        },
+        {
+          "name": "Cough/percussion/hop tenderness",
+          "points": 2
+        },
+        {
+          "name": "Right iliac fossa tenderness",
+          "points": 4
+        },
+        {
+          "name": "Fever (>38\u00b0C)",
+          "points": 3
+        },
+        {
+          "name": "WBC >10,000",
+          "points": 2
+        },
+        {
+          "name": "Neutrophilia (>70%)",
+          "points": 1
+        },
+        {
+          "name": "Male sex",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 3,
+          "label": "Low risk",
+          "action": "Observation \u2014 discharge with precautions"
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "label": "Intermediate risk",
+          "action": "Imaging (USS/CT) \u2014 surgical review"
+        },
+        {
+          "min": 7,
+          "max": 16,
+          "label": "High risk",
+          "action": "Surgical consult \u2014 likely appendicitis"
+        }
+      ]
+    },
+    "wells_dvt": {
+      "name": "Wells Score \u2014 DVT",
+      "category": "vascular",
+      "components": [
+        {
+          "name": "Active cancer (treatment within 6 months or palliative)",
+          "points": 1
+        },
+        {
+          "name": "Paralysis, paresis, or recent plaster immobilisation of lower extremity",
+          "points": 1
+        },
+        {
+          "name": "Recently bedridden >3 days or major surgery within 4 weeks",
+          "points": 1
+        },
+        {
+          "name": "Localised tenderness along deep venous system",
+          "points": 1
+        },
+        {
+          "name": "Entire leg swollen",
+          "points": 1
+        },
+        {
+          "name": "Calf swelling >3cm compared to asymptomatic leg",
+          "points": 1
+        },
+        {
+          "name": "Pitting oedema confined to symptomatic leg",
+          "points": 1
+        },
+        {
+          "name": "Collateral superficial veins (non-varicose)",
+          "points": 1
+        },
+        {
+          "name": "Alternative diagnosis as likely or more likely than DVT",
+          "points": -2
+        }
+      ],
+      "interpretation": [
+        {
+          "min": -2,
+          "max": 0,
+          "label": "DVT unlikely",
+          "action": "D-dimer \u2014 if negative, exclude DVT"
+        },
+        {
+          "min": 1,
+          "max": 7,
+          "label": "DVT likely",
+          "action": "Compression USS immediately"
+        }
+      ]
+    },
+    "wells_pe": {
+      "name": "Wells Score \u2014 PE",
+      "category": "respiratory",
+      "components": [
+        {
+          "name": "Clinical signs of DVT (minimum 3 points leg swelling and pain with palpation of deep veins)",
+          "points": 3
+        },
+        {
+          "name": "Alternative diagnosis less likely than PE",
+          "points": 3
+        },
+        {
+          "name": "Heart rate >100 bpm",
+          "points": 1.5
+        },
+        {
+          "name": "Immobilisation \u22653 days or surgery in previous 4 weeks",
+          "points": 1.5
+        },
+        {
+          "name": "Previous DVT/PE",
+          "points": 1.5
+        },
+        {
+          "name": "Haemoptysis",
+          "points": 1
+        },
+        {
+          "name": "Active cancer",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 4,
+          "label": "PE unlikely",
+          "action": "PERC rule \u2192 D-dimer if PERC not met"
+        },
+        {
+          "min": 4.5,
+          "max": 12.5,
+          "label": "PE likely",
+          "action": "CTPA immediately"
+        }
+      ]
+    },
+    "perc": {
+      "name": "PERC Rule (Pulmonary Embolism Rule-out Criteria)",
+      "category": "respiratory",
+      "all_no_means_pe_excluded": true,
+      "components": [
+        {
+          "name": "Age \u226550 years",
+          "points": 1
+        },
+        {
+          "name": "Heart rate \u2265100 bpm",
+          "points": 1
+        },
+        {
+          "name": "O\u2082 saturation <95% on room air",
+          "points": 1
+        },
+        {
+          "name": "Unilateral leg swelling",
+          "points": 1
+        },
+        {
+          "name": "Haemoptysis",
+          "points": 1
+        },
+        {
+          "name": "Recent surgery or trauma (within 4 weeks)",
+          "points": 1
+        },
+        {
+          "name": "Prior DVT or PE",
+          "points": 1
+        },
+        {
+          "name": "Hormone use (OCP/HRT)",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "all_no",
+          "label": "PE excluded",
+          "action": "No further testing needed \u2014 PE ruled out"
+        },
+        {
+          "condition": "any_yes",
+          "label": "PERC not met",
+          "action": "Proceed to Wells score or D-dimer"
+        }
+      ]
+    },
+    "curb65": {
+      "name": "CURB-65 Score",
+      "category": "respiratory",
+      "components": [
+        {
+          "name": "Confusion (new onset)",
+          "points": 1
+        },
+        {
+          "name": "Urea >7 mmol/L (or BUN >20 mg/dL)",
+          "points": 1
+        },
+        {
+          "name": "Respiratory rate \u226530/min",
+          "points": 1
+        },
+        {
+          "name": "Blood pressure: SBP <90 or DBP \u226460 mmHg",
+          "points": 1
+        },
+        {
+          "name": "Age \u226565 years",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 0,
+          "label": "Low risk",
+          "action": "Consider outpatient treatment \u2014 mortality <1%"
+        },
+        {
+          "min": 1,
+          "max": 2,
+          "label": "Intermediate risk",
+          "action": "Consider short hospitalisation or outpatient \u2014 mortality 9%"
+        },
+        {
+          "min": 3,
+          "max": 5,
+          "label": "High risk",
+          "action": "Admit to hospital \u2014 severe pneumonia \u2014 mortality 15-40%"
+        }
+      ]
+    },
+    "burch_wartofsky": {
+      "name": "Burch-Wartofsky Score (Thyroid Storm)",
+      "category": "endocrine",
+      "components": [
+        {
+          "name": "Temperature",
+          "key": "temp",
+          "options": [
+            {
+              "value": 0,
+              "label": "<37.2\u00b0C",
+              "desc": "Normal"
+            },
+            {
+              "value": 5,
+              "label": "37.2-37.7\u00b0C",
+              "desc": "Low-grade"
+            },
+            {
+              "value": 10,
+              "label": "37.8-38.3\u00b0C",
+              "desc": "Mild fever"
+            },
+            {
+              "value": 15,
+              "label": "38.4-38.8\u00b0C",
+              "desc": "Moderate fever"
+            },
+            {
+              "value": 20,
+              "label": "38.9-39.4\u00b0C",
+              "desc": "High fever"
+            },
+            {
+              "value": 25,
+              "label": "39.5-39.9\u00b0C",
+              "desc": "Very high fever"
+            },
+            {
+              "value": 30,
+              "label": "\u226540\u00b0C",
+              "desc": "Hyperpyrexia"
+            }
+          ]
+        },
+        {
+          "name": "Cardiovascular",
+          "key": "cvs",
+          "options": [
+            {
+              "value": 0,
+              "label": "Normal",
+              "desc": "HR <90 bpm, no CHF"
+            },
+            {
+              "value": 5,
+              "label": "Tachycardia 90-109",
+              "desc": "Mild tachycardia"
+            },
+            {
+              "value": 10,
+              "label": "Tachycardia 110-119",
+              "desc": "Moderate tachycardia"
+            },
+            {
+              "value": 15,
+              "label": "Tachycardia 120-139",
+              "desc": "Marked tachycardia"
+            },
+            {
+              "value": 20,
+              "label": "Tachycardia \u2265140",
+              "desc": "Severe tachycardia"
+            },
+            {
+              "value": 5,
+              "label": "AF + rate 90-109",
+              "desc": "Atrial fibrillation"
+            },
+            {
+              "value": 10,
+              "label": "AF + rate \u2265110",
+              "desc": "Rapid AF"
+            },
+            {
+              "value": 15,
+              "label": "Pulmonary oedema",
+              "desc": "CHF"
+            },
+            {
+              "value": 25,
+              "label": "Cardiogenic shock",
+              "desc": "Shock"
+            }
+          ]
+        },
+        {
+          "name": "CNS",
+          "key": "cns",
+          "options": [
+            {
+              "value": 0,
+              "label": "Normal",
+              "desc": "No impairment"
+            },
+            {
+              "value": 10,
+              "label": "Mild agitation",
+              "desc": "Agitated, anxious"
+            },
+            {
+              "value": 20,
+              "label": "Delirium/psychosis",
+              "desc": "Confusion, psychosis"
+            },
+            {
+              "value": 30,
+              "label": "Seizure/coma",
+              "desc": "Extreme lethargy, seizure, coma"
+            }
+          ]
+        },
+        {
+          "name": "GI/Hepatic",
+          "key": "gi",
+          "options": [
+            {
+              "value": 0,
+              "label": "Normal",
+              "desc": "No GI symptoms"
+            },
+            {
+              "value": 10,
+              "label": "Diarrhoea/nausea/pain",
+              "desc": "Mild GI symptoms"
+            },
+            {
+              "value": 20,
+              "label": "Jaundice",
+              "desc": "Unexplained jaundice"
+            },
+            {
+              "value": 30,
+              "label": "Severe GI symptoms",
+              "desc": "Severe abdominal pain, hepatic failure"
+            }
+          ]
+        },
+        {
+          "name": "Precipitant history",
+          "key": "precipitant",
+          "options": [
+            {
+              "value": 0,
+              "label": "None identified",
+              "desc": "No precipitant"
+            },
+            {
+              "value": 10,
+              "label": "Present",
+              "desc": "Infection, surgery, iodine load, OCP, etc."
+            }
+          ]
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 24,
+          "label": "Unlikely thyroid storm",
+          "action": "Supportive care \u2014 treat underlying cause"
+        },
+        {
+          "min": 25,
+          "max": 44,
+          "label": "Imminent thyroid storm",
+          "action": "Start antithyroid treatment \u2014 admit ICU"
+        },
+        {
+          "min": 45,
+          "max": 140,
+          "label": "Thyroid storm",
+          "action": "ICU admission \u2014 aggressive treatment immediately"
+        }
+      ]
+    },
+    "parkland": {
+      "name": "Parkland Formula (Burns Resuscitation)",
+      "category": "trauma",
+      "calculator_type": "formula",
+      "formula": "(4 mL \u00d7 Weight [kg] \u00d7 TBSA%)",
+      "half_in_first_8h": true,
+      "inputs": [
+        {
+          "name": "Weight",
+          "key": "weight",
+          "unit": "kg",
+          "type": "number"
+        },
+        {
+          "name": "TBSA",
+          "key": "tbsa",
+          "unit": "%",
+          "type": "number"
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "result",
+          "label": "Total 24h fluid",
+          "action": "\u00bd in first 8h from time of burn, \u00bd in next 16h"
+        }
+      ]
+    },
+    "qsofa": {
+      "name": "qSOFA (Quick SOFA)",
+      "category": "sepsis",
+      "components": [
+        {
+          "name": "Respiratory rate \u226522/min",
+          "points": 1
+        },
+        {
+          "name": "Altered mentation (GCS <15)",
+          "points": 1
+        },
+        {
+          "name": "Systolic BP \u2264100 mmHg",
+          "points": 1
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 1,
+          "label": "Low risk",
+          "action": "Continue standard care"
+        },
+        {
+          "min": 2,
+          "max": 3,
+          "label": "High risk of poor outcome",
+          "action": "Check full SOFA, start sepsis bundle, consider ICU"
+        }
+      ]
+    },
+    "tews": {
+      "name": "TEWS (Triage Early Warning Score)",
+      "category": "triage",
+      "components": [
+        {
+          "name": "Heart Rate",
+          "key": "hr",
+          "options": [
+            {
+              "value": 0,
+              "label": "51-100",
+              "range": "51-100 bpm"
+            },
+            {
+              "value": 1,
+              "label": "101-110",
+              "range": "101-110"
+            },
+            {
+              "value": 2,
+              "label": "\u226450 or 111-129",
+              "range": "\u226450 or 111-129"
+            },
+            {
+              "value": 3,
+              "label": "\u2265130",
+              "range": "\u2265130"
+            }
+          ]
+        },
+        {
+          "name": "Systolic BP",
+          "key": "sbp",
+          "options": [
+            {
+              "value": 0,
+              "label": "101-199",
+              "range": "101-199 mmHg"
+            },
+            {
+              "value": 1,
+              "label": "81-100",
+              "range": "81-100"
+            },
+            {
+              "value": 2,
+              "label": "71-80 or \u2265200",
+              "range": "71-80 or \u2265200"
+            },
+            {
+              "value": 3,
+              "label": "\u226470",
+              "range": "\u226470"
+            }
+          ]
+        },
+        {
+          "name": "Respiratory Rate",
+          "key": "rr",
+          "options": [
+            {
+              "value": 0,
+              "label": "9-14",
+              "range": "9-14 /min"
+            },
+            {
+              "value": 1,
+              "label": "15-20",
+              "range": "15-20"
+            },
+            {
+              "value": 2,
+              "label": "21-29 or \u22648",
+              "range": "21-29 or \u22648"
+            },
+            {
+              "value": 3,
+              "label": "\u226530",
+              "range": "\u226530"
+            }
+          ]
+        },
+        {
+          "name": "Temperature",
+          "key": "temp",
+          "options": [
+            {
+              "value": 0,
+              "label": "36-37.4\u00b0C",
+              "range": "36-37.4"
+            },
+            {
+              "value": 1,
+              "label": "35-35.9 or 37.5-38.4",
+              "range": "35-35.9 or 37.5-38.4"
+            },
+            {
+              "value": 2,
+              "label": "\u226434.9 or 38.5-39.4",
+              "range": "\u226434.9 or 38.5-39.4"
+            },
+            {
+              "value": 3,
+              "label": "\u226539.5",
+              "range": "\u226539.5"
+            }
+          ]
+        },
+        {
+          "name": "AVPU",
+          "key": "avpu",
+          "options": [
+            {
+              "value": 0,
+              "label": "Alert",
+              "range": "A \u2014 Alert"
+            },
+            {
+              "value": 1,
+              "label": "Verbal",
+              "range": "V \u2014 Responds to verbal"
+            },
+            {
+              "value": 2,
+              "label": "Pain",
+              "range": "P \u2014 Responds to pain"
+            },
+            {
+              "value": 3,
+              "label": "Unresponsive",
+              "range": "U \u2014 Unresponsive"
+            }
+          ]
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 0,
+          "max": 2,
+          "label": "TEWS Green",
+          "action": "Standard care \u2014 outpatient or ward"
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "label": "TEWS Yellow",
+          "action": "Medical officer review within 30 min"
+        },
+        {
+          "min": 5,
+          "max": 6,
+          "label": "TEWS Orange",
+          "action": "Senior review within 15 min \u2014 consider HDU"
+        },
+        {
+          "min": 7,
+          "max": 15,
+          "label": "TEWS Red",
+          "action": "Resuscitation team \u2014 ICU immediately"
+        }
+      ]
+    },
+    "tetanus_wound": {
+      "name": "Tetanus Wound Classification",
+      "category": "trauma",
+      "components": [
+        {
+          "name": "Clean minor wound",
+          "clean": true
+        },
+        {
+          "name": "All other wounds (dirty, major, crush, burn, frostbite, devitalised tissue)",
+          "clean": false
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "clean_and_3plus_doses",
+          "label": "No TIG needed",
+          "action": "Give Td booster if >10y since last dose"
+        },
+        {
+          "condition": "clean_and_fewer_doses",
+          "label": "Give Td",
+          "action": "Give Td booster + complete schedule"
+        },
+        {
+          "condition": "dirty_and_3plus_doses",
+          "label": "TIG not needed",
+          "action": "Give Td booster if >5y since last dose"
+        },
+        {
+          "condition": "dirty_and_fewer_doses",
+          "label": "Give Td + TIG",
+          "action": "Give Td + 250 IU TIG at separate site"
+        }
+      ]
+    },
+    "burn_referral": {
+      "name": "Burns Referral Criteria",
+      "category": "trauma",
+      "components": [
+        {
+          "name": "Partial-thickness >10% TBSA (adults) or >5% (children/elderly)",
+          "refer": true
+        },
+        {
+          "name": "Full-thickness burns >5% TBSA",
+          "refer": true
+        },
+        {
+          "name": "Burns involving face, hands, feet, genitalia, perineum, or major joints",
+          "refer": true
+        },
+        {
+          "name": "Electrical, chemical, or inhalation burns",
+          "refer": true
+        },
+        {
+          "name": "Circumferential burns of limbs or chest",
+          "refer": true
+        },
+        {
+          "name": "Burns in patients with significant comorbidities",
+          "refer": true
+        },
+        {
+          "name": "Any burn in a child <1 year",
+          "refer": true
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "any_yes",
+          "label": "Refer to burns unit",
+          "action": "Contact referral centre immediately"
+        },
+        {
+          "condition": "all_no",
+          "label": "Can manage locally",
+          "action": "Standard burn care \u2014 outpatient follow-up"
+        }
+      ]
+    },
+    "anion_gap": {
+      "name": "Anion Gap",
+      "category": "metabolic",
+      "calculator_type": "formula",
+      "formula": "Na - (Cl + HCO3)",
+      "inputs": [
+        {
+          "name": "Sodium",
+          "key": "na",
+          "unit": "mmol/L",
+          "type": "number"
+        },
+        {
+          "name": "Chloride",
+          "key": "cl",
+          "unit": "mmol/L",
+          "type": "number"
+        },
+        {
+          "name": "Bicarbonate (HCO3)",
+          "key": "hco3",
+          "unit": "mmol/L",
+          "type": "number"
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 8,
+          "max": 12,
+          "label": "Normal",
+          "action": "Normal anion gap"
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "label": "Elevated",
+          "action": "Consider causes of high anion gap metabolic acidosis"
+        },
+        {
+          "min": 17,
+          "max": 50,
+          "label": "High",
+          "action": "MUDPILES \u2014 DKA, lactic acidosis, renal failure, etc."
+        }
+      ]
+    },
+    "corrected_na": {
+      "name": "Corrected Sodium (for Hyperglycaemia)",
+      "category": "metabolic",
+      "calculator_type": "formula",
+      "formula": "Na_measured + [1.6 \u00d7 (Glucose - 5.5) / 5.5]",
+      "inputs": [
+        {
+          "name": "Measured Sodium",
+          "key": "na",
+          "unit": "mmol/L",
+          "type": "number"
+        },
+        {
+          "name": "Glucose",
+          "key": "glucose",
+          "unit": "mmol/L",
+          "type": "number"
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "result",
+          "label": "Corrected Na",
+          "action": "Use corrected Na for treatment decisions"
+        }
+      ]
+    },
+    "free_water_deficit": {
+      "name": "Free Water Deficit",
+      "category": "metabolic",
+      "calculator_type": "formula",
+      "formula": "0.6 \u00d7 Weight(kg) \u00d7 ([Na]/140 - 1)",
+      "inputs": [
+        {
+          "name": "Weight",
+          "key": "weight",
+          "unit": "kg",
+          "type": "number"
+        },
+        {
+          "name": "Sodium",
+          "key": "na",
+          "unit": "mmol/L",
+          "type": "number"
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "result",
+          "label": "Free water deficit",
+          "action": "Replace slowly over 48-72h \u2014 max correction 10 mmol/L/day"
+        }
+      ]
+    },
+    "sodium_deficit": {
+      "name": "Sodium Deficit",
+      "category": "metabolic",
+      "calculator_type": "formula",
+      "formula": "0.6 \u00d7 Weight(kg) \u00d7 (Desired Na - Actual Na)",
+      "inputs": [
+        {
+          "name": "Weight",
+          "key": "weight",
+          "unit": "kg",
+          "type": "number"
+        },
+        {
+          "name": "Actual Na",
+          "key": "na_actual",
+          "unit": "mmol/L",
+          "type": "number"
+        },
+        {
+          "name": "Desired Na",
+          "key": "na_desired",
+          "unit": "mmol/L",
+          "type": "number",
+          "default": 140
+        }
+      ],
+      "interpretation": [
+        {
+          "condition": "result",
+          "label": "Na deficit",
+          "action": "Correct max 8-10 mmol/L per 24h"
+        }
+      ]
+    },
+    "pf_ratio": {
+      "name": "P/F Ratio",
+      "category": "respiratory",
+      "calculator_type": "formula",
+      "formula": "PaO2 / FiO2",
+      "inputs": [
+        {
+          "name": "PaO2",
+          "key": "pao2",
+          "unit": "mmHg",
+          "type": "number"
+        },
+        {
+          "name": "FiO2",
+          "key": "fio2",
+          "unit": "decimal (0.21-1.0)",
+          "type": "number"
+        }
+      ],
+      "interpretation": [
+        {
+          "min": 300,
+          "max": 500,
+          "label": "Normal",
+          "action": "No significant hypoxaemia"
+        },
+        {
+          "min": 200,
+          "max": 299,
+          "label": "Mild ARDS",
+          "action": "Consider PEEP optimisation"
+        },
+        {
+          "min": 100,
+          "max": 199,
+          "label": "Moderate ARDS",
+          "action": "Lung protective ventilation, consider proning"
+        },
+        {
+          "min": 0,
+          "max": 99,
+          "label": "Severe ARDS",
+          "action": "ECMO consideration, proning, recruitment"
+        }
+      ]
+    }
   }
 }
