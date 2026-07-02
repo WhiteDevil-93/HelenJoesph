@@ -1,6 +1,6 @@
-# Titrate - ICU Dosing Guide
+# Titrate - ICU & ED Clinical Reference
 
-> Offline-capable Progressive Web App (PWA) for the Chris Hani Baragwanath Academic Hospital ICU Dosing Card -- 2024 protocols.
+> Offline-capable Progressive Web App (PWA) combining the Chris Hani Baragwanath Academic Hospital ICU Dosing Card with the Helen Joseph Hospital Emergency Department Clinical Guidelines 2026.
 
 Created by **Tashriq Hendricks** & **Kimi**.
 
@@ -8,169 +8,60 @@ Created by **Tashriq Hendricks** & **Kimi**.
 
 ## What's Inside
 
-Titrate is a clinical reference app designed for ICU environments. It provides:
+Titrate is a comprehensive clinical reference app for ICU and Emergency Department environments:
 
-- **7 clinical categories**: Resuscitation, Airway & Ventilation, Sedation & Neuro, Antimicrobials, Metabolic, Toxicology, and Formulae
-- **Real-time search** across all drugs, conditions, and dosing protocols
+### ICU Dosing (Original 10 Categories)
+- **Resuscitation**: Fluids, inotropes, vasopressors, resuscitation medications, cardioversion
+- **Airway & Ventilation**: Intubation, vent settings, lung protection, RSI sedation, status asthmaticus
+- **Sedation & Neuro**: Analgesia-first strategy, seizure management, neuroprotective agents
+- **Antimicrobials**: Broad-spectrum antibiotics, gram-positive coverage, antifungals, antivirals, HIV/TB protocols
+- **Metabolic & Nutrition**: Electrolyte management, hyperkalaemia protocols, nutrition, diuretics
+- **Toxicology**: Antidotes, reversal agents, NAC protocol, withdrawal management
+- **Formulae**: Inotrope calculations, anion gap, corrected sodium, respiratory indices
+- **Cardiovascular**: Antihypertensives, heart failure, thrombolytics, anticoagulation
+- **Blood Products**: Transfusion triggers, FFP, platelets, albumin
+- **Endocrine**: Steroids, insulin, thyroid, other agents
+
+### ED Protocols (New 5 Categories - 2026 HJH Guidelines)
+- **ED Medical Emergencies**: ACS/STEMI, stroke, asthma, COPD, sepsis, pneumonia, PE, DVT, malaria, AF
+- **ED Toxicology**: Organophosphates, paracetamol overdose, TCA, salicylates, warfarin reversal, toxidromes, toxic alcohols
+- **ED Trauma**: Head injury, burns (Brooke formula), C-spine (NEXUS/Canadian), trauma primary survey, compartment syndrome
+- **ED Metabolic**: DKA/HHS protocols, hyperkalaemia, hyponatraemia, hyperthermia, hypothermia, thyroid emergencies
+- **ED Procedures**: AHA resuscitation algorithms, infusion protocols, procedural sedation, NIV settings, FAST/RUSH
+
+### Features
+- **2,071 clinical entries** across 16 categories
+- **Real-time search** across all drugs, protocols, and scoring systems
 - **Interactive inotrope calculators** for Adrenaline, Noradrenaline, and Dobutamine
-- **Clinical badges** highlighting first-line drugs, cautions, and warnings
-- **Full offline support** -- works without internet after first load
-- **Installable on home screen** -- behaves like a native app
+- **Weight-based dose calculations** with patient weight input
+- **Clinical badges**: First-line drugs, cautions, warnings, scoring systems, formulas
+- **Favourites system**: Save frequently-used entries locally
+- **Full offline support**: Works without internet after first load
+- **Installable on home screen**: Behaves like a native app
 
 ---
 
-## Live Web App (Beta)
+## Live Web App
 
 **URL**: `https://whitedevil-93.github.io/HelenJoesph/`
 
 ### To install on your phone:
 1. Open the URL in your browser
-2. **Android (Chrome)**: Tap the menu (3 dots) -> "Add to Home Screen"
+2. **Android (Chrome)**: Tap menu (3 dots) -> "Add to Home Screen"
 3. **iOS (Safari)**: Tap Share -> "Add to Home Screen"
 4. The app installs and works completely offline
 
 ---
 
-## Native Android App
+## Data Sources
 
-### Option 1: GitHub Actions CI/CD (Easiest)
+All clinical data is derived from:
+- **Chris Hani Baragwanath Academic Hospital ICU Dosing Card** (2024 updates)
+- **Helen Joseph Tertiary Hospital Emergency Department Clinical Guidelines 2026**
+  - Editor: Dr Jana du Plessis
+  - Contributing authors: Dr P Saffy, Dr L Chadinha, Dr JP da Costa, Dr C Geldenhuys, Dr N Bruton
 
-Every push to `main` automatically builds the APK via GitHub Actions.
-
-1. Go to [Actions](https://github.com/WhiteDevil-93/HelenJoesph/actions) tab
-2. Click the latest workflow run
-3. Download the APK artifact
-
-To trigger a build manually:
-1. Go to Actions -> "Build Android APK"
-2. Click "Run workflow"
-
-To set up the CI workflow, create `.github/workflows/build-android.yml` in this repo with this content:
-
-```yaml
-name: Build Android APK
-
-on:
-  push:
-    branches: [ main ]
-    tags: [ 'v*' ]
-  workflow_dispatch:
-
-jobs:
-  build-android:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Capacitor
-        run: |
-          npm install -g @capacitor/cli
-          npm install @capacitor/core @capacitor/android
-
-      - name: Init Capacitor
-        run: npx cap init Titrate com.tashriqhendricks.titrate --web-dir . --no-interaction
-
-      - name: Add Android Platform
-        run: npx cap add android
-
-      - name: Sync Web Assets
-        run: npx cap sync android
-
-      - name: Build Debug APK
-        run: |
-          cd android
-          chmod +x gradlew
-          ./gradlew assembleDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: titrate-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-### Option 2: Build Locally
-
-**Prerequisites:**
-- Node.js 18+ and npm
-- Java JDK 17+
-- Android Studio (for SDK + emulator)
-
-**Steps:**
-
-```bash
-# Clone the repo
-git clone https://github.com/WhiteDevil-93/HelenJoesph.git
-cd Titrate
-
-# Install Capacitor
-npm install @capacitor/core @capacitor/android
-npm install -g @capacitor/cli
-
-# Initialize Capacitor
-npx cap init Titrate com.tashriqhendricks.titrate --web-dir .
-
-# Add Android platform
-npx cap add android
-
-# Sync web assets
-npx cap sync android
-
-# Build debug APK
-cd android
-./gradlew assembleDebug
-
-# APK will be at:
-# android/app/build/outputs/apk/debug/app-debug.apk
-```
-
----
-
-## Native iOS App
-
-iOS builds require macOS and Xcode.
-
-**Prerequisites:**
-- macOS with Xcode 15+
-- Node.js 18+ and npm
-
-**Steps:**
-
-```bash
-# Clone and setup
-git clone https://github.com/WhiteDevil-93/HelenJoesph.git
-cd Titrate
-
-# Install Capacitor
-npm install @capacitor/core @capacitor/ios
-npm install -g @capacitor/cli
-
-# Initialize and add iOS
-npx cap init Titrate com.tashriqhendricks.titrate --web-dir .
-npx cap add ios
-npx cap sync ios
-
-# Open in Xcode
-npx cap open ios
-
-# In Xcode: Product -> Archive -> Distribute App
-```
+**Disclaimer**: This app is for clinical reference only. Always verify doses before administration. Guidelines are not intended to replace clinical judgement.
 
 ---
 
@@ -180,14 +71,13 @@ npx cap open ios
 Titrate/
 |-- index.html              # Main app UI
 |-- app.js                  # App logic, search, calculators
-|-- data.json               # Clinical protocols (2024 Bara ICU)
+|-- data.json               # Clinical protocols (ICU + ED 2026)
 |-- manifest.json           # PWA manifest
 |-- service-worker.js       # Offline caching
 |-- capacitor.config.json   # Capacitor configuration
-|-- package.json            # Node dependencies + build scripts
+|-- package.json            # Node dependencies
 |-- icon-192.svg            # App icon (192x192)
 |-- icon-512.svg            # App icon (512x512)
-|-- .gitignore              # Git ignore rules
 |-- README.md               # This file
 ```
 
@@ -203,24 +93,10 @@ Titrate/
 
 ---
 
-## Data Sources
-
-All clinical data is derived from the **Chris Hani Baragwanath Academic Hospital ICU Dosing Card** and its **2024 updates**, including:
-
-- Noradrenaline as first-line vasopressor
-- TLD (TDF + 3TC + DTG) as first-line HIV regimen
-- Updated surgical prophylaxis dosing
-- Artesunate for severe malaria
-- CRE infection protocols
-
-**Disclaimer**: This app is for clinical reference only. Always verify doses before administration.
-
----
-
 ## License
 
 MIT
 
 ---
 
-**Titrate v1.0** - Bara ICU Dosing Guide - 2024
+**Titrate v3.0** - ICU & ED Clinical Reference - 2026
