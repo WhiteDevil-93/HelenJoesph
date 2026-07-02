@@ -2,12 +2,12 @@
   "name": "Titrate - ICU Dosing Guide",
   "short_name": "Titrate",
   "description": "Offline ICU dosing guide for Chris Hani Baragwanath Academic Hospital - 2024 protocols",
-  "start_url": "/Titrate/index.html",
+  "start_url": "/HelenJoesph/index.html",
   "display": "standalone",
   "background_color": "#0a1f1f",
   "theme_color": "#0d3b3b",
   "orientation": "portrait-primary",
-  "scope": "/Titrate/",
+  "scope": "/HelenJoesph/",
   "icons": [
     {
       "src": "icon-192.svg",
@@ -22,7 +22,11 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["medical", "health", "reference"],
+  "categories": [
+    "medical",
+    "health",
+    "reference"
+  ],
   "lang": "en",
   "dir": "ltr"
 }
