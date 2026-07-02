@@ -1,11 +1,21 @@
-// Kill switch - v4.1
+// Titrate legacy SW kill-switch v4.2
+// This overwrites the old v3.0 cache-first service worker
+const KILL = 'titrate-kill-v4-2';
+
 self.addEventListener('install', e => {
   self.skipWaiting();
-  e.waitUntil(caches.keys().then(names => Promise.all(names.map(n => caches.delete(n)))));
+  e.waitUntil(
+    caches.keys().then(names => Promise.all(names.map(n => caches.delete(n))))
+  );
 });
+
 self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(names => Promise.all(names.map(n => caches.delete(n))))).then(() => self.clients.claim());
+  e.waitUntil(
+    caches.keys().then(names => Promise.all(names.map(n => caches.delete(n))))
+      .then(() => self.clients.claim())
+  );
 });
+
 self.addEventListener('fetch', e => {
   e.respondWith(fetch(e.request, { cache: 'no-store' }));
 });
