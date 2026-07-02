@@ -21,7 +21,7 @@ Titrate is a clinical reference app designed for ICU environments. It provides:
 
 ## Live Web App (Beta)
 
-**URL**: `https://whitedevil-93.github.io/Titrate/`
+**URL**: `https://whitedevil-93.github.io/HelenJoesph/`
 
 ### To install on your phone:
 1. Open the URL in your browser
@@ -37,7 +37,7 @@ Titrate is a clinical reference app designed for ICU environments. It provides:
 
 Every push to `main` automatically builds the APK via GitHub Actions.
 
-1. Go to [Actions](https://github.com/WhiteDevil-93/Titrate/actions) tab
+1. Go to [Actions](https://github.com/WhiteDevil-93/HelenJoesph/actions) tab
 2. Click the latest workflow run
 3. Download the APK artifact
 
@@ -116,7 +116,7 @@ jobs:
 
 ```bash
 # Clone the repo
-git clone https://github.com/WhiteDevil-93/Titrate.git
+git clone https://github.com/WhiteDevil-93/HelenJoesph.git
 cd Titrate
 
 # Install Capacitor
@@ -154,7 +154,7 @@ iOS builds require macOS and Xcode.
 
 ```bash
 # Clone and setup
-git clone https://github.com/WhiteDevil-93/Titrate.git
+git clone https://github.com/WhiteDevil-93/HelenJoesph.git
 cd Titrate
 
 # Install Capacitor
