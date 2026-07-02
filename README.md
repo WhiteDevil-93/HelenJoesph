@@ -100,3 +100,5 @@ MIT
 ---
 
 **Titrate v3.0** - ICU & ED Clinical Reference - 2026
+
+<!-- deploy-trigger: v4.1 -->
