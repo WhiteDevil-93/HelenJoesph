@@ -1,4 +1,5 @@
-// Titrate - ICU Dosing Guide PWA v2.1
+// Titrate - ICU & ED Dosing Guide PWA v3.0
+// Expanded with Helen Joseph Hospital ED Protocols 2026
 let clinicalData = null;
 let deferredPrompt = null;
 let patientWeight = 0;
@@ -14,50 +15,69 @@ const CAT_NAMES = {
     '7_useful_formulae': 'Formulae',
     '8_cardiovascular': 'Cardiovascular',
     '9_blood_products': 'Blood Products',
-    '10_endocrine_and_other': 'Endocrine'
+    '10_endocrine_and_other': 'Endocrine',
+    '11_ed_medical_emergencies': 'ED Medical',
+    '12_ed_toxicology': 'ED Toxicology',
+    '13_ed_trauma_surgical': 'ED Trauma',
+    '14_ed_metabolic': 'ED Metabolic',
+    '15_ed_procedures': 'ED Procedures'
 };
 
 const CAT_ICONS = {
-    'favourites': '⭐',
-    '1_resuscitation_fluids_and_inotropes': '💉',
-    '2_airway_and_ventilation': '🫁',
-    '3_sedation_analgesia_and_neurology': '🧠',
-    '4_antimicrobials_and_infectious_diseases': '🦠',
-    '5_metabolic_electrolytes_and_nutrition': '⚗️',
-    '6_poisoning_and_toxicology': '☠️',
-    '7_useful_formulae': '📐',
-    '8_cardiovascular': '❤️',
-    '9_blood_products': '🩸',
-    '10_endocrine_and_other': '🔬'
+    'favourites': '\u2B50',
+    '1_resuscitation_fluids_and_inotropes': '\uD83D\uDC89',
+    '2_airway_and_ventilation': '\uD83E\uDEC1',
+    '3_sedation_analgesia_and_neurology': '\uD83E\uDDE0',
+    '4_antimicrobials_and_infectious_diseases': '\uD83E\uDDA0',
+    '5_metabolic_electrolytes_and_nutrition': '\u2697\uFE0F',
+    '6_poisoning_and_toxicology': '\u2620\uFE0F',
+    '7_useful_formulae': '\uD83D\uDCD0',
+    '8_cardiovascular': '\u2764\uFE0F',
+    '9_blood_products': '\uD83E\uDE78',
+    '10_endocrine_and_other': '\uD83D\uDD2C',
+    '11_ed_medical_emergencies': '\uD83E\uDEC0',
+    '12_ed_toxicology': '\u2620\uFE0F',
+    '13_ed_trauma_surgical': '\uD83D\uDE91',
+    '14_ed_metabolic': '\u2697\uFE0F',
+    '15_ed_procedures': '\uD83E\uDE7A'
 };
 
 const TAB_ORDER = [
-    'favourites','1_resuscitation_fluids_and_inotropes','2_airway_and_ventilation',
-    '3_sedation_analgesia_and_neurology','4_antimicrobials_and_infectious_diseases',
-    '5_metabolic_electrolytes_and_nutrition','6_poisoning_and_toxicology',
-    '7_useful_formulae','8_cardiovascular','9_blood_products','10_endocrine_and_other'
+    'favourites',
+    '1_resuscitation_fluids_and_inotropes',
+    '2_airway_and_ventilation',
+    '3_sedation_analgesia_and_neurology',
+    '4_antimicrobials_and_infectious_diseases',
+    '5_metabolic_electrolytes_and_nutrition',
+    '6_poisoning_and_toxicology',
+    '7_useful_formulae',
+    '8_cardiovascular',
+    '9_blood_products',
+    '10_endocrine_and_other',
+    '11_ed_medical_emergencies',
+    '12_ed_toxicology',
+    '13_ed_trauma_surgical',
+    '14_ed_metabolic',
+    '15_ed_procedures'
 ];
 
-// ═══ DOSE PARSER ═══
+// DOSE PARSER
 function parseWeightDose(doseStr) {
     if (!doseStr) return null;
-    const s = doseStr.toLowerCase().replace(/–/g, '-');
+    const s = doseStr.toLowerCase().replace(/\u2013/g, '-');
 
-    // Infusion rates: 0.05-1 mcg/kg/min
     let m = s.match(/(\d+\.?\d*)\s*-\s*(\d+\.?\d*)\s*(mcg|mg|ug|g|units|iu)\s*\/\s*kg\s*\/\s*(min|hr|hour)/);
     if (m) return { type: 'infusion', minVal: parseFloat(m[1]), maxVal: parseFloat(m[2]), unit: m[3], time: m[4], isRange: true };
 
     m = s.match(/(\d+\.?\d*)\s*(mcg|mg|ug|g|units|iu)\s*\/\s*kg\s*\/\s*(min|hr|hour)/);
     if (m) return { type: 'infusion', minVal: parseFloat(m[1]), maxVal: parseFloat(m[1]), unit: m[2], time: m[3], isRange: false };
 
-    // Weight-based with freq: 10-20mg/kg IV 8hrly
     m = s.match(/(\d+\.?\d*)\s*-\s*(\d+\.?\d*)\s*(mg|mcg|ug|g|units|iu|mmol|ml)\s*\/\s*kg\s+(.*)/);
     if (m) return { type: 'dose_freq', minVal: parseFloat(m[1]), maxVal: parseFloat(m[2]), unit: m[3], freq: m[4], isRange: true };
 
     m = s.match(/(\d+\.?\d*)\s*(mg|mcg|ug|g|units|iu|mmol|ml)\s*\/\s*kg\s+(.*)/);
     if (m) return { type: 'dose_freq', minVal: parseFloat(m[1]), maxVal: parseFloat(m[1]), unit: m[2], freq: m[3], isRange: false };
 
-    // Plain weight-based: 10mg/kg
     m = s.match(/(\d+\.?\d*)\s*-\s*(\d+\.?\d*)\s*(mg|mcg|ug|g|units|iu|mmol|ml)\s*\/\s*kg/);
     if (m) return { type: 'dose', minVal: parseFloat(m[1]), maxVal: parseFloat(m[2]), unit: m[3], isRange: true };
 
@@ -93,7 +113,7 @@ function hasWeightDose(item) {
     return /\/\s*kg/.test(t.toLowerCase());
 }
 
-// ═══ WEIGHT MANAGEMENT ═══
+// WEIGHT MANAGEMENT
 function getWeight() { return parseFloat(localStorage.getItem('titrate_weight') || '0'); }
 function setWeight(w) { localStorage.setItem('titrate_weight', w); patientWeight = w; updateAllCalcs(); updateWeightBadge(); }
 
@@ -109,23 +129,23 @@ function updateAllCalcs() {
         const result = calculateDose(parsed, patientWeight);
         if (result) {
             el.style.display = 'flex';
-            el.querySelector('.calc-value').textContent = '→ ' + result;
+            el.querySelector('.calc-value').textContent = '\u2192 ' + result;
         } else {
             el.style.display = 'none';
         }
     });
 }
 
-// ═══ FAVOURITES ═══
+// FAVOURITES
 function getFavs() { try { return JSON.parse(localStorage.getItem('titrate_favourites') || '[]'); } catch { return []; } }
 function saveFavs(f) { localStorage.setItem('titrate_favourites', JSON.stringify(f)); updateFavBadge(); }
 function toggleFav(key) { let f = getFavs(); saveFavs(f.includes(key) ? f.filter(x => x !== key) : [...f, key]); updateFavBtns(); if (activeCat === 'favourites') renderFavourites(); }
 function isFav(key) { return getFavs().includes(key); }
 function makeKey(item, cat) { const n = item.item || item.drug || item.condition_or_drug || item.poison_or_drug || item.antidote_treatment || item.product || ''; return cat + '::' + n; }
 function updateFavBadge() { const b = document.getElementById('favBadge'); if (b) { const c = getFavs().length; b.textContent = c; b.style.display = c > 0 ? 'inline-flex' : 'none'; } }
-function updateFavBtns() { document.querySelectorAll('.fav-btn').forEach(btn => { const k = btn.dataset.key; const f = isFav(k); btn.textContent = f ? '★' : '☆'; btn.classList.toggle('fav-active', f); btn.title = f ? 'Remove from favourites' : 'Add to favourites'; }); }
+function updateFavBtns() { document.querySelectorAll('.fav-btn').forEach(btn => { const k = btn.dataset.key; const f = isFav(k); btn.textContent = f ? '\u2605' : '\u2606'; btn.classList.toggle('fav-active', f); btn.title = f ? 'Remove from favourites' : 'Add to favourites'; }); }
 
-// ═══ INIT ═══
+// INIT
 document.addEventListener('DOMContentLoaded', () => { patientWeight = getWeight(); loadData(); setupSearch(); setupScrollTop(); setupInstallPrompt(); });
 
 if ('serviceWorker' in navigator) {
@@ -142,11 +162,11 @@ async function loadData() {
         if (activeCat === 'favourites') renderFavourites(); else if (activeCat === 'all') renderAllSections(); else renderSection(activeCat);
         updateConnectionStatus(); updateFavBadge(); updateWeightBadge();
     } catch (e) {
-        document.getElementById('content').innerHTML = '<div class="no-results"><div style="font-size:2rem">⚠️</div>Failed to load data.<br>Check connection and refresh.</div>';
+        document.getElementById('content').innerHTML = '<div class="no-results"><div style="font-size:2rem">\u26A0\uFE0F</div>Failed to load data.<br>Check connection and refresh.</div>';
     }
 }
 
-// ═══ NAV ═══
+// NAV
 let activeCat = 'all';
 
 function renderNav() {
@@ -154,7 +174,7 @@ function renderNav() {
     let html = '';
     const fc = getFavs().length;
     html += `<button class="cat-btn" data-cat="favourites">${CAT_ICONS.favourites} ${CAT_NAMES.favourites}<span class="nav-badge" id="favBadge" style="display:${fc > 0 ? 'inline-flex' : 'none'}">${fc}</span></button>`;
-    html += `<button class="cat-btn active" data-cat="all">📋 All</button>`;
+    html += `<button class="cat-btn active" data-cat="all">\uD83D\uDCCB All</button>`;
     for (const key of TAB_ORDER) {
         if (key === 'favourites' || !clinicalData[key]) continue;
         html += `<button class="cat-btn" data-cat="${key}">${CAT_ICONS[key]} ${CAT_NAMES[key]}</button>`;
@@ -174,7 +194,7 @@ function renderNav() {
     });
 }
 
-// ═══ RENDER ═══
+// RENDER
 function renderAllSections() {
     const c = document.getElementById('content'); let h = '';
     for (const k of TAB_ORDER) { if (k !== 'favourites' && clinicalData[k]) h += renderSectionHTML(k); }
@@ -200,13 +220,13 @@ function renderSectionHTML(catKey) {
             if (has) { body += `<div class="sub-label">${sl}</div>` + sm; }
         } else { body += renderDrugCard(items, catKey); }
     }
-    return `<div class="section" data-cat="${catKey}"><div class="section-header"><div class="section-title">${ci} ${cn}</div><div class="section-toggle">▼</div></div><div class="section-body">${body}</div></div>`;
+    return `<div class="section" data-cat="${catKey}"><div class="section-header"><div class="section-title">${ci} ${cn}</div><div class="section-toggle">\u25BC</div></div><div class="section-body">${body}</div></div>`;
 }
 
 function renderFavourites() {
     const c = document.getElementById('content'); const favs = getFavs();
     if (favs.length === 0) {
-        c.innerHTML = `<div class="no-results"><div style="font-size:3rem;margin-bottom:1rem">⭐</div><div style="font-size:1.1rem;font-weight:700">No favourites yet</div><div style="font-size:0.85rem;color:var(--text-secondary);max-width:280px;margin:0.5rem auto">Tap the ☆ star on any drug to add it here. Saved locally, works offline.</div></div>`;
+        c.innerHTML = `<div class="no-results"><div style="font-size:3rem;margin-bottom:1rem">\u2B50</div><div style="font-size:1.1rem;font-weight:700">No favourites yet</div><div style="font-size:0.85rem;color:var(--text-secondary);max-width:280px;margin:0.5rem auto">Tap the \u2606 star on any drug to add it here. Saved locally, works offline.</div></div>`;
         return;
     }
     let h = '<div class="section expanded"><div class="section-body" style="max-height:none">';
@@ -225,15 +245,17 @@ function renderDrugCard(item, catKey) {
     const dn = name || `${item.category} - ${item.item || ''}`;
     const dk = makeKey(item, catKey);
     const fv = isFav(dk);
-    const fb = `<button class="fav-btn ${fv ? 'fav-active' : ''}" data-key="${dk}" onclick="event.stopPropagation();toggleFav('${dk}')" title="${fv ? 'Remove' : 'Add'}">${fv ? '★' : '☆'}</button>`;
+    const fb = `<button class="fav-btn ${fv ? 'fav-active' : ''}" data-key="${dk}" onclick="event.stopPropagation();toggleFav('${dk}')" title="${fv ? 'Remove' : 'Add'}">${fv ? '\u2605' : '\u2606'}</button>`;
     const notes = item.notes_updates || item.notes || '';
     let badges = '';
     if (notes.toLowerCase().includes('first-line')) badges += '<span class="badge b-first">1st</span>';
-    if (notes.toLowerCase().includes('warning') || notes.toLowerCase().includes('caution')) badges += '<span class="badge b-warn">⚠️</span>';
-    if (notes.toLowerCase().includes('avoid') || notes.toLowerCase().includes('teratogenic') || notes.toLowerCase().includes('contraindicated')) badges += '<span class="badge b-dang">🚫</span>';
-    if (item.standard_dilutions) badges += '<span class="badge b-calc">📟</span>';
+    if (notes.toLowerCase().includes('warning') || notes.toLowerCase().includes('caution')) badges += '<span class="badge b-warn">\u26A0\uFE0F</span>';
+    if (notes.toLowerCase().includes('avoid') || notes.toLowerCase().includes('teratogenic') || notes.toLowerCase().includes('contraindicated')) badges += '<span class="badge b-dang">\uD83D\uDEAB</span>';
+    if (item.standard_dilutions || item.formula) badges += '<span class="badge b-calc">\uD83D\uDDFB</span>';
+    if (item.protocol_type === 'ed_scoring' || dn.startsWith('\uD83D\uDCCA')) badges += '<span class="badge b-info">\uD83D\uDCCA</span>';
+    if (item.protocol_type === 'ed_formula' || dn.startsWith('\uD83D\uDCD0')) badges += '<span class="badge b-info">\uD83D\uDCD0</span>';
+    if (dn.startsWith('\u2501')) badges += '<span class="badge b-header">\u25B6</span>';
 
-    // Build weight-based calc rows for adult + paediatric doses
     let calcRows = '';
     const doses = [item.adult_dose, item.paediatric_dose, item.adult_settings, item.paediatric_settings, item.protocol_dose].filter(Boolean);
     const seen = new Set();
@@ -245,7 +267,7 @@ function renderDrugCard(item, catKey) {
                 seen.add(key);
                 const label = dose === item.adult_dose || dose === item.adult_settings ? 'Adult calc' : dose === item.protocol_dose ? 'Protocol calc' : 'Peds calc';
                 const result = patientWeight > 0 ? calculateDose(parsed, patientWeight) : null;
-                const display = result ? `→ ${result}` : 'Enter weight to calculate';
+                const display = result ? `\u2192 ${result}` : 'Enter weight to calculate';
                 const style = result ? '' : 'style="opacity:0.5"';
                 calcRows += `<div class="calc-result-row" data-dose="${dose.replace(/"/g, '&quot;')}" ${style}><span class="calc-label">${label}</span><span class="calc-value">${display}</span></div>`;
             }
@@ -254,6 +276,10 @@ function renderDrugCard(item, catKey) {
 
     let h = `<div class="drug-card" data-search="${(dn + ' ' + notes + ' ' + (item.adult_dose || '') + ' ' + (item.paediatric_dose || '')).toLowerCase()}">`;
     h += `<div class="drug-header"><div class="drug-name">${dn} ${badges}</div>${fb}</div>`;
+
+    if (item.parent_protocol && !dn.includes(item.parent_protocol)) {
+        h += `<div style="font-size:0.65rem;color:var(--accent);margin-bottom:0.25rem;font-weight:600">\u25B8 ${item.parent_protocol}</div>`;
+    }
 
     if (item.adult_dose || item.adult_settings) h += `<div class="dose-row"><span class="dose-label">Adult</span><span class="dose-value">${item.adult_dose || item.adult_settings}</span></div>`;
     if (item.paediatric_dose || item.paediatric_settings) h += `<div class="dose-row"><span class="dose-label">Paed</span><span class="dose-value">${item.paediatric_dose || item.paediatric_settings}</span></div>`;
@@ -269,7 +295,11 @@ function renderDrugCard(item, catKey) {
         let nc = 'notes';
         if (notes.toLowerCase().includes('warning') || notes.toLowerCase().includes('avoid') || notes.toLowerCase().includes('teratogenic') || notes.toLowerCase().includes('contraindicated')) nc += ' danger';
         else if (notes.toLowerCase().includes('caution') || notes.toLowerCase().includes('consult') || notes.toLowerCase().includes('section 21')) nc += ' warn';
-        h += `<div class="${nc}">${notes}</div>`;
+        if (notes.length > 200) {
+            h += `<div class="${nc}" style="max-height:120px;overflow-y:auto;font-size:0.72rem">${notes}</div>`;
+        } else {
+            h += `<div class="${nc}">${notes}</div>`;
+        }
     }
     h += '</div>';
     return h;
@@ -277,14 +307,14 @@ function renderDrugCard(item, catKey) {
 
 function renderCalc(item) {
     const id = item.item.replace(/\s+/g, '').replace(/[^a-zA-Z0-9]/g, '');
-    return `<button class="calc-btn" onclick="toggleCalc('${id}')">📟 Infusion Calc</button><div class="calc-panel" id="calc-${id}"><div class="calc-inputs"><input type="number" id="d-${id}" placeholder="mcg/kg/min" step="0.01" oninput="cI('${id}','${item.item}')"><input type="number" id="w-${id}" placeholder="Wt (kg)" step="0.1" value="${patientWeight || ''}" oninput="cI('${id}','${item.item}')"></div><div class="calc-result" id="r-${id}">-- ml/hr</div><div class="formula-display">${item.formula}</div></div>`;
+    return `<button class="calc-btn" onclick="toggleCalc('${id}')">\uD83D\uDDFB Infusion Calc</button><div class="calc-panel" id="calc-${id}"><div class="calc-inputs"><input type="number" id="d-${id}" placeholder="mcg/kg/min" step="0.01" oninput="cI('${id}','${item.item}')"><input type="number" id="w-${id}" placeholder="Wt (kg)" step="0.1" value="${patientWeight || ''}" oninput="cI('${id}','${item.item}')"></div><div class="calc-result" id="r-${id}">-- ml/hr</div><div class="formula-display">${item.formula}</div></div>`;
 }
 
 function toggleCalc(id) { document.getElementById(`calc-${id}`).classList.toggle('open'); }
 function cI(id, drug) { const d = parseFloat(document.getElementById(`d-${id}`).value) || 0; const w = parseFloat(document.getElementById(`w-${id}`).value) || 0; if (d <= 0 || w <= 0) { document.getElementById(`r-${id}`).textContent = '-- ml/hr'; return; } const div = { 'Adrenaline': 25, 'Noradrenaline': 50, 'Dobutamine': 1250 }[drug] || 50; document.getElementById(`r-${id}`).textContent = ((d * w * 60) / div).toFixed(1) + ' ml/hr'; }
 function attachHandlers() { document.querySelectorAll('.section-header').forEach(h => { h.addEventListener('click', () => { h.parentElement.classList.toggle('expanded'); }); }); }
 
-// ═══ SEARCH ═══
+// SEARCH
 function setupSearch() {
     const inp = document.getElementById('searchInput');
     const clr = document.getElementById('clearBtn');
@@ -306,9 +336,9 @@ function doSearch(q) {
             if (Array.isArray(items)) { let sm = ''; for (const item of items) { if (JSON.stringify(item).toLowerCase().includes(q)) sm += hlt(renderDrugCard(item, ck), q); } if (sm) cm += `<div class="sub-label">${sk.replace(/_/g, ' ').replace(/^\w/, c => c.toUpperCase())}</div>` + sm; }
             else { if (JSON.stringify(items).toLowerCase().includes(q)) cm += hlt(renderDrugCard(items, ck), q); }
         }
-        if (cm) h += `<div class="section expanded"><div class="section-header"><div class="section-title">${CAT_ICONS[ck] || ''} ${CAT_NAMES[ck]}</div><div class="section-toggle">▼</div></div><div class="section-body">${cm}</div></div>`;
+        if (cm) h += `<div class="section expanded"><div class="section-header"><div class="section-title">${CAT_ICONS[ck] || ''} ${CAT_NAMES[ck]}</div><div class="section-toggle">\u25BC</div></div><div class="section-body">${cm}</div></div>`;
     }
-    c.innerHTML = h || `<div class="no-results"><div style="font-size:2rem">🔍</div>No results for "${q}"</div>`;
+    c.innerHTML = h || `<div class="no-results"><div style="font-size:2rem">\uD83D\uDD0D</div>No results for "${q}"</div>`;
     attachHandlers(); updateFavBtns(); updateAllCalcs();
 }
 
@@ -320,7 +350,6 @@ function updateConnectionStatus() { const b = document.getElementById('offlineBa
 window.addEventListener('online', updateConnectionStatus);
 window.addEventListener('offline', updateConnectionStatus);
 
-// Weight input handler
 document.addEventListener('DOMContentLoaded', () => {
     const wi = document.getElementById('weightInput');
     if (wi) {
@@ -330,4 +359,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('footer').innerHTML = 'Titrate v2.1 &middot; 248 Drugs &middot; Weight-Based Calculators<br>For clinical reference only &middot; Verify all doses<br><span style="opacity:0.7">Created by Tashriq Hendricks &amp; Kimi</span>';
+document.getElementById('footer').innerHTML = 'Titrate v3.0 &middot; 2,071 Entries &middot; 16 Categories &middot; Weight-Based Calculators<br>ICU Dosing + HJH ED Protocols 2026 &middot; For clinical reference only &middot; Verify all doses<br><span style="opacity:0.7">Created by Tashriq Hendricks &amp; Kimi</span>';
