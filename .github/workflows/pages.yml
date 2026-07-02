@@ -1,4 +1,4 @@
-name: Build Check
+name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]
@@ -6,23 +6,25 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Verify build
-        run: |
-          echo "Files in repo:"
-          ls -la
-          echo "index.html size: $(wc -c < index.html)"
-          echo "app.js size: $(wc -c < app.js)"
-          echo "data.json size: $(wc -c < data.json)"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
