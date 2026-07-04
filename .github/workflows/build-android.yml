@@ -35,7 +35,7 @@ jobs:
       - name: Prepare Web Assets
         run: |
           mkdir -p www
-          cp index.html app.js data.json manifest.json service-worker.js icon-*.svg www/
+          cp index.html app-4.4.js data.json manifest.json service-worker.js sw.js www/
 
       - name: Install Capacitor
         run: |
