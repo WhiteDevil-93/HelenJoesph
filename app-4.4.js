@@ -847,23 +847,6 @@ resEl.className='scres'+cls;resEl.innerHTML=`<div class="tot">${tot} — ${match
 }else{resEl.className='scres';resEl.innerHTML=`<div class="tot">${tot}</div>`}
 }
 
-function calcFormula(key){
-const sc=D['16_score_calculators'][key];const sid='sc-'+key;const resEl=document.getElementById(sid+'-res');
-if(!sc||!resEl)return;
-const vals={};
-for(const inp of(sc.inputs||[])){const v=parseFloat(document.getElementById(sid+'-'+inp.key)?.value);if(isNaN(v)){resEl.innerHTML='<div class="tot">--</div><div class="lbl">Enter all values</div>';return}vals[inp.key]=v}
-let result,label,action;
-if(key==='parkland'){const ml=4*vals.weight*vals.tbsa;const half=ml/2;result=`${ml.toFixed(0)} mL/24h`;label=`${half.toFixed(0)} mL in first 8h`;action=`Then ${half.toFixed(0)} mL over next 16h`;
-const tEl=document.getElementById(sid+'-time');if(tEl&&tEl.value){const bt=new Date(tEl.value);const nw=new Date();const hs=(nw-bt)/3600000;const hl=Math.max(0,8-hs);const rate=hl>0?(half/hl).toFixed(0):'0';action+=` | Rate: ${rate} mL/h (${hs.toFixed(1)}h elapsed)`}
-}else if(key==='anion_gap'){const gap=vals.na-(vals.cl+vals.hco3);result=`${gap.toFixed(1)} mmol/L`;label=gap<8?'Low':gap<=12?'Normal':gap<=16?'Elevated':'High';action=gap>16?'MUDPILES: Methanol, Uraemia, DKA, INH, Lactate, Ethylene glycol, Salicylates':'Check albumin, bromide, lithium if low'}
-else if(key==='corrected_na'){const corr=vals.na+(1.6*(vals.glucose-5.5)/5.5);result=`${corr.toFixed(1)} mmol/L`;label='Corrected Na';action='Use for treatment decisions'}
-else if(key==='free_water_deficit'){const def=0.6*vals.weight*((vals.na/140)-1);result=`${def.toFixed(0)} L`;label='Deficit';action='Replace over 48-72h. Max 10 mmol/L/day'}
-else if(key==='sodium_deficit'){const def=0.6*vals.weight*(vals.na_desired-vals.na_actual);result=`${def.toFixed(0)} mmol`;label='Na Deficit';action='Correct max 8-10 mmol/L/24h'}
-else if(key==='pf_ratio'){const pf=vals.pao2/vals.fio2;result=`${pf.toFixed(0)}`;label=pf>=300?'Normal':pf>=200?'Mild ARDS':pf>=100?'Moderate ARDS':'Severe ARDS';action=pf<100?'Consider ECMO, proning':pf<200?'Lung protective ventilation':''}
-else return;
-resEl.innerHTML=`<div class="tot">${result}</div><div class="lbl">${label}</div><div class="act">${action}</div>`;
-}
-
 /* ===== FAVOURITES ===== */
 function renderF(){
 const favs=gF();const c=document.getElementById('c');
@@ -1501,21 +1484,6 @@ function esc(str) {
    STAGE 3: SAFE FORMULA CALCULATORS
    Replaces unsafe calcFormula() with safe math parser + clinical interpretation
    ============================================================ */
-
-/**
- * Escape HTML entities to prevent XSS in user-generated content.
- * @param {string} text - Raw text that may contain HTML characters
- * @returns {string} Escaped text safe for innerHTML insertion
- */
-function esc(text) {
-  if (text == null) return '';
-  return String(text)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
 
 /**
  * Safely evaluate a formula from the score_calculators data.
