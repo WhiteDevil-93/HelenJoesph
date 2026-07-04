@@ -174,102 +174,118 @@ function renderSect(cat){
 
 /* ===== ED PROCEDURES RENDERER ===== */
 function renderEDProcedures(d){
-  // Flatten all items from nested structure
-  let allItems=[];
-  for(const[sk,items]of Object.entries(d)){
-    if(Array.isArray(items)){for(const it of items)allItems.push(it)}
-    else{allItems.push(items)}
-  }
-  // Group items by protocol
-  let protocols=[];
-  let currentProto=null;
-  let currentItems=[];
-  for(const it of allItems){
-    const n=it.item||'';
-    if(n.startsWith('━')){
-      if(currentProto){protocols.push({name:currentProto,items:currentItems})}
-      currentProto=n.replace(/━/g,'').trim();
-      currentItems=[];
-    }else{
-      currentItems.push(it);
-    }
-  }
-  if(currentProto&&currentItems.length)protocols.push({name:currentProto,items:currentItems});
-  // If no headers found, treat all as one protocol
-  if(!protocols.length&&allItems.length)protocols.push({name:'ED Procedures',items:allItems});
-
+  const protocols=d.protocols||[];
+  if(!protocols.length)return'';
   let body='';
-  for(const proto of protocols){
-    body+=renderEDProtocol(proto.name,proto.items);
+  for(const p of protocols){
+    if(p.item)body+=renderEDProtocolCard(p);
   }
   if(!body)return'';
   return `<div class="sect open" data-c="15_ed_procedures"><div class="sh" onclick="togS(this)"><div style="display:flex;align-items:center"><div class="shi">${I['15_ed_procedures']}</div><div class="sht">${C['15_ed_procedures']}</div></div><div class="shc">▼</div></div><div class="sb">${body}</div></div>`;
 }
 
-function renderEDProtocol(name,items){
-  // Separate equipment, metadata, and steps
-  let equipment=[];
-  let metadata=[];
-  let steps=[];
-  let other=[];
-  for(const it of items){
-    const n=it.item||'';
-    const notes=it.notes_updates||it.notes||'';
-    // Skip metadata fields
-    if(n==='Name'||n==='Category'||n==='Category Name'||notes===name||notes==='procedure_critical_care'){
-      metadata.push(it);continue;
-    }
-    // Equipment items: no notes_updates, not part of a step group
-    if(n&&!notes&&!it.parent_protocol){
-      equipment.push(it);continue;
-    }
-    // Steps have parent_protocol like "Step By Step_0"
-    if(it.parent_protocol){
-      steps.push(it);continue;
-    }
-    other.push(it);
+function renderEDProtocolCard(p){
+  const k='15_ed_procedures::'+p.item;
+  let h=`<div class="drug" data-k="${esc(k)}">`;
+  // Title + star
+  h+=`<div class="dh"><div class="dn" style="font-size:.9rem">${esc(p.item)}</div><button class="star${iF(k)?' on':''}" onclick="togF('${esc(k)}')">${iF(k)?'★':'☆'}</button></div>`;
+  // Equipment list
+  const eq=p.equipment||[];
+  if(eq.length){
+    h+=`<div class="eq-grid" style="margin:.3rem 0">`;
+    for(const e of eq)h+=`<span class="eq-item">${esc(e)}</span>`;
+    h+=`</div>`;
   }
-  let h=`<div class="drug">`;
-  // Protocol title card
-  h+=`<div class="dh"><div class="dn" style="font-size:.9rem">▶ ${name}</div></div>`;
-  // Equipment checklist (compact inline, no stars)
-  if(equipment.length){
-    const eqList=equipment.map(it=>it.item).filter(Boolean).join(' · ');
-    if(eqList)h+=`<div style="padding:.35rem .6rem;font-size:.72rem;color:var(--t2);background:rgba(255,255,255,.03);border-radius:.3rem;margin:.15rem .5rem .3rem"><strong style="color:var(--a)">Equipment:</strong> ${eqList}</div>`;
+  // Drugs
+  const drugs=p.drugs||[];
+  if(drugs.length){
+    for(const drug of drugs)h+=renderDrug(drug,'15_ed_procedures');
   }
-  // Steps grouped by parent_protocol
+  // Management steps
+  const steps=p.management_steps||[];
   if(steps.length){
-    // Group by parent_protocol number
-    const stepGroups={};
+    h+=`<div style="font-size:.65rem;font-weight:700;color:var(--a);margin:.4rem 0 .2rem;text-transform:uppercase;letter-spacing:.5px">Protocol Steps</div>`;
     for(const s of steps){
-      const pp=s.parent_protocol||'';
-      const idx=pp.replace(/\D/g,'')||'0';
-      if(!stepGroups[idx])stepGroups[idx]={};
-      const item=s.item||'';
-      if(item==='Action')stepGroups[idx].action=s.notes_updates||s.notes||'';
-      else if(item==='Details')stepGroups[idx].details=s.notes_updates||s.notes||'';
-      else if(item==='Caution')stepGroups[idx].caution=s.notes_updates||s.notes||'';
-      else stepGroups[idx].action=item;
-    }
-    h+=`<div style="font-size:.65rem;font-weight:700;color:var(--a);margin:.4rem .5rem .2rem;text-transform:uppercase;letter-spacing:.5px">Protocol Steps</div>`;
-    const indices=Object.keys(stepGroups).sort((a,b)=>parseInt(a)-parseInt(b));
-    for(let i=0;i<indices.length;i++){
-      const idx=indices[i];
-      const sg=stepGroups[idx];
-      const stepNum=i+1;
-      h+=`<div style="margin:.2rem .5rem;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
-      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--fg);margin-bottom:.1rem">Step ${stepNum}: ${sg.action||''}</div>`;
-      if(sg.details)h+=`<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${sg.details}</div>`;
-      if(sg.caution)h+=`<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${sg.caution}</div>`;
+      h+=`<div style="margin:.2rem 0;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
+      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--fg)">Step ${s.step_number||'?'}: ${esc(s.action||'')}</div>`;
+      if(s.details)h+=`<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${esc(s.details)}</div>`;
+      if(s.caution)h+=`<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${esc(s.caution)}</div>`;
       h+=`</div>`;
     }
   }
-  // Other items that don't fit into steps
-  for(const it of other){
-    const n=it.item||'';
-    const notes=it.notes_updates||it.notes||'';
-    if(n)h+=`<div class="note" style="margin:.2rem .5rem;padding:.3rem .5rem;font-size:.75rem">${n}${notes?`: ${notes}`:''}</div>`;
-    else if(notes)h+=`<div class="note" style="margin:.2rem .5rem;padding:.3rem .5rem;font-size:.75rem">${notes}</div>`;
+  // Notes / sub-protocols
+  const notes=p.notes_updates||'';
+  if(notes){
+    const sections=parseProtocolSections(notes);
+    if(sections.length>1){
+      for(const sec of sections){
+        h+=`<div style="margin:.25rem 0;padding:.35rem .5rem;background:rgba(255,255,255,.03);border-radius:.3rem">`;
+        h+=`<div style="font-size:.68rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.1rem">${esc(sec.title)}</div>`;
+        h+=`<div style="font-size:.76rem;color:var(--t2);line-height:1.45">${sec.content}</div>`;
+        h+=`</div>`;
+      }
+    }else{
+      h+=`<div class="note" style="font-size:.76rem;color:var(--t2);line-height:1.45;margin-top:.2rem">${sections.map(s=>s.content).join('<br><br>')}</div>`;
+    }
+  }
+  // Sub-protocols (for Oncological, Ophthalmology, Vascular, etc.)
+  const subs=p.sub_protocols||[];
+  if(subs.length){
+    for(const sp of subs){
+      h+=`<div style="margin:.35rem 0;padding:.4rem .6rem;border-radius:.4rem;background:rgba(0,217,181,.06);border:1px solid var(--b)">`;
+      h+=`<div style="font-size:.82rem;font-weight:700;color:var(--fg);margin-bottom:.15rem">${esc(sp.name||'')}</div>`;
+      // Render sub-protocol content
+      for(const[sk,sv]of Object.entries(sp)){
+        if(sk==='name'||!sv)continue;
+        if(Array.isArray(sv)){
+          h+=`<div style="font-size:.68rem;font-weight:700;color:var(--a);margin:.15rem 0 .05rem;text-transform:uppercase">${esc(sk)}</div>`;
+          for(const item of sv){
+            if(typeof item==='string'){
+              h+=`<div style="font-size:.75rem;color:var(--t2);padding:.1rem 0">• ${esc(item)}</div>`;
+            }else if(typeof item==='object'){
+              for(const[ik,iv]of Object.entries(item)){
+                if(!iv)continue;
+                h+=`<div style="font-size:.75rem;color:var(--t2);padding:.1rem 0"><b>${esc(ik)}</b>: ${esc(typeof iv==='string'?iv:JSON.stringify(iv))}</div>`;
+              }
+            }
+          }
+        }else if(typeof sv==='object'){
+          h+=`<div style="font-size:.68rem;font-weight:700;color:var(--a);margin:.15rem 0 .05rem;text-transform:uppercase">${esc(sk)}</div>`;
+          for(const[dk,dv]of Object.entries(sv)){
+            if(!dv)continue;
+            h+=`<div style="font-size:.75rem;color:var(--t2);padding:.1rem 0"><b>${esc(dk)}</b>: ${esc(typeof dv==='string'?dv:JSON.stringify(dv))}</div>`;
+          }
+        }else{
+          h+=`<div style="font-size:.75rem;color:var(--t2);padding:.1rem 0"><b>${esc(sk)}</b>: ${esc(String(sv))}</div>`;
+        }
+      }
+      h+=`</div>`;
+    }
+  }
+  // Settings
+  const settings=p.settings||[];
+  if(settings.length){
+    h+=`<div style="font-size:.65rem;font-weight:700;color:var(--a);margin:.4rem 0 .2rem;text-transform:uppercase;letter-spacing:.5px">Settings</div>`;
+    for(const s of settings){
+      h+=`<div style="font-size:.76rem;color:var(--t2);padding:.15rem 0"><b>${esc(s.parameter||'')}</b>: ${esc(s.value||'')}${s.unit?` ${esc(s.unit)}`:''}${s.conditions?` <span style="color:var(--w)">(${esc(s.conditions)})</span>`:''}</div>`;
+    }
+  }
+  // Monitoring
+  if(p.monitoring){
+    const mon=Array.isArray(p.monitoring)?p.monitoring:[p.monitoring];
+    h+=`<div style="font-size:.65rem;font-weight:700;color:var(--a);margin:.3rem 0 .1rem;text-transform:uppercase;letter-spacing:.5px">Monitoring</div>`;
+    for(const m of mon)h+=`<div style="font-size:.75rem;color:var(--t2)">• ${esc(m)}</div>`;
+  }
+  // Complications
+  const comp=p.complications||[];
+  if(comp.length){
+    h+=`<div style="font-size:.65rem;font-weight:700;color:var(--d);margin:.3rem 0 .1rem;text-transform:uppercase;letter-spacing:.5px">Complications</div>`;
+    for(const c of comp)h+=`<div style="font-size:.75rem;color:var(--t2)">• ${esc(c)}</div>`;
+  }
+  // Warnings
+  const warns=p.warnings||[];
+  if(warns.length){
+    for(const w of warns)h+=`<div style="font-size:.72rem;color:#e74c3c;margin:.1rem 0;padding:.2rem .3rem;background:rgba(231,76,60,.08);border-radius:.3rem">⚠️ ${esc(w)}</div>`;
   }
   h+=`</div>`;
   return h;
