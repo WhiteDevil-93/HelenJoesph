@@ -99,7 +99,7 @@ function renderOnboardCard(ov){
   const step=ONBOARD_STEPS[onboardStep];
   ov.innerHTML=`<div style="background:var(--bg);border:1px solid var(--b);border-radius:1rem;padding:1.5rem;max-width:320px;width:85%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.4)">
     <div style="font-size:3rem;margin-bottom:.5rem">${step.icon}</div>
-    <div style="font-weight:700;font-size:1.1rem;margin-bottom:.3rem;color:var(--fg)">${step.title}</div>
+    <div style="font-weight:700;font-size:1.1rem;margin-bottom:.3rem;color:var(--t)">${step.title}</div>
     <div style="font-size:.82rem;color:var(--t2);margin-bottom:1rem;line-height:1.4">${step.desc}</div>
     <div style="display:flex;gap:.5rem;margin-bottom:1rem;justify-content:center">
       ${ONBOARD_STEPS.map((_,i)=>`<div style="width:8px;height:8px;border-radius:50%;background:${i===onboardStep?'var(--a)':'var(--b)'};transition:background .2s"></div>`).join('')}
@@ -207,7 +207,7 @@ function renderEDProtocolCard(p){
     h+=`<div style="font-size:.65rem;font-weight:700;color:var(--a);margin:.4rem 0 .2rem;text-transform:uppercase;letter-spacing:.5px">Protocol Steps</div>`;
     for(const s of steps){
       h+=`<div style="margin:.2rem 0;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
-      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--fg)">Step ${s.step_number||'?'}: ${esc(s.action||'')}</div>`;
+      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--t)">Step ${s.step_number||'?'}: ${esc(s.action||'')}</div>`;
       if(s.details)h+=`<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${esc(s.details)}</div>`;
       if(s.caution)h+=`<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${esc(s.caution)}</div>`;
       h+=`</div>`;
@@ -233,7 +233,7 @@ function renderEDProtocolCard(p){
   if(subs.length){
     for(const sp of subs){
       h+=`<div style="margin:.35rem 0;padding:.4rem .6rem;border-radius:.4rem;background:rgba(0,217,181,.06);border:1px solid var(--b)">`;
-      h+=`<div style="font-size:.82rem;font-weight:700;color:var(--fg);margin-bottom:.15rem">${esc(sp.name||'')}</div>`;
+      h+=`<div style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.15rem">${esc(sp.name||'')}</div>`;
       // Render sub-protocol content
       for(const[sk,sv]of Object.entries(sp)){
         if(sk==='name'||!sv)continue;
@@ -391,7 +391,7 @@ function renderStructuredProtocol(it,cat){
       const details = step.details || '';
       const caution = step.caution || '';
       h+=`<div style="margin:.2rem 0;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
-      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--fg);margin-bottom:.1rem"><span style="background:var(--a);color:#000;padding:.05rem .35rem;border-radius:.25rem;font-size:.7rem;margin-right:.3rem">Step ${sn}</span>${action}</div>`;
+      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--t);margin-bottom:.1rem"><span style="background:var(--a);color:#000;padding:.05rem .35rem;border-radius:.25rem;font-size:.7rem;margin-right:.3rem">Step ${sn}</span>${action}</div>`;
       if(details) h+=`<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${details}</div>`;
       if(caution) h+=`<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${caution}</div>`;
       h+=`</div>`;
@@ -664,9 +664,9 @@ function renderInfusionCalc(it, n){
   return `<div class="inf-calc" style="margin:.3rem .5rem;padding:.5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border:1px solid var(--b)">
     <div style="font-size:.7rem;font-weight:700;color:var(--a);margin-bottom:.3rem">💉 Infusion Calculator</div>
     <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.3rem">
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Dose</label><input type="number" id="${id}-dose" placeholder="mcg/kg/min" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--fg);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Conc (mg/mL)</label><input type="number" id="${id}-conc" placeholder="e.g. 0.1" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--fg);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Weight (kg)</label><input type="number" id="${id}-wt" placeholder="kg" step="any" value="${W>0?W:''}" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--fg);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Dose</label><input type="number" id="${id}-dose" placeholder="mcg/kg/min" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Conc (mg/mL)</label><input type="number" id="${id}-conc" placeholder="e.g. 0.1" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Weight (kg)</label><input type="number" id="${id}-wt" placeholder="kg" step="any" value="${W>0?W:''}" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
     </div>
     <button onclick="calcInfusion('${id}')" style="padding:.3rem .6rem;font-size:.75rem;font-weight:700;background:var(--a);color:#000;border:none;border-radius:.3rem;cursor:pointer">Calculate mL/hr</button>
     <div id="${id}-res" style="margin-top:.3rem;font-size:.78rem;display:none"></div>
@@ -949,7 +949,7 @@ function renderGCS(gcsData) {
 
   // Running total display
   h += `<div class="gcs-total" id="${tableId}-total" style="margin-top:.4rem;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.2);text-align:center;font-size:.9rem;font-weight:700;color:var(--t2)">`;
-  h += `Total: <span style="color:var(--fg);font-size:1.1rem">--</span> / 15`;
+  h += `Total: <span style="color:var(--t);font-size:1.1rem">--</span> / 15`;
   h += `</div>`;
   h += `</div>`;
   return h;
@@ -992,7 +992,7 @@ function pickGCSRow(el, score, catKey, tableId) {
 
   const categoriesFilled = Object.keys(st).length;
   if (categoriesFilled < 3) {
-    totalEl.innerHTML = `Total: <span style="color:var(--fg);font-size:1.1rem">--</span> / 15 <span style="font-size:.7rem;color:var(--t2)">(${3 - categoriesFilled} category${categoriesFilled < 2 ? 'y' : 'ies'} remaining)</span>`;
+    totalEl.innerHTML = `Total: <span style="color:var(--t);font-size:1.1rem">--</span> / 15 <span style="font-size:.7rem;color:var(--t2)">(${3 - categoriesFilled} category${categoriesFilled < 2 ? 'y' : 'ies'} remaining)</span>`;
     totalEl.style.borderLeft = '';
     totalEl.style.background = 'rgba(0,0,0,.2)';
   } else {
@@ -1194,7 +1194,7 @@ function renderEquipmentList(equipment) {
   for (const eq of equipment) {
     const label = esc(typeof eq === 'string' ? eq : (eq.item || eq.name || eq.equipment || ''));
     if (!label) continue;
-    h += `<span class="eq-item" style="padding:.25rem .45rem;border-radius:.35rem;background:rgba(0,0,0,.15);border:1px solid var(--b);font-size:.72rem;color:var(--fg)">${label}</span>`;
+    h += `<span class="eq-item" style="padding:.25rem .45rem;border-radius:.35rem;background:rgba(0,0,0,.15);border:1px solid var(--b);font-size:.72rem;color:var(--t)">${label}</span>`;
   }
   h += `</div></div>`;
   return h;
@@ -1411,7 +1411,7 @@ function renderStructuredProtocol(it, cat) {
       const details = esc(step.details || '');
       const caution = esc(step.caution || '');
       h += `<div style="margin:.2rem 0;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
-      h += `<div style="font-weight:700;font-size:.78rem;color:var(--fg);margin-bottom:.1rem"><span style="background:var(--a);color:#000;padding:.05rem .35rem;border-radius:.25rem;font-size:.7rem;margin-right:.3rem">Step ${sn}</span>${action}</div>`;
+      h += `<div style="font-weight:700;font-size:.78rem;color:var(--t);margin-bottom:.1rem"><span style="background:var(--a);color:#000;padding:.05rem .35rem;border-radius:.25rem;font-size:.7rem;margin-right:.3rem">Step ${sn}</span>${action}</div>`;
       if (details) h += `<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${details}</div>`;
       if (caution) h += `<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${caution}</div>`;
       h += `</div>`;
