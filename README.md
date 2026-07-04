@@ -70,14 +70,12 @@ All clinical data is derived from:
 ```
 Titrate/
 |-- index.html              # Main app UI
-|-- app.js                  # App logic, search, calculators
+|-- app-4.4.js              # App logic, search, calculators
 |-- data.json               # Clinical protocols (ICU + ED 2026)
 |-- manifest.json           # PWA manifest
 |-- service-worker.js       # Offline caching
 |-- capacitor.config.json   # Capacitor configuration
 |-- package.json            # Node dependencies
-|-- icon-192.svg            # App icon (192x192)
-|-- icon-512.svg            # App icon (512x512)
 |-- README.md               # This file
 ```
 
@@ -99,6 +97,4 @@ MIT
 
 ---
 
-**Titrate v3.0** - ICU & ED Clinical Reference - 2026
-
-<!-- deploy-trigger: v4.1 -->
+**Titrate v4.4** - ICU & ED Clinical Reference - 2026
