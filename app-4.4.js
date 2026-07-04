@@ -341,114 +341,6 @@ function renderProtocol(it,cat,n,notes){
   return h;
 }
 
-/* ===== STRUCTURED PROTOCOL RENDERER ===== */
-function renderStructuredProtocol(it,cat){
-  let h='';
-
-  // 1. Diagnostic Criteria
-  if(it.diagnostic_criteria && it.diagnostic_criteria.length){
-    h+=`<div class="ps"><div class="ps-h" onclick="togPS(this)">🔬 Diagnostic Criteria</div><div class="ps-b" style="display:none">`;
-    h+=`<table style="width:100%;font-size:.75rem;border-collapse:collapse"><thead><tr style="color:var(--a);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px"><th style="text-align:left;padding:.2rem 0;border-bottom:1px solid var(--b)">Parameter</th><th style="text-align:left;padding:.2rem 0;border-bottom:1px solid var(--b)">Threshold</th><th style="text-align:left;padding:.2rem 0;border-bottom:1px solid var(--b)">Unit</th></tr></thead><tbody>`;
-    for(const dc of it.diagnostic_criteria){
-      h+=`<tr><td style="padding:.2rem .3rem .2rem 0;border-bottom:1px solid rgba(255,255,255,.05)">${dc.parameter||''}</td><td style="padding:.2rem .3rem;border-bottom:1px solid rgba(255,255,255,.05)">${dc.threshold||''}</td><td style="padding:.2rem 0;border-bottom:1px solid rgba(255,255,255,.05);color:var(--t2)">${dc.unit||''}</td></tr>`;
-    }
-    h+=`</tbody></table></div></div>`;
-  }
-
-  // 2. Classification
-  if(it.classification && it.classification.length){
-    h+=`<div class="ps"><div class="ps-h" onclick="togPS(this)">📊 Classification</div><div class="ps-b" style="display:none"><ul>`;
-    for(const cl of it.classification){
-      if(typeof cl==='string'){
-        h+=`<li>${cl}</li>`;
-      } else {
-        h+=`<li><strong>${cl.name||cl.label||''}</strong>${cl.description?': '+cl.description:''}${cl.criteria?': '+cl.criteria:''}</li>`;
-      }
-    }
-    h+=`</ul></div></div>`;
-  }
-
-  // 3. Clinical Features
-  if(it.clinical_features && Object.keys(it.clinical_features).length){
-    h+=`<div class="ps"><div class="ps-h" onclick="togPS(this)">🩺 Clinical Features</div><div class="ps-b" style="display:none">`;
-    for(const[sys,features] of Object.entries(it.clinical_features)){
-      h+=`<div style="font-weight:700;color:var(--a);font-size:.7rem;margin:.2rem 0;text-transform:uppercase;letter-spacing:.5px">${sys}</div>`;
-      if(Array.isArray(features)){
-        h+=`<ul style="margin:.1rem 0 .3rem">${features.map(f=>`<li>${f}</li>`).join('')}</ul>`;
-      } else if(typeof features==='string'){
-        h+=`<div style="font-size:.75rem;color:var(--t2);margin-bottom:.3rem">${features}</div>`;
-      }
-    }
-    h+=`</div></div>`;
-  }
-
-  // 4. Management Steps
-  if(it.management_steps && it.management_steps.length){
-    h+=`<div class="ps"><div class="ps-h" onclick="togPS(this)">📋 Management Steps</div><div class="ps-b" style="display:none">`;
-    for(const step of it.management_steps){
-      const sn = step.step_number || '';
-      const action = step.action || '';
-      const details = step.details || '';
-      const caution = step.caution || '';
-      h+=`<div style="margin:.2rem 0;padding:.4rem .5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border-left:2px solid var(--a)">`;
-      h+=`<div style="font-weight:700;font-size:.78rem;color:var(--t);margin-bottom:.1rem"><span style="background:var(--a);color:#000;padding:.05rem .35rem;border-radius:.25rem;font-size:.7rem;margin-right:.3rem">Step ${sn}</span>${action}</div>`;
-      if(details) h+=`<div style="font-size:.75rem;color:var(--t2);margin-top:.1rem">${details}</div>`;
-      if(caution) h+=`<div style="font-size:.72rem;color:#e74c3c;margin-top:.15rem">⚠️ ${caution}</div>`;
-      h+=`</div>`;
-    }
-    h+=`</div></div>`;
-  }
-
-  // 5. Drugs — call renderDrug() for weight-based dosing & infusion calc
-  if(it.drugs && it.drugs.length){
-    for(const drug of it.drugs){
-      const drugName = drug.drug || drug.name || drug.item || '';
-      if(!drugName) continue;
-      const drugObj = {
-        ...drug,
-        item: drugName,
-        notes_updates: drug.notes || drug.notes_updates || '',
-      };
-      h+=renderDrug(drugObj,cat,drugName);
-    }
-  }
-
-  // 6. Monitoring
-  if(it.monitoring && it.monitoring.length){
-    h+=`<div class="ps"><div class="ps-h" onclick="togPS(this)">👁 Monitoring</div><div class="ps-b" style="display:none"><ul>`;
-    for(const m of it.monitoring){
-      if(typeof m==='string') h+=`<li>${m}</li>`;
-      else h+=`<li>${m.parameter||m.item||JSON.stringify(m)}</li>`;
-    }
-    h+=`</ul></div></div>`;
-  }
-
-  // 7. Warnings
-  if(it.warnings && it.warnings.length){
-    h+=`<div class="warnbox"><div class="wl">⚠️ Warnings</div>`;
-    for(const w of it.warnings){
-      h+=`<div>${w}</div>`;
-    }
-    h+=`</div>`;
-  }
-
-  // 8. Disposition
-  if(it.disposition){
-    h+=`<div style="margin-top:.25rem;padding:.3rem .5rem;border-radius:.3rem;background:rgba(0,201,167,.06);border-left:2px solid var(--g);font-size:.72rem"><strong style="color:var(--g)">Disposition:</strong> ${it.disposition}</div>`;
-  }
-
-  // 9. Equipment
-  if(it.equipment && it.equipment.length){
-    const eqTags = it.equipment.map(eq => {
-      const label = typeof eq==='string' ? eq : (eq.item || eq.name || '');
-      return `<span class="eqtag">${label}</span>`;
-    }).join('');
-    h+=`<div style="padding:.35rem .6rem;font-size:.72rem;color:var(--t2);background:rgba(255,255,255,.03);border-radius:.3rem;margin:.15rem 0 .3rem"><strong style="color:var(--a)">Equipment:</strong> ${eqTags}</div>`;
-  }
-
-  return h;
-}
-
 /* ===== PARSE PROTOCOL NOTES INTO SECTIONS ===== */
 function parseProtocolSections(text){
   if(!text||text.length<10)return'';
@@ -664,9 +556,9 @@ function renderInfusionCalc(it, n){
   return `<div class="inf-calc" style="margin:.3rem .5rem;padding:.5rem;border-radius:.4rem;background:rgba(0,0,0,.15);border:1px solid var(--b)">
     <div style="font-size:.7rem;font-weight:700;color:var(--a);margin-bottom:.3rem">💉 Infusion Calculator</div>
     <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.3rem">
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Dose</label><input type="number" id="${id}-dose" placeholder="mcg/kg/min" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Conc (mg/mL)</label><input type="number" id="${id}-conc" placeholder="e.g. 0.1" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
-      <div style="flex:1;min-width:100px"><label style="font-size:.65rem;color:var(--t2)">Weight (kg)</label><input type="number" id="${id}-wt" placeholder="kg" step="any" value="${W>0?W:''}" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label for="${id}-dose" style="font-size:.65rem;color:var(--t2)">Dose</label><input type="number" id="${id}-dose" placeholder="mcg/kg/min" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label for="${id}-conc" style="font-size:.65rem;color:var(--t2)">Conc (mg/mL)</label><input type="number" id="${id}-conc" placeholder="e.g. 0.1" step="any" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
+      <div style="flex:1;min-width:100px"><label for="${id}-wt" style="font-size:.65rem;color:var(--t2)">Weight (kg)</label><input type="number" id="${id}-wt" placeholder="kg" step="any" value="${W>0?W:''}" style="width:100%;padding:.25rem .35rem;font-size:.75rem;background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:.3rem;margin-top:.1rem"></div>
     </div>
     <button onclick="calcInfusion('${id}')" style="padding:.3rem .6rem;font-size:.75rem;font-weight:700;background:var(--a);color:#000;border:none;border-radius:.3rem;cursor:pointer">Calculate mL/hr</button>
     <div id="${id}-res" style="margin-top:.3rem;font-size:.78rem;display:none"></div>
